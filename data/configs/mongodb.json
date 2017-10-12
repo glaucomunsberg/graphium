@@ -1,0 +1,5 @@
+{
+  "mongo_db": "graphium",
+  "mongo_host": "localhost",
+  "mongo_port": 27017
+}

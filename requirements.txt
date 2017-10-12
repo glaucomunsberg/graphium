@@ -1,0 +1,6 @@
+pymongo
+osgeo
+osmread
+unidecode
+geopy
+osmapi

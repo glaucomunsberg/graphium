@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Glauco Roberto Munsberg">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Graphium - Graphium</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Graphium";
+    var mkdocs_page_input_path = "swarm/system/graphium.md";
+    var mkdocs_page_url = "/swarm/system/graphium/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Graphium</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Swarm</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../">About Swarm</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Hive</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../hive/agent/">Agent</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../hive/swarm/">Swarm</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../hive/api/">Swarm</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">System</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Graphium</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#definition">Definition</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#attributes">Attributes</a></li>
+        
+            <li><a class="toctree-l5" href="#methods">Methods</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../helper/">Helper</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../logger/">Logger</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../mongo/">Logger</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Assistant</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../assistant/reader/">Reader</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">WebServer</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../webserver/">About Maker</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../about/license/">License</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../about/release-notes/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Graphium</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Swarm &raquo;</li>
+        
+      
+        
+          <li>System &raquo;</li>
+        
+      
+    
+    <li>Graphium</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="definition">Definition</h1>
+<p>The graphium return a instance of Graphium. It is a Dic with many configs what you can see inside the directory <code>data/configs/</code></p>
+<h2 id="attributes">Attributes</h2>
+<p><strong>config</strong> : the metadata of configuration has default. The file <code>data/configs/graphium.json</code> is load to system.<code>type:Dic</code></p>
+<p>Keys inside attribute config:</p>
+<pre><code>{
+    "path_root": "&lt;PATH&gt;/kootstrap/",
+    "path_log":"data/logs/",
+    "path_config":"data/configs/",
+    "path_dataset":"data/datasets/",
+
+    "log_level":"INFO",
+    "version":"0.0.1"
+}
+</code></pre>
+<p><strong>mongo</strong> : the metatada of mongoDB used has default. The file <code>data/configs/mongodb.json</code> is load to system. <code>type:Dic</code></p>
+<p>Keys inside attribute Mongod:</p>
+<pre><code>{
+    "mongo_db":"graphium",
+    "mongo_host":"localhost",
+    "mongo_port":27017
+}
+</code></pre>
+<p><strong>osm</strong> : the metatada of Open Street Map used has default. The file <code>data/configs/osm.json</code> is load to system. <code>type:Dic</code></p>
+<p>Keys inside attribute OSM:</p>
+<pre><code>{
+  "use_urban_ways": true,
+  "use_motorways": true,
+  "use_othersways":false,
+  "urban_highway_tipes": ["tertiary", "road", "residential", "service", "living_street", "pedestrian", "bus_guideway", "steps","secondary", "trunk", "primary"],
+  "motorways_highway_tipes": ["motorway", "escape"],
+  "others_highway_tipes": ["track"]
+}
+</code></pre>
+<p><strong>swarm</strong> : the metatada of Swarm used has default. The file <code>data/configs/swarm.json</code> is load to system. <code>type:Dic</code></p>
+<p>Keys inside attribute Swarm:</p>
+<pre><code>{
+  "swarm_turns": 3,
+  "swarm_cycles": -1,
+  "swarm_agent_names_API": "http://namey.muffinlabs.com/name.json?with_surname=true&amp;frequency=all",
+  "swarm_agent_names": ["Coralina Malaya","Abigail Johnson","Antonietta Marinese","Elisa Rogoff","Serafim Folkerts", "Dulce Barrell"],
+  "swarm_agent_colors": ["#E91E63", "#9C27B0", "#F44336", "#673AB7", "#3F51B5", "#2196F3", "#00BCD4", "#009688", "#4CAF50", "#CDDC39", "#FF9800","#795548","#FF5722","#607D8B","#9E9E9E","#827717"]
+}
+</code></pre>
+<h2 id="methods">Methods</h2>
+<p><strong>path_config</strong>: Return absolute path to configurations of koopstrap. <code>type:String</code></p>
+<p><strong>path_log</strong>: Return absolute path to logs of system. <code>type:String</code></p>
+<p><strong>path_dataset</strong>: Return absolute path to all datasets. <code>type:String</code></p>
+<p><strong>version</strong>: Return version of koopstrap. <code>type:String</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../helper/" class="btn btn-neutral float-right" title="Helper">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../hive/api/" class="btn btn-neutral" title="Swarm"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../hive/api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../helper/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "use_urban_ways": true,
+  "use_motorways": true,
+  "use_othersways":false,
+  "urban_highway_tipes": ["tertiary", "road", "residential", "service", "living_street", "pedestrian", "bus_guideway", "steps","secondary", "trunk", "primary"],
+  "motorways_highway_tipes": ["motorway", "escape"],
+  "others_highway_tipes": ["track"]
+}
