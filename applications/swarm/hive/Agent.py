@@ -9,6 +9,7 @@ from system.Graphium import *
 from system.Mongo import *
 from system.Logger import *
 from system.Helper import *
+from assistant.GeoSpatial import GeoSpatial
 from Swarm import *
 from API import *
 
@@ -20,6 +21,7 @@ class Agent(Thread):
     _api            = None
     _logger         = None
     _helper         = None
+    _geospatial     = None
 
     _work           = None
     _cycles         = None
@@ -36,11 +38,12 @@ class Agent(Thread):
     def __init__(self,swarm_identifier):
         Thread.__init__(self)
 
-        self._g         = Graphium()
-        self._mongo     = Mongo()
-        self._api       = API()
-        self._logger    = Logger(swarm_identifier)
-        self._helper    = Helper()
+        self._g             = Graphium()
+        self._mongo         = Mongo()
+        self._api           = API()
+        self._logger        = Logger(swarm_identifier)
+        self._helper        = Helper()
+        self._geospatial    = GeoSpatial(self._logger)
 
         self._swarm_identifier  = swarm_identifier
         self._swarm_at_mongo    = self._mongo.getSwarmByIdentifier(swarm_identifier)
@@ -217,7 +220,7 @@ class Agent(Thread):
         dot1 = (lat1,lng1)
         dot2 = (lat2,lng2)
 
-        result = great_circle(dot1, dot2).meters
+        result = self._geospatial.getDistance(dot1, dot2)
 
         self._logger.info('%s: The distance from %s to %s is %s! :P'%(self.getName(),this_node['id'],next_node['id'],result))
 
