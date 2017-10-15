@@ -5,8 +5,8 @@ import socket, datetime, traceback, math, argparse
 from time import sleep
 
 from system.Graphium import Graphium
-from system.Mongo import Logger
-from system.Helper import Logger
+from system.Mongo import Mongo
+from system.Helper import Helper
 from system.Logger import Logger
 from Agent import Agent
 

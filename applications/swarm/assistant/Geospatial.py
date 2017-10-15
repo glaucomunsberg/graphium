@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
+import sys, math
 sys.path.append('../')
 
 from geopy.distance import great_circle
@@ -9,20 +9,21 @@ from geopy.distance import great_circle
 from system.Graphium import Graphium
 from system.Logger import Logger
 
-
 class GeoSpatial:
 
     _logger = None
 
-    def __init__(self):
-        None
+    def __init__(self,logger=None):
+        if logger == None:
+            self._logger = Logger('Geospatial')
+        else:
+            self._logger = logger
 
     #
     # getDistance
     #   calculate the distance between two dots
     def getDistance(self,dot1,dot2):
         return great_circle(dot1, dot2).meters
-
 
     #
     # getIntermediatePointsFromTwoDots
@@ -62,7 +63,7 @@ class GeoSpatial:
             lng_bit     = lng_diff%float(divisibleBy)
 
             lista_to_return.append(dot1)
-            for i in range(int(divideBy)):
+            for i in range(int(divisibleBy)):
                 to_append = tuple([lat1+((i+1)*lat_bit),lng1+((i+1)*lng_bit)])
                 #print 'Append',to_append
                 lista_to_return.append(to_append)
@@ -82,7 +83,7 @@ class GeoSpatial:
         return self.getIntermediatePointsFromTwoDots(dot1,dot2)
 
 
-    def calculate_initial_compass_bearing(pointA, pointB):
+    def calculateInitialCompassBearing(self,pointA, pointB):
         """
         Calculates the bearing between two points.
         The formulae used is the following:

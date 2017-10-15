@@ -4,5 +4,6 @@
   "path_dataset": "data/datasets/",
   "version": "0.0.1",
   "path_log": "data/logs/",
-  "path_config": "data/configs/"
+  "path_config": "data/configs/",
+  "path_picture": "data/pictures/"
 }

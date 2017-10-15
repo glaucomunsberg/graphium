@@ -8,6 +8,7 @@ class Graphium:
     mongodb     = None
     osm         = None
     swarm       = None
+    gmaps       = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
@@ -61,6 +62,13 @@ class Graphium:
             print "ERROR to update swarm absolute path"
             print traceback.format_exc()
 
+        try:
+            with open(self.config['path_root']+self.config['path_config']+'gmaps.json', 'r') as f:
+                self.gmaps = json.load(f)
+        except:
+            print "ERROR to update gmaps absolute path"
+            print traceback.format_exc()
+
     def path_config(self):
         return self.config['path_root']+self.config['path_config']
 
@@ -69,6 +77,9 @@ class Graphium:
 
     def path_dataset(self):
         return self.config['path_root']+self.config['path_dataset']
+
+    def path_picture(self):
+        return self.config['path_root']+self.config['path_picture']
 
     def version(self):
         return self.config['version']

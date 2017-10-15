@@ -5,11 +5,12 @@ from threading import Thread
 from geopy.distance import great_circle
 from decimal import Decimal
 
-from system.Graphium import *
-from system.Mongo import *
-from system.Logger import *
-from system.Helper import *
-from assistant.GeoSpatial import GeoSpatial
+from system.Graphium import Graphium
+from system.Mongo import Mongo
+from system.Logger import Logger
+from system.Helper import Helper
+from assistant.Geospatial import GeoSpatial
+from assistant.Looker import Looker
 from Swarm import *
 from API import *
 
@@ -22,6 +23,7 @@ class Agent(Thread):
     _logger         = None
     _helper         = None
     _geospatial     = None
+    _looker         = None
 
     _work           = None
     _cycles         = None
@@ -44,6 +46,7 @@ class Agent(Thread):
         self._logger        = Logger(swarm_identifier)
         self._helper        = Helper()
         self._geospatial    = GeoSpatial(self._logger)
+        self._looker        = Looker()
 
         self._swarm_identifier  = swarm_identifier
         self._swarm_at_mongo    = self._mongo.getSwarmByIdentifier(swarm_identifier)
@@ -65,7 +68,7 @@ class Agent(Thread):
                 #   this agent need choose one street to start
                 #   else need to get from chooseTheNextStreet
                 if self._agent_at_mongo['last_street_id_osm'] == None:
-                    self._street = self.chooseTheFirstStret()
+                    self._street = self.chooseTheFirstStreet()
                 else:
                     #self._street = self.chooseTheNextStreet()
                     self._street = self.fastChooseTheNextStret()
@@ -221,6 +224,7 @@ class Agent(Thread):
         dot2 = (lat2,lng2)
 
         result = self._geospatial.getDistance(dot1, dot2)
+        self._looker.checkPoints(dot1,dot2)
 
         self._logger.info('%s: The distance from %s to %s is %s! :P'%(self.getName(),this_node['id'],next_node['id'],result))
 
@@ -254,12 +258,12 @@ class Agent(Thread):
 
         self._logger.info('%s: I can\'t run on this street! Only one node :S' % (self.getName()))
     #
-    # chooseTheFirstStret
+    # chooseTheFirstStreet
     #   Method to choose the first street
     #   to try walk. First choose a way from
     #   wishlist else a aleatory way
     #
-    def chooseTheFirstStret(self):
+    def chooseTheFirstStreet(self):
 
         # search all possible streets that are not busy
         wishlist = self._mongo.getWishListNoProccessedByIdentifier(self._swarm_identifier)
@@ -356,7 +360,7 @@ class Agent(Thread):
                 return the_street_chosen
             else:
                 self._logger.info('%s: Oh really? I will check wishlist or get a random way -.-' % (self.getName()))
-                return self.chooseTheFirstStret()
+                return self.chooseTheFirstStreet()
 
     #
     # fastChooseTheNextStret
