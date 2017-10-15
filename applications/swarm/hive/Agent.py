@@ -12,14 +12,12 @@ from system.Helper import Helper
 from assistant.Geospatial import GeoSpatial
 from assistant.Looker import Looker
 from Swarm import *
-from API import *
 
 class Agent(Thread):
 
     _g              = None
 
     _mongo          = None
-    _api            = None
     _logger         = None
     _helper         = None
     _geospatial     = None
@@ -42,11 +40,10 @@ class Agent(Thread):
 
         self._g             = Graphium()
         self._mongo         = Mongo()
-        self._api           = API()
         self._logger        = Logger(swarm_identifier)
         self._helper        = Helper()
         self._geospatial    = GeoSpatial(self._logger)
-        self._looker        = Looker()
+        self._looker        = Looker(self._logger)
 
         self._swarm_identifier  = swarm_identifier
         self._swarm_at_mongo    = self._mongo.getSwarmByIdentifier(swarm_identifier)

@@ -12,7 +12,7 @@ Graphium help you to walk in google street view and use IA to find elements lear
 
 **Run at streets** with `5` agents at `Pelotas` city.
 
-    python Main.py --mode warm --swarm_city 59dd4d7b6a86370cb85d6be7
+    python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7
 
 
 ## Web Server

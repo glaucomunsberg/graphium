@@ -12,3 +12,7 @@
 ## Methods
 
 **getWaysByNode** : Get the routes that the dot is a bit.
+
+**getPanoByPoint**: Return the image pano form this point. `type:Dic`
+
+**getPanoInfoByPoint**: Return the information of this point (lat,lng). `type:Dic`

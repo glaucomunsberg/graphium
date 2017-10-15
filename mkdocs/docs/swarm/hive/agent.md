@@ -21,7 +21,7 @@
 
 **lastNode**: call when we have only one node at street.
 
-**chooseTheFirstStret**: Method to choose the first street to try walk. First choose a way from wishlist else a aleatory way. `type:Street`
+**chooseTheFirstStreet**: Method to choose the first street to try walk. First choose a way from wishlist else a aleatory way. `type:Street`
 
 **chooseTheFirstStret**: After walk one street new need choose de next this method choose the way with less count and return. If any way cross he then we need get other way how? Go to other agent =]. `type:Street`
 

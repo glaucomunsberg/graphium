@@ -74,7 +74,7 @@
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../swarm/hive/api/">Swarm</a>
+    <a class="" href="../../swarm/hive/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -106,7 +106,15 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="../../assistant/reader/">Reader</a>
+    <a class="" href="../../swarm/assistant/geospatial/">GeoSpatial</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../swarm/assistant/looker/">Looker</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../swarm/assistant/reader/">Reader</a>
                 </li>
     </ul>
                 </li>
@@ -140,6 +148,8 @@
     <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
     
         <ul>
+        
+            <li><a class="toctree-l4" href="#version-002">Version 0.0.2</a></li>
         
             <li><a class="toctree-l4" href="#version-001">Version 0.0.1</a></li>
         
@@ -188,6 +198,14 @@
             <div class="section">
               
                 <h1 id="release-notes">Release Notes</h1>
+<h2 id="version-002">Version 0.0.2</h2>
+<ul>
+<li><code>Assistant</code>: Intro <code>GeoSpatial.py</code> to cal distance and intermediate points of sistem</li>
+<li><code>Assistant</code>: Intro <code>Looker.py</code> search the pictures on google street view</li>
+<li><code>Hive</code>: Improved the <code>Agent.py</code> and <code>API.py</code></li>
+<li><code>System</code>: Now the <code>Graphium.py</code> has the config to download images from Google Street View</li>
+<li><code>System</code>: Graphium receive the picture folder to not request two time the same pano image. Google restringe 25.000 requests by day</li>
+</ul>
 <h2 id="version-001">Version 0.0.1</h2>
 <ul>
 <li>Project start baseded on old graphium project</li>

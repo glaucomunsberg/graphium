@@ -74,7 +74,7 @@
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../hive/api/">Swarm</a>
+    <a class="" href="../../hive/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -120,7 +120,15 @@
     <ul class="subnav">
                 <li class="toctree-l3">
                     
-    <a class="" href="../../../assistant/reader/">Reader</a>
+    <a class="" href="../../assistant/geospatial/">GeoSpatial</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../assistant/looker/">Looker</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../assistant/reader/">Reader</a>
                 </li>
     </ul>
                 </li>
@@ -208,7 +216,7 @@
     "version":"0.0.1"
 }
 </code></pre>
-<p><strong>mongo</strong> : the metatada of mongoDB used has default. The file <code>data/configs/mongodb.json</code> is load to system. <code>type:Dic</code></p>
+<p><strong>mongo</strong> : the metadata of mongoDB used has default. The file <code>data/configs/mongodb.json</code> is load to system. <code>type:Dic</code></p>
 <p>Keys inside attribute Mongod:</p>
 <pre><code>{
     "mongo_db":"graphium",
@@ -216,7 +224,7 @@
     "mongo_port":27017
 }
 </code></pre>
-<p><strong>osm</strong> : the metatada of Open Street Map used has default. The file <code>data/configs/osm.json</code> is load to system. <code>type:Dic</code></p>
+<p><strong>osm</strong> : the metadata of Open Street Map used has default. The file <code>data/configs/osm.json</code> is load to system. <code>type:Dic</code></p>
 <p>Keys inside attribute OSM:</p>
 <pre><code>{
   "use_urban_ways": true,
@@ -227,7 +235,7 @@
   "others_highway_tipes": ["track"]
 }
 </code></pre>
-<p><strong>swarm</strong> : the metatada of Swarm used has default. The file <code>data/configs/swarm.json</code> is load to system. <code>type:Dic</code></p>
+<p><strong>swarm</strong> : the metadata of Swarm used has default. The file <code>data/configs/swarm.json</code> is load to system. <code>type:Dic</code></p>
 <p>Keys inside attribute Swarm:</p>
 <pre><code>{
   "swarm_turns": 3,
@@ -237,10 +245,18 @@
   "swarm_agent_colors": ["#E91E63", "#9C27B0", "#F44336", "#673AB7", "#3F51B5", "#2196F3", "#00BCD4", "#009688", "#4CAF50", "#CDDC39", "#FF9800","#795548","#FF5722","#607D8B","#9E9E9E","#827717"]
 }
 </code></pre>
+<p><strong>gmaps</strong> : the metadata of google street maps used has default. The file <code>data/configs/gmaps.json</code> is load to system. <code>type:Dic</code></p>
+<p>Keys inside attribute Swarm:</p>
+<p>{
+    "width": 640,
+    "height": 450,
+    "google_key": "AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
+  }</p>
 <h2 id="methods">Methods</h2>
 <p><strong>path_config</strong>: Return absolute path to configurations of koopstrap. <code>type:String</code></p>
 <p><strong>path_log</strong>: Return absolute path to logs of system. <code>type:String</code></p>
 <p><strong>path_dataset</strong>: Return absolute path to all datasets. <code>type:String</code></p>
+<p><strong>path_picture</strong>: Return absolute path to all images on directory. <code>type:String</code></p>
 <p><strong>version</strong>: Return version of koopstrap. <code>type:String</code></p>
               
             </div>
@@ -252,7 +268,7 @@
         <a href="../helper/" class="btn btn-neutral float-right" title="Helper">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../hive/api/" class="btn btn-neutral" title="Swarm"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../hive/api/" class="btn btn-neutral" title="API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

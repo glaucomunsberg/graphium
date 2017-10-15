@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to Graphium\n\n\nGraphium help you to walk in google street view and use IA to find elements learned.\n\n\nCommands\n\n\nCreate a dataset\n from \nPelotas\n data to be processed in a swarm with N agents.\n\n\ncd swarm/\npython Main.py --mode reader --osm_path city_pelotas/ex_pelotas.osm\n\n\n\nRun at streets\n with \n5\n agents at \nPelotas\n city.\n\n\npython Main.py --mode warm --swarm_city 59dd4d7b6a86370cb85d6be7\n\n\n\nWeb Server\n\n\nYou can control everting on web server at:\n\n\ncd ../webserver/app/\nrails s\n\n\n\nProject layout\n\n\ndata/           # folder with all data generate by applications.\n    configs/\n    datasets/\n    logs/\napplications/   # applications suches crawler, analyzers etc\n    swarm/\n    webserver/\ndocs/           # documentation of Graphium\nmkdocs/         # generator of documentation", 
+            "text": "Welcome to Graphium\n\n\nGraphium help you to walk in google street view and use IA to find elements learned.\n\n\nCommands\n\n\nCreate a dataset\n from \nPelotas\n data to be processed in a swarm with N agents.\n\n\ncd swarm/\npython Main.py --mode reader --osm_path city_pelotas/ex_pelotas.osm\n\n\n\nRun at streets\n with \n5\n agents at \nPelotas\n city.\n\n\npython Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7\n\n\n\nWeb Server\n\n\nYou can control everting on web server at:\n\n\ncd ../webserver/app/\nrails s\n\n\n\nProject layout\n\n\ndata/           # folder with all data generate by applications.\n    configs/\n    datasets/\n    logs/\napplications/   # applications suches crawler, analyzers etc\n    swarm/\n    webserver/\ndocs/           # documentation of Graphium\nmkdocs/         # generator of documentation", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#commands", 
-            "text": "Create a dataset  from  Pelotas  data to be processed in a swarm with N agents.  cd swarm/\npython Main.py --mode reader --osm_path city_pelotas/ex_pelotas.osm  Run at streets  with  5  agents at  Pelotas  city.  python Main.py --mode warm --swarm_city 59dd4d7b6a86370cb85d6be7", 
+            "text": "Create a dataset  from  Pelotas  data to be processed in a swarm with N agents.  cd swarm/\npython Main.py --mode reader --osm_path city_pelotas/ex_pelotas.osm  Run at streets  with  5  agents at  Pelotas  city.  python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7", 
             "title": "Commands"
         }, 
         {
@@ -47,7 +47,7 @@
         }, 
         {
             "location": "/swarm/hive/agent/", 
-            "text": "Definition\n\n\nAgent.py\n is a class  in Thread that walk in a street.\n\n\nParams\n\n\nswarm_identifier\n: a identifier. \ntype:Stirng\n\n\nMethods\n\n\nrun\n : start the executation.\n\n\nupdateRule\n : Update the Street's counter.\n\n\nnodeByNode\n: calcule the distance between two dots in meters. \ntype:Int\n\n\nfirstNode\n: execute only on first node.\n\n\nlastNode\n: execute only on last node.\n\n\nlastNode\n: call when we have only one node at street.\n\n\nchooseTheFirstStret\n: Method to choose the first street to try walk. First choose a way from wishlist else a aleatory way. \ntype:Street\n\n\nchooseTheFirstStret\n: After walk one street new need choose de next this method choose the way with less count and return. If any way cross he then we need get other way how? Go to other agent =]. \ntype:Street\n\n\nfastChooseTheNextStret\n: this method choose the fast way: check the list of wish, if empty choose the fist road that is not busy and count igual 0. \ntype:Street\n\n\nchoosingNewStreetToNavegate\n: choose the street with the less weight to navegate. \ntype:Street\n\n\nappendPathBread\n: update the lat and lng of agent set at pathbread of agent.\n\n\nappendStreetVisited\n: insert the name of the street if agent are not visited yet.\n\n\nstartAgent\n: Set the name, start the mongo information and others actions.\n\n\nfinish\n: Set information about agent at db and close at db.\n\n\ngetIdentifier\n: Return the identifier. \ntype:Identifier\n\n\nsetIdentifier\n: set the identifier.\n\n\nsetAgentName\n: Return the agent name.", 
+            "text": "Definition\n\n\nAgent.py\n is a class  in Thread that walk in a street.\n\n\nParams\n\n\nswarm_identifier\n: a identifier. \ntype:Stirng\n\n\nMethods\n\n\nrun\n : start the executation.\n\n\nupdateRule\n : Update the Street's counter.\n\n\nnodeByNode\n: calcule the distance between two dots in meters. \ntype:Int\n\n\nfirstNode\n: execute only on first node.\n\n\nlastNode\n: execute only on last node.\n\n\nlastNode\n: call when we have only one node at street.\n\n\nchooseTheFirstStreet\n: Method to choose the first street to try walk. First choose a way from wishlist else a aleatory way. \ntype:Street\n\n\nchooseTheFirstStret\n: After walk one street new need choose de next this method choose the way with less count and return. If any way cross he then we need get other way how? Go to other agent =]. \ntype:Street\n\n\nfastChooseTheNextStret\n: this method choose the fast way: check the list of wish, if empty choose the fist road that is not busy and count igual 0. \ntype:Street\n\n\nchoosingNewStreetToNavegate\n: choose the street with the less weight to navegate. \ntype:Street\n\n\nappendPathBread\n: update the lat and lng of agent set at pathbread of agent.\n\n\nappendStreetVisited\n: insert the name of the street if agent are not visited yet.\n\n\nstartAgent\n: Set the name, start the mongo information and others actions.\n\n\nfinish\n: Set information about agent at db and close at db.\n\n\ngetIdentifier\n: Return the identifier. \ntype:Identifier\n\n\nsetIdentifier\n: set the identifier.\n\n\nsetAgentName\n: Return the agent name.", 
             "title": "Agent"
         }, 
         {
@@ -62,7 +62,7 @@
         }, 
         {
             "location": "/swarm/hive/agent/#methods", 
-            "text": "run  : start the executation.  updateRule  : Update the Street's counter.  nodeByNode : calcule the distance between two dots in meters.  type:Int  firstNode : execute only on first node.  lastNode : execute only on last node.  lastNode : call when we have only one node at street.  chooseTheFirstStret : Method to choose the first street to try walk. First choose a way from wishlist else a aleatory way.  type:Street  chooseTheFirstStret : After walk one street new need choose de next this method choose the way with less count and return. If any way cross he then we need get other way how? Go to other agent =].  type:Street  fastChooseTheNextStret : this method choose the fast way: check the list of wish, if empty choose the fist road that is not busy and count igual 0.  type:Street  choosingNewStreetToNavegate : choose the street with the less weight to navegate.  type:Street  appendPathBread : update the lat and lng of agent set at pathbread of agent.  appendStreetVisited : insert the name of the street if agent are not visited yet.  startAgent : Set the name, start the mongo information and others actions.  finish : Set information about agent at db and close at db.  getIdentifier : Return the identifier.  type:Identifier  setIdentifier : set the identifier.  setAgentName : Return the agent name.", 
+            "text": "run  : start the executation.  updateRule  : Update the Street's counter.  nodeByNode : calcule the distance between two dots in meters.  type:Int  firstNode : execute only on first node.  lastNode : execute only on last node.  lastNode : call when we have only one node at street.  chooseTheFirstStreet : Method to choose the first street to try walk. First choose a way from wishlist else a aleatory way.  type:Street  chooseTheFirstStret : After walk one street new need choose de next this method choose the way with less count and return. If any way cross he then we need get other way how? Go to other agent =].  type:Street  fastChooseTheNextStret : this method choose the fast way: check the list of wish, if empty choose the fist road that is not busy and count igual 0.  type:Street  choosingNewStreetToNavegate : choose the street with the less weight to navegate.  type:Street  appendPathBread : update the lat and lng of agent set at pathbread of agent.  appendStreetVisited : insert the name of the street if agent are not visited yet.  startAgent : Set the name, start the mongo information and others actions.  finish : Set information about agent at db and close at db.  getIdentifier : Return the identifier.  type:Identifier  setIdentifier : set the identifier.  setAgentName : Return the agent name.", 
             "title": "Methods"
         }, 
         {
@@ -87,8 +87,8 @@
         }, 
         {
             "location": "/swarm/hive/api/", 
-            "text": "Definition\n\n\nAPI.py\n connect to OsmAPI.\n\n\nParams\n\n\nusermme\n: name in API. \ntype:Stirng\n\n\npassword\n: password in API. \ntype:Stirng\n\n\nMethods\n\n\ngetWaysByNode\n : Get the routes that the dot is a bit.", 
-            "title": "Swarm"
+            "text": "Definition\n\n\nAPI.py\n connect to OsmAPI.\n\n\nParams\n\n\nusermme\n: name in API. \ntype:Stirng\n\n\npassword\n: password in API. \ntype:Stirng\n\n\nMethods\n\n\ngetWaysByNode\n : Get the routes that the dot is a bit.\n\n\ngetPanoByPoint\n: Return the image pano form this point. \ntype:Dic\n\n\ngetPanoInfoByPoint\n: Return the information of this point (lat,lng). \ntype:Dic", 
+            "title": "API"
         }, 
         {
             "location": "/swarm/hive/api/#definition", 
@@ -102,12 +102,12 @@
         }, 
         {
             "location": "/swarm/hive/api/#methods", 
-            "text": "getWaysByNode  : Get the routes that the dot is a bit.", 
+            "text": "getWaysByNode  : Get the routes that the dot is a bit.  getPanoByPoint : Return the image pano form this point.  type:Dic  getPanoInfoByPoint : Return the information of this point (lat,lng).  type:Dic", 
             "title": "Methods"
         }, 
         {
             "location": "/swarm/system/graphium/", 
-            "text": "Definition\n\n\nThe graphium return a instance of Graphium. It is a Dic with many configs what you can see inside the directory \ndata/configs/\n\n\nAttributes\n\n\nconfig\n : the metadata of configuration has default. The file \ndata/configs/graphium.json\n is load to system.\ntype:Dic\n\n\nKeys inside attribute config:\n\n\n{\n    \"path_root\": \"\nPATH\n/kootstrap/\",\n    \"path_log\":\"data/logs/\",\n    \"path_config\":\"data/configs/\",\n    \"path_dataset\":\"data/datasets/\",\n\n    \"log_level\":\"INFO\",\n    \"version\":\"0.0.1\"\n}\n\n\n\nmongo\n : the metatada of mongoDB used has default. The file \ndata/configs/mongodb.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute Mongod:\n\n\n{\n    \"mongo_db\":\"graphium\",\n    \"mongo_host\":\"localhost\",\n    \"mongo_port\":27017\n}\n\n\n\nosm\n : the metatada of Open Street Map used has default. The file \ndata/configs/osm.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute OSM:\n\n\n{\n  \"use_urban_ways\": true,\n  \"use_motorways\": true,\n  \"use_othersways\":false,\n  \"urban_highway_tipes\": [\"tertiary\", \"road\", \"residential\", \"service\", \"living_street\", \"pedestrian\", \"bus_guideway\", \"steps\",\"secondary\", \"trunk\", \"primary\"],\n  \"motorways_highway_tipes\": [\"motorway\", \"escape\"],\n  \"others_highway_tipes\": [\"track\"]\n}\n\n\n\nswarm\n : the metatada of Swarm used has default. The file \ndata/configs/swarm.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute Swarm:\n\n\n{\n  \"swarm_turns\": 3,\n  \"swarm_cycles\": -1,\n  \"swarm_agent_names_API\": \"http://namey.muffinlabs.com/name.json?with_surname=true\nfrequency=all\",\n  \"swarm_agent_names\": [\"Coralina Malaya\",\"Abigail Johnson\",\"Antonietta Marinese\",\"Elisa Rogoff\",\"Serafim Folkerts\", \"Dulce Barrell\"],\n  \"swarm_agent_colors\": [\"#E91E63\", \"#9C27B0\", \"#F44336\", \"#673AB7\", \"#3F51B5\", \"#2196F3\", \"#00BCD4\", \"#009688\", \"#4CAF50\", \"#CDDC39\", \"#FF9800\",\"#795548\",\"#FF5722\",\"#607D8B\",\"#9E9E9E\",\"#827717\"]\n}\n\n\n\nMethods\n\n\npath_config\n: Return absolute path to configurations of koopstrap. \ntype:String\n\n\npath_log\n: Return absolute path to logs of system. \ntype:String\n\n\npath_dataset\n: Return absolute path to all datasets. \ntype:String\n\n\nversion\n: Return version of koopstrap. \ntype:String", 
+            "text": "Definition\n\n\nThe graphium return a instance of Graphium. It is a Dic with many configs what you can see inside the directory \ndata/configs/\n\n\nAttributes\n\n\nconfig\n : the metadata of configuration has default. The file \ndata/configs/graphium.json\n is load to system.\ntype:Dic\n\n\nKeys inside attribute config:\n\n\n{\n    \"path_root\": \"\nPATH\n/kootstrap/\",\n    \"path_log\":\"data/logs/\",\n    \"path_config\":\"data/configs/\",\n    \"path_dataset\":\"data/datasets/\",\n\n    \"log_level\":\"INFO\",\n    \"version\":\"0.0.1\"\n}\n\n\n\nmongo\n : the metadata of mongoDB used has default. The file \ndata/configs/mongodb.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute Mongod:\n\n\n{\n    \"mongo_db\":\"graphium\",\n    \"mongo_host\":\"localhost\",\n    \"mongo_port\":27017\n}\n\n\n\nosm\n : the metadata of Open Street Map used has default. The file \ndata/configs/osm.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute OSM:\n\n\n{\n  \"use_urban_ways\": true,\n  \"use_motorways\": true,\n  \"use_othersways\":false,\n  \"urban_highway_tipes\": [\"tertiary\", \"road\", \"residential\", \"service\", \"living_street\", \"pedestrian\", \"bus_guideway\", \"steps\",\"secondary\", \"trunk\", \"primary\"],\n  \"motorways_highway_tipes\": [\"motorway\", \"escape\"],\n  \"others_highway_tipes\": [\"track\"]\n}\n\n\n\nswarm\n : the metadata of Swarm used has default. The file \ndata/configs/swarm.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute Swarm:\n\n\n{\n  \"swarm_turns\": 3,\n  \"swarm_cycles\": -1,\n  \"swarm_agent_names_API\": \"http://namey.muffinlabs.com/name.json?with_surname=true\nfrequency=all\",\n  \"swarm_agent_names\": [\"Coralina Malaya\",\"Abigail Johnson\",\"Antonietta Marinese\",\"Elisa Rogoff\",\"Serafim Folkerts\", \"Dulce Barrell\"],\n  \"swarm_agent_colors\": [\"#E91E63\", \"#9C27B0\", \"#F44336\", \"#673AB7\", \"#3F51B5\", \"#2196F3\", \"#00BCD4\", \"#009688\", \"#4CAF50\", \"#CDDC39\", \"#FF9800\",\"#795548\",\"#FF5722\",\"#607D8B\",\"#9E9E9E\",\"#827717\"]\n}\n\n\n\ngmaps\n : the metadata of google street maps used has default. The file \ndata/configs/gmaps.json\n is load to system. \ntype:Dic\n\n\nKeys inside attribute Swarm:\n\n\n{\n    \"width\": 640,\n    \"height\": 450,\n    \"google_key\": \"AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM\"\n  }\n\n\nMethods\n\n\npath_config\n: Return absolute path to configurations of koopstrap. \ntype:String\n\n\npath_log\n: Return absolute path to logs of system. \ntype:String\n\n\npath_dataset\n: Return absolute path to all datasets. \ntype:String\n\n\npath_picture\n: Return absolute path to all images on directory. \ntype:String\n\n\nversion\n: Return version of koopstrap. \ntype:String", 
             "title": "Graphium"
         }, 
         {
@@ -117,12 +117,12 @@
         }, 
         {
             "location": "/swarm/system/graphium/#attributes", 
-            "text": "config  : the metadata of configuration has default. The file  data/configs/graphium.json  is load to system. type:Dic  Keys inside attribute config:  {\n    \"path_root\": \" PATH /kootstrap/\",\n    \"path_log\":\"data/logs/\",\n    \"path_config\":\"data/configs/\",\n    \"path_dataset\":\"data/datasets/\",\n\n    \"log_level\":\"INFO\",\n    \"version\":\"0.0.1\"\n}  mongo  : the metatada of mongoDB used has default. The file  data/configs/mongodb.json  is load to system.  type:Dic  Keys inside attribute Mongod:  {\n    \"mongo_db\":\"graphium\",\n    \"mongo_host\":\"localhost\",\n    \"mongo_port\":27017\n}  osm  : the metatada of Open Street Map used has default. The file  data/configs/osm.json  is load to system.  type:Dic  Keys inside attribute OSM:  {\n  \"use_urban_ways\": true,\n  \"use_motorways\": true,\n  \"use_othersways\":false,\n  \"urban_highway_tipes\": [\"tertiary\", \"road\", \"residential\", \"service\", \"living_street\", \"pedestrian\", \"bus_guideway\", \"steps\",\"secondary\", \"trunk\", \"primary\"],\n  \"motorways_highway_tipes\": [\"motorway\", \"escape\"],\n  \"others_highway_tipes\": [\"track\"]\n}  swarm  : the metatada of Swarm used has default. The file  data/configs/swarm.json  is load to system.  type:Dic  Keys inside attribute Swarm:  {\n  \"swarm_turns\": 3,\n  \"swarm_cycles\": -1,\n  \"swarm_agent_names_API\": \"http://namey.muffinlabs.com/name.json?with_surname=true frequency=all\",\n  \"swarm_agent_names\": [\"Coralina Malaya\",\"Abigail Johnson\",\"Antonietta Marinese\",\"Elisa Rogoff\",\"Serafim Folkerts\", \"Dulce Barrell\"],\n  \"swarm_agent_colors\": [\"#E91E63\", \"#9C27B0\", \"#F44336\", \"#673AB7\", \"#3F51B5\", \"#2196F3\", \"#00BCD4\", \"#009688\", \"#4CAF50\", \"#CDDC39\", \"#FF9800\",\"#795548\",\"#FF5722\",\"#607D8B\",\"#9E9E9E\",\"#827717\"]\n}", 
+            "text": "config  : the metadata of configuration has default. The file  data/configs/graphium.json  is load to system. type:Dic  Keys inside attribute config:  {\n    \"path_root\": \" PATH /kootstrap/\",\n    \"path_log\":\"data/logs/\",\n    \"path_config\":\"data/configs/\",\n    \"path_dataset\":\"data/datasets/\",\n\n    \"log_level\":\"INFO\",\n    \"version\":\"0.0.1\"\n}  mongo  : the metadata of mongoDB used has default. The file  data/configs/mongodb.json  is load to system.  type:Dic  Keys inside attribute Mongod:  {\n    \"mongo_db\":\"graphium\",\n    \"mongo_host\":\"localhost\",\n    \"mongo_port\":27017\n}  osm  : the metadata of Open Street Map used has default. The file  data/configs/osm.json  is load to system.  type:Dic  Keys inside attribute OSM:  {\n  \"use_urban_ways\": true,\n  \"use_motorways\": true,\n  \"use_othersways\":false,\n  \"urban_highway_tipes\": [\"tertiary\", \"road\", \"residential\", \"service\", \"living_street\", \"pedestrian\", \"bus_guideway\", \"steps\",\"secondary\", \"trunk\", \"primary\"],\n  \"motorways_highway_tipes\": [\"motorway\", \"escape\"],\n  \"others_highway_tipes\": [\"track\"]\n}  swarm  : the metadata of Swarm used has default. The file  data/configs/swarm.json  is load to system.  type:Dic  Keys inside attribute Swarm:  {\n  \"swarm_turns\": 3,\n  \"swarm_cycles\": -1,\n  \"swarm_agent_names_API\": \"http://namey.muffinlabs.com/name.json?with_surname=true frequency=all\",\n  \"swarm_agent_names\": [\"Coralina Malaya\",\"Abigail Johnson\",\"Antonietta Marinese\",\"Elisa Rogoff\",\"Serafim Folkerts\", \"Dulce Barrell\"],\n  \"swarm_agent_colors\": [\"#E91E63\", \"#9C27B0\", \"#F44336\", \"#673AB7\", \"#3F51B5\", \"#2196F3\", \"#00BCD4\", \"#009688\", \"#4CAF50\", \"#CDDC39\", \"#FF9800\",\"#795548\",\"#FF5722\",\"#607D8B\",\"#9E9E9E\",\"#827717\"]\n}  gmaps  : the metadata of google street maps used has default. The file  data/configs/gmaps.json  is load to system.  type:Dic  Keys inside attribute Swarm:  {\n    \"width\": 640,\n    \"height\": 450,\n    \"google_key\": \"AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM\"\n  }", 
             "title": "Attributes"
         }, 
         {
             "location": "/swarm/system/graphium/#methods", 
-            "text": "path_config : Return absolute path to configurations of koopstrap.  type:String  path_log : Return absolute path to logs of system.  type:String  path_dataset : Return absolute path to all datasets.  type:String  version : Return version of koopstrap.  type:String", 
+            "text": "path_config : Return absolute path to configurations of koopstrap.  type:String  path_log : Return absolute path to logs of system.  type:String  path_dataset : Return absolute path to all datasets.  type:String  path_picture : Return absolute path to all images on directory.  type:String  version : Return version of koopstrap.  type:String", 
             "title": "Methods"
         }, 
         {
@@ -171,9 +171,64 @@
             "title": "Methods"
         }, 
         {
-            "location": "/assistant/reader/", 
-            "text": "", 
+            "location": "/swarm/assistant/geospatial/", 
+            "text": "Definition\n\n\nGeospatial.py\n mensure to you the distance between two points or for example slice two points at many points with the same distance between them.\n\n\nParams\n\n\nlogger\n: a instance of logger or \nNone\n. \ntype:Logger\n\n\nMethods\n\n\ngetDistance\n : Return the distance bewteen two dots. \ntype:float\n\n\ngetIntermediatePointsFromTwoDots\n: Return intermediate points between two dots if the distance bewteen them is great that distanceMax. \ntype:List\n\n\ncalculateInitialCompassBearing\n: Return the \nbearing\n or the direction (degrees) of the points \ntype:Float\n\n\ngetIntermediatePointsFromTwoCoordinates\n: the same of \ngetIntermediatePointsFromTwoDots\n but not receive a tuple, but the 4 values (lat1,lng1,lat2,lng2)", 
+            "title": "GeoSpatial"
+        }, 
+        {
+            "location": "/swarm/assistant/geospatial/#definition", 
+            "text": "Geospatial.py  mensure to you the distance between two points or for example slice two points at many points with the same distance between them.", 
+            "title": "Definition"
+        }, 
+        {
+            "location": "/swarm/assistant/geospatial/#params", 
+            "text": "logger : a instance of logger or  None .  type:Logger", 
+            "title": "Params"
+        }, 
+        {
+            "location": "/swarm/assistant/geospatial/#methods", 
+            "text": "getDistance  : Return the distance bewteen two dots.  type:float  getIntermediatePointsFromTwoDots : Return intermediate points between two dots if the distance bewteen them is great that distanceMax.  type:List  calculateInitialCompassBearing : Return the  bearing  or the direction (degrees) of the points  type:Float  getIntermediatePointsFromTwoCoordinates : the same of  getIntermediatePointsFromTwoDots  but not receive a tuple, but the 4 values (lat1,lng1,lat2,lng2)", 
+            "title": "Methods"
+        }, 
+        {
+            "location": "/swarm/assistant/looker/", 
+            "text": "Definition\n\n\nLooker.py\n look to google street view with point received from \nGeospatial.py\n and get the images of sides (left and right) with a instance of \nAPI.py\n.\n\n\nParams\n\n\nlogger\n: a instance of logger or \nNone\n. \ntype:Logger\n\n\nMethods\n\n\ncheckPoints\n : receive two points ahd look for left and right side of street", 
+            "title": "Looker"
+        }, 
+        {
+            "location": "/swarm/assistant/looker/#definition", 
+            "text": "Looker.py  look to google street view with point received from  Geospatial.py  and get the images of sides (left and right) with a instance of  API.py .", 
+            "title": "Definition"
+        }, 
+        {
+            "location": "/swarm/assistant/looker/#params", 
+            "text": "logger : a instance of logger or  None .  type:Logger", 
+            "title": "Params"
+        }, 
+        {
+            "location": "/swarm/assistant/looker/#methods", 
+            "text": "checkPoints  : receive two points ahd look for left and right side of street", 
+            "title": "Methods"
+        }, 
+        {
+            "location": "/swarm/assistant/reader/", 
+            "text": "Definition\n\n\nReader.py\n allow you convert files \n.osm\n into a struct used by Graphium system.\n\n\nParams\n\n\nargs\n: Receive the params suchs the file to convert. \ntype:argparse\n\n\nMethods\n\n\nstart\n : transform the file .osm in a mongodb struct.\n\n\ninsertStreetInformationOSM\n: insert the data from street at mongodb\n\n\ninsertCityInformationOSM\n: insert the information about the city at mongodb\n\n\ngetCityAndCoutry\n: Return the city on mongodb. \ntype:Dic\n\n\nreadShapeFromOpenStreet\n: Get the shape with the information on ESRI shapefile.", 
             "title": "Reader"
+        }, 
+        {
+            "location": "/swarm/assistant/reader/#definition", 
+            "text": "Reader.py  allow you convert files  .osm  into a struct used by Graphium system.", 
+            "title": "Definition"
+        }, 
+        {
+            "location": "/swarm/assistant/reader/#params", 
+            "text": "args : Receive the params suchs the file to convert.  type:argparse", 
+            "title": "Params"
+        }, 
+        {
+            "location": "/swarm/assistant/reader/#methods", 
+            "text": "start  : transform the file .osm in a mongodb struct.  insertStreetInformationOSM : insert the data from street at mongodb  insertCityInformationOSM : insert the information about the city at mongodb  getCityAndCoutry : Return the city on mongodb.  type:Dic  readShapeFromOpenStreet : Get the shape with the information on ESRI shapefile.", 
+            "title": "Methods"
         }, 
         {
             "location": "/webserver/", 
@@ -187,13 +242,18 @@
         }, 
         {
             "location": "/about/release-notes/", 
-            "text": "Release Notes\n\n\nVersion 0.0.1\n\n\n\n\nProject start baseded on old graphium project", 
+            "text": "Release Notes\n\n\nVersion 0.0.2\n\n\n\n\nAssistant\n: Intro \nGeoSpatial.py\n to cal distance and intermediate points of sistem\n\n\nAssistant\n: Intro \nLooker.py\n search the pictures on google street view\n\n\nHive\n: Improved the \nAgent.py\n and \nAPI.py\n\n\nSystem\n: Now the \nGraphium.py\n has the config to download images from Google Street View\n\n\nSystem\n: Graphium receive the picture folder to not request two time the same pano image. Google restringe 25.000 requests by day\n\n\n\n\nVersion 0.0.1\n\n\n\n\nProject start baseded on old graphium project", 
             "title": "Release Notes"
         }, 
         {
             "location": "/about/release-notes/#release-notes", 
             "text": "", 
             "title": "Release Notes"
+        }, 
+        {
+            "location": "/about/release-notes/#version-002", 
+            "text": "Assistant : Intro  GeoSpatial.py  to cal distance and intermediate points of sistem  Assistant : Intro  Looker.py  search the pictures on google street view  Hive : Improved the  Agent.py  and  API.py  System : Now the  Graphium.py  has the config to download images from Google Street View  System : Graphium receive the picture folder to not request two time the same pano image. Google restringe 25.000 requests by day", 
+            "title": "Version 0.0.2"
         }, 
         {
             "location": "/about/release-notes/#version-001", 

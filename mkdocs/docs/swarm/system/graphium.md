@@ -18,7 +18,7 @@ Keys inside attribute config:
         "version":"0.0.1"
     }
 
-**mongo** : the metatada of mongoDB used has default. The file `data/configs/mongodb.json` is load to system. `type:Dic`
+**mongo** : the metadata of mongoDB used has default. The file `data/configs/mongodb.json` is load to system. `type:Dic`
 
 Keys inside attribute Mongod:
 
@@ -28,7 +28,7 @@ Keys inside attribute Mongod:
         "mongo_port":27017
     }
 
-**osm** : the metatada of Open Street Map used has default. The file `data/configs/osm.json` is load to system. `type:Dic`
+**osm** : the metadata of Open Street Map used has default. The file `data/configs/osm.json` is load to system. `type:Dic`
 
 Keys inside attribute OSM:
 
@@ -41,7 +41,7 @@ Keys inside attribute OSM:
       "others_highway_tipes": ["track"]
     }
 
-**swarm** : the metatada of Swarm used has default. The file `data/configs/swarm.json` is load to system. `type:Dic`
+**swarm** : the metadata of Swarm used has default. The file `data/configs/swarm.json` is load to system. `type:Dic`
 
 Keys inside attribute Swarm:
 
@@ -53,6 +53,17 @@ Keys inside attribute Swarm:
       "swarm_agent_colors": ["#E91E63", "#9C27B0", "#F44336", "#673AB7", "#3F51B5", "#2196F3", "#00BCD4", "#009688", "#4CAF50", "#CDDC39", "#FF9800","#795548","#FF5722","#607D8B","#9E9E9E","#827717"]
     }
 
+**gmaps** : the metadata of google street maps used has default. The file `data/configs/gmaps.json` is load to system. `type:Dic`
+
+Keys inside attribute Swarm:
+
+  {
+    "width": 640,
+    "height": 450,
+    "google_key": "AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
+  }
+
+
 ## Methods
 
 **path_config**: Return absolute path to configurations of koopstrap. `type:String`
@@ -60,5 +71,7 @@ Keys inside attribute Swarm:
 **path_log**: Return absolute path to logs of system. `type:String`
 
 **path_dataset**: Return absolute path to all datasets. `type:String`
+
+**path_picture**: Return absolute path to all images on directory. `type:String`
 
 **version**: Return version of koopstrap. `type:String`

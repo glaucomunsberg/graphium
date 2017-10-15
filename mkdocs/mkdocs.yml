@@ -7,14 +7,17 @@ pages:
         - Hive:
           - Agent: 'swarm/hive/agent.md'
           - Swarm: 'swarm/hive/swarm.md'
-          - Swarm: 'swarm/hive/api.md'
+          - API: 'swarm/hive/api.md'
         - System:
           - Graphium: 'swarm/system/graphium.md'
           - Helper: 'swarm/system/helper.md'
           - Logger: 'swarm/system/logger.md'
           - Logger: 'swarm/system/mongo.md'
         - Assistant:
-          - Reader: 'assistant/reader.md'
+          - GeoSpatial: 'swarm/assistant/geospatial.md'
+          - Looker: 'swarm/assistant/looker.md'
+          - Reader: 'swarm/assistant/reader.md'
+
     - WebServer:
         - About Maker: 'webserver/index.md'
     - About:
