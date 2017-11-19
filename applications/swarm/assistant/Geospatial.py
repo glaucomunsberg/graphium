@@ -47,28 +47,38 @@ class GeoSpatial:
             lat2    = dot2[0]
             lng2    = dot2[1]
 
-            if lat2 > lat1:
-                lat_diff    = float(lat2-lat1)
-            else:
-                lat_diff    = float(lat1-lat2)
+            lat_diff    = abs(float(abs(lat1)-abs(lat2)))
 
-            if lng2 > lng1:
-                lng_diff    = float(lng2-lng1)
-            else:
-                lng_diff    = float(lng1-lng2)
+            lng_diff    = abs(float(abs(lng1)-abs(lng2)))
+
+            print 'lat_diff',lat_diff,'lng_diff',lng_diff
 
             divisibleBy    = distanceBetween/float(distanceMax)
-            #print 'DivisionBy',divisibleBy
-            lat_bit     = lat_diff%float(divisibleBy)
-            lng_bit     = lng_diff%float(divisibleBy)
+            print 'divisibleBy',divisibleBy
+            lat_bit     = lat_diff/float(int(divisibleBy))
+            lng_bit     = lng_diff/float(int(divisibleBy))
+            print 'lat_bit',lat_bit,'lng_bit',lng_bit
 
-            lista_to_return.append(dot1)
             for i in range(int(divisibleBy)):
-                to_append = tuple([lat1+((i+1)*lat_bit),lng1+((i+1)*lng_bit)])
-                #print 'Append',to_append
-                lista_to_return.append(to_append)
+                print 'i',i
+                if lat1 >= lat2:
+                    new_lat = lat1-(i*lat_bit)
+                else:
+                    new_lat = lat1+(i*lat_bit)
 
-            lista_to_return.append(dot2)
+                if lng1 >= lng2:
+                    new_lng = lng1-(i*lng_bit)
+                else:
+                    new_lng = lng1+(i*lng_bit)
+
+
+                to_append = tuple([new_lat,new_lng])
+                print 'to_append',to_append
+                lista_to_return.append(to_append)
+            # if different need put the exact point =D
+            if int(divisibleBy) != divisibleBy:
+                lista_to_return.append(dot2)
+
             return lista_to_return
 
 
@@ -83,7 +93,7 @@ class GeoSpatial:
         return self.getIntermediatePointsFromTwoDots(dot1,dot2)
 
 
-    def calculateInitialCompassBearing(self,pointA, pointB):
+    def calculateStreetOrientation(self,pointA, pointB):
         """
         Calculates the bearing between two points.
         The formulae used is the following:

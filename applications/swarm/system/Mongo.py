@@ -274,3 +274,17 @@ class Mongo:
     def updateWishListById(self,identifier,data):
         self.__collection = self.__db.wish_list
         self.__collection.update({'_id':identifier},{"$set":data},upsert=False)
+
+
+    ############ Graffiti ############
+
+    # insertGraffiti
+    #   insert the graffiti at MongoDB
+    #   return the id
+    #
+    def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address):
+        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country,'state':state,'city':city,'address':address}
+        self.__collection = self.__db.graffiti
+        return self.__collection.insert_one(dataToSend).inserted_id
+
+    

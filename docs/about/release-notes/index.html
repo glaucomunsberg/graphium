@@ -62,6 +62,20 @@
                 </li>
                 <li class="">
                     
+    <span class="caption-text">Anima</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../swarm/anima/looker/">Looker</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../swarm/anima/oracle/">Oracle</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
     <span class="caption-text">Hive</span>
     <ul class="subnav">
                 <li class="toctree-l3">
@@ -71,10 +85,6 @@
                 <li class="toctree-l3">
                     
     <a class="" href="../../swarm/hive/swarm/">Swarm</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../swarm/hive/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -110,11 +120,11 @@
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../swarm/assistant/looker/">Looker</a>
+    <a class="" href="../../swarm/assistant/reader/">Reader</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../swarm/assistant/reader/">Reader</a>
+    <a class="" href="../../swarm/assistant/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -148,6 +158,8 @@
     <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
     
         <ul>
+        
+            <li><a class="toctree-l4" href="#version-003">Version 0.0.3</a></li>
         
             <li><a class="toctree-l4" href="#version-002">Version 0.0.2</a></li>
         
@@ -198,13 +210,22 @@
             <div class="section">
               
                 <h1 id="release-notes">Release Notes</h1>
+<h2 id="version-003">Version 0.0.3</h2>
+<ul>
+<li><code>Anima</code>: The <code>Looker.py</code> moved into Package and create</li>
+<li><code>Anima</code>: <code>Oracle.py</code> class responsible by predictions models</li>
+<li><code>Assistant</code>: Intro <code>Scissor.py</code> to cut images. <code>API.py</code> moved into this Package</li>
+<li><code>Assistant</code>: <code>Reader.py</code> improved to make a place – without city information – a fictional city</li>
+<li><code>Hive</code>: Agents now drive between two dots</li>
+<li><code>System</code>: improved the <code>Graphium.py</code> to scissor information</li>
+</ul>
 <h2 id="version-002">Version 0.0.2</h2>
 <ul>
-<li><code>Assistant</code>: Intro <code>GeoSpatial.py</code> to cal distance and intermediate points of sistem</li>
+<li><code>Assistant</code>: Intro <code>GeoSpatial.py</code> to cal distance and intermediate points of system</li>
 <li><code>Assistant</code>: Intro <code>Looker.py</code> search the pictures on google street view</li>
 <li><code>Hive</code>: Improved the <code>Agent.py</code> and <code>API.py</code></li>
 <li><code>System</code>: Now the <code>Graphium.py</code> has the config to download images from Google Street View</li>
-<li><code>System</code>: Graphium receive the picture folder to not request two time the same pano image. Google restringe 25.000 requests by day</li>
+<li><code>System</code>: Graphium receive the picture folder to not request two time the same pano image. Google restricts 25.000 requests by day</li>
 </ul>
 <h2 id="version-001">Version 0.0.1</h2>
 <ul>
@@ -232,12 +253,12 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -249,7 +270,10 @@
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
 
 </body>
 </html>

@@ -4,3 +4,8 @@ osmread
 unidecode
 geopy
 osmapi
+wand
+pillow
+h5py
+keras
+tensorflow

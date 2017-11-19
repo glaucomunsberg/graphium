@@ -62,6 +62,20 @@
                 </li>
                 <li class="">
                     
+    <span class="caption-text">Anima</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../anima/looker/">Looker</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../anima/oracle/">Oracle</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
     <span class="caption-text">Hive</span>
     <ul class="subnav">
                 <li class="toctree-l3">
@@ -71,10 +85,6 @@
                 <li class="toctree-l3">
                     
     <a class="" href="../../hive/swarm/">Swarm</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../hive/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -124,11 +134,11 @@
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../assistant/looker/">Looker</a>
+    <a class="" href="../../assistant/reader/">Reader</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../assistant/reader/">Reader</a>
+    <a class="" href="../../assistant/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -246,16 +256,27 @@
 }
 </code></pre>
 <p><strong>gmaps</strong> : the metadata of google street maps used has default. The file <code>data/configs/gmaps.json</code> is load to system. <code>type:Dic</code></p>
-<p>Keys inside attribute Swarm:</p>
+<p>Keys inside attribute Gmap:</p>
 <p>{
     "width": 640,
     "height": 450,
     "google_key": "AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
   }</p>
+<p><strong>scissor</strong> : the metadata of scissor used has default. The file <code>data/configs/scissor.json</code> is load to system. <code>type:Dic</code></p>
+<p>Keys inside attribute Scissor:</p>
+<pre><code>{
+    "target_max_width":224,
+    "target_max_height":224,
+    "target_min_width":224,
+    "target_min_height":224,
+    "target_rate":0.8
+}
+</code></pre>
 <h2 id="methods">Methods</h2>
 <p><strong>path_config</strong>: Return absolute path to configurations of koopstrap. <code>type:String</code></p>
 <p><strong>path_log</strong>: Return absolute path to logs of system. <code>type:String</code></p>
 <p><strong>path_dataset</strong>: Return absolute path to all datasets. <code>type:String</code></p>
+<p><strong>path_model</strong>: Return absolute path to all models. <code>type:String</code></p>
 <p><strong>path_picture</strong>: Return absolute path to all images on directory. <code>type:String</code></p>
 <p><strong>version</strong>: Return version of koopstrap. <code>type:String</code></p>
               
@@ -268,7 +289,7 @@
         <a href="../helper/" class="btn btn-neutral float-right" title="Helper">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../hive/api/" class="btn btn-neutral" title="API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../hive/swarm/" class="btn btn-neutral" title="Swarm"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -282,26 +303,29 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../hive/api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../hive/swarm/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../helper/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
+    <script>var base_url = '../../..';</script>
     <script src="../../../js/theme.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
 
 </body>
 </html>

@@ -4,10 +4,13 @@ pages:
     - Home: 'index.md'
     - Swarm:
         - About Swarm: 'swarm/index.md'
+        - Anima:
+          - Looker: 'swarm/anima/looker.md'
+          - Oracle: 'swarm/anima/oracle.md'
         - Hive:
           - Agent: 'swarm/hive/agent.md'
           - Swarm: 'swarm/hive/swarm.md'
-          - API: 'swarm/hive/api.md'
+
         - System:
           - Graphium: 'swarm/system/graphium.md'
           - Helper: 'swarm/system/helper.md'
@@ -15,8 +18,8 @@ pages:
           - Logger: 'swarm/system/mongo.md'
         - Assistant:
           - GeoSpatial: 'swarm/assistant/geospatial.md'
-          - Looker: 'swarm/assistant/looker.md'
           - Reader: 'swarm/assistant/reader.md'
+          - API: 'swarm/assistant/api.md'
 
     - WebServer:
         - About Maker: 'webserver/index.md'

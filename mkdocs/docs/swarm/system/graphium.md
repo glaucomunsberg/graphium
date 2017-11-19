@@ -55,13 +55,25 @@ Keys inside attribute Swarm:
 
 **gmaps** : the metadata of google street maps used has default. The file `data/configs/gmaps.json` is load to system. `type:Dic`
 
-Keys inside attribute Swarm:
+Keys inside attribute Gmap:
 
   {
     "width": 640,
     "height": 450,
     "google_key": "AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
   }
+
+  **scissor** : the metadata of scissor used has default. The file `data/configs/scissor.json` is load to system. `type:Dic`
+
+  Keys inside attribute Scissor:
+
+    {
+        "target_max_width":224,
+        "target_max_height":224,
+        "target_min_width":224,
+        "target_min_height":224,
+        "target_rate":0.8
+    }
 
 
 ## Methods
@@ -71,6 +83,8 @@ Keys inside attribute Swarm:
 **path_log**: Return absolute path to logs of system. `type:String`
 
 **path_dataset**: Return absolute path to all datasets. `type:String`
+
+**path_model**: Return absolute path to all models. `type:String`
 
 **path_picture**: Return absolute path to all images on directory. `type:String`
 

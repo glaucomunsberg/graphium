@@ -102,3 +102,4 @@ ENV/
 
 # picture directory
 data/pictures/google_street_view/*.jpeg
+data/pictures/scissor/*.jpeg

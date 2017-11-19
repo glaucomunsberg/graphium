@@ -13,7 +13,6 @@ from system.Helper import Helper
 
 class Reader:
 
-
     _g          = None
     _logger     = None
     _helper     = None
@@ -92,7 +91,6 @@ class Reader:
                         city['population'] = int(entity.tags['population'])
                     except:
                         city['population'] = -1
-
                     try:
                         city['country_code'] = entity.tags['is_in:country_code']
                     except:
@@ -166,6 +164,17 @@ class Reader:
                         city['osm_node_id'] = int(entity.id)
                     except:
                         city['osm_node_id'] = 0
+
+        if city == None:
+            city = {}
+            city['name']   = 'Unnamed'
+            city['lat']    = 0.0
+            city['lng']    = 0.0
+            city['osm_node_id'] = 0
+            city['state_code'] = ""
+            city['country'] = ""
+            city['country_code'] = ""
+            city['population'] = 0
 
         self.city = self.getCityAndCoutry(city['name'],city['country_code'])
         if self.city == None:

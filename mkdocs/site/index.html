@@ -78,6 +78,20 @@
                 </li>
                 <li class="">
                     
+    <span class="caption-text">Anima</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="swarm/anima/looker/">Looker</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="swarm/anima/oracle/">Oracle</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
     <span class="caption-text">Hive</span>
     <ul class="subnav">
                 <li class="toctree-l3">
@@ -87,10 +101,6 @@
                 <li class="toctree-l3">
                     
     <a class="" href="swarm/hive/swarm/">Swarm</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="swarm/hive/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -126,11 +136,11 @@
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="swarm/assistant/looker/">Looker</a>
+    <a class="" href="swarm/assistant/reader/">Reader</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="swarm/assistant/reader/">Reader</a>
+    <a class="" href="swarm/assistant/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -215,11 +225,13 @@ rails s
     configs/
     datasets/
     logs/
+    models/
+    pictures/
 applications/   # applications suches crawler, analyzers etc
     swarm/
     webserver/
 docs/           # documentation of Graphium
-mkdocs/         # generator of documentation
+mkdocs/         # generator of docs
 </code></pre>
               
             </div>
@@ -243,12 +255,12 @@ mkdocs/         # generator of documentation
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -260,12 +272,15 @@ mkdocs/         # generator of documentation
       
     </span>
 </div>
+    <script>var base_url = '.';</script>
     <script src="./js/theme.js"></script>
+      <script src="./search/require.js"></script>
+      <script src="./search/search.js"></script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 0.16.3
-Build Date UTC : 2017-10-15 15:03:22
+MkDocs version : 0.17.2
+Build Date UTC : 2017-11-19 19:58:15
 -->

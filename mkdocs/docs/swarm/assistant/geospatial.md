@@ -13,6 +13,6 @@
 
 **getIntermediatePointsFromTwoDots**: Return intermediate points between two dots if the distance bewteen them is great that distanceMax. `type:List`
 
-**calculateInitialCompassBearing**: Return the `bearing` or the direction (degrees) of the points `type:Float`
+**calculateStreetOrientation**: Return the `bearing` or the direction (degrees) of the points `type:Float`
 
 **getIntermediatePointsFromTwoCoordinates**: the same of `getIntermediatePointsFromTwoDots` but not receive a tuple, but the 4 values (lat1,lng1,lat2,lng2)

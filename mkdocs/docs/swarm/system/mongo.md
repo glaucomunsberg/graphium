@@ -4,6 +4,9 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 
 ## Methods
 
+
+### Agents
+
 **getAgentByIdentifier**: Return the agent by Identifer. `type:Object`
 
 **getAgentByName**: Like  `getAgentByIdentifier` but by name. `type:Object`
@@ -24,6 +27,9 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 
 **getAgentsEndWellBySwarm**: Return a list with agents that end well. `type:List`
 
+
+### Users
+
 **insertUser**: Create a new user. `type:String:Identifier`
 
 **updateUserInformation**: Updat the email and date of user. `type:Boolean`
@@ -31,6 +37,9 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 **getUsersQuery**: Generic. `type:List`
 
 **removeUsers**: Remove user from mongo db. `type:Boolean`
+
+
+### Streets
 
 **getStreetByIdOSM**: Return the first street by `identifier`. `type:Object`
 
@@ -40,11 +49,17 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 
 **getStreetQuery**: Generic. `type:List`
 
+
+### WishLists
+
 **insertWishList**: Insert a wish List that is a street that pretend visit. `type:Boolean`
 
 **removeWishList**: Remove a wish List by `query`. `type:Boolean`
 
 **getWishListById**: get wishList by `id`. `type:Object`
+
+
+### Swarms
 
 **insertSwarm**: Insert a new swart at database . `type:String:Identifier`
 
@@ -52,7 +67,12 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 
 **updateSwarmByIdentifier**: update the swarm by `identifier`. `type:Boolean`
 
+### Log
+
 **addLog**: add log in a swarm `id`. `type:Boolean`
+
+
+### Wish
 
 **updateWishById**: update the wish by `id`. `type:Object`
 
@@ -61,3 +81,8 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 **getWishListNoProccessedByIdentifier**: return only the streets in wishList not processed. `type:List`
 
 **updateWishListById**: Upodat the wish list with `data`. `type:Boolean`
+
+
+### Graffiti
+
+**insertGraffiti**: Insert a graffiti in mongodb. `type:String:Identifier`

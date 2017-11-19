@@ -79,7 +79,7 @@ class Swarm:
                     print 'Creating', create_agents_number, 'agents'
 
                     for i in range(create_agents_number):
-                            agent = Agent(self._identifier)
+                            agent = Agent(self._identifier,self._logger)
                             self._agents.append(agent)
                             agent.start()
 

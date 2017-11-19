@@ -28,8 +28,10 @@ You can control everting on web server at:
         configs/
         datasets/
         logs/
+        models/
+        pictures/
     applications/   # applications suches crawler, analyzers etc
         swarm/
         webserver/
     docs/           # documentation of Graphium
-    mkdocs/         # generator of documentation
+    mkdocs/         # generator of docs

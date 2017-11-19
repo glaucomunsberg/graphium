@@ -10,8 +10,7 @@ from system.Mongo import Mongo
 from system.Logger import Logger
 from system.Helper import Helper
 from assistant.Geospatial import GeoSpatial
-from assistant.Looker import Looker
-from Swarm import *
+from anima.Looker import Looker
 
 class Agent(Thread):
 
@@ -35,12 +34,16 @@ class Agent(Thread):
     _node_osm_position  = None
 
 
-    def __init__(self,swarm_identifier):
+    def __init__(self,swarm_identifier,logger=None):
         Thread.__init__(self)
 
+        if logger == None:
+            self._logger    = Logger(swarm_identifier)
+        else:
+            self._logger    = logger
+            
         self._g             = Graphium()
         self._mongo         = Mongo()
-        self._logger        = Logger(swarm_identifier)
         self._helper        = Helper()
         self._geospatial    = GeoSpatial(self._logger)
         self._looker        = Looker(self._logger)
@@ -129,7 +132,7 @@ class Agent(Thread):
                         if self._node_osm_position != 0 and self._node_osm_position <= len(self._street['nodes'])-2:
 
                             # call the method that execute something node by node
-                            self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1])
+                            self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1],self._street['id_osm'])
 
                         else:
                             if self._node_osm_position == 0:
@@ -208,7 +211,7 @@ class Agent(Thread):
     # nodeByNode
     #   calcule the distance between two dots in meters
     #
-    def nodeByNode(self,this_node,next_node):
+    def nodeByNode(self,this_node,next_node,way_osm_id):
 
         self.appendPathBread(this_node['id'],this_node['lat'],this_node['lng'],False)
 
@@ -221,7 +224,7 @@ class Agent(Thread):
         dot2 = (lat2,lng2)
 
         result = self._geospatial.getDistance(dot1, dot2)
-        self._looker.checkPoints(dot1,dot2)
+        self._looker.driveFromPointToPoint(dot1,dot2,way_osm_id)
 
         self._logger.info('%s: The distance from %s to %s is %s! :P'%(self.getName(),this_node['id'],next_node['id'],result))
 

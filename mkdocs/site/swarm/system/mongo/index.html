@@ -62,6 +62,20 @@
                 </li>
                 <li class="">
                     
+    <span class="caption-text">Anima</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../anima/looker/">Looker</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../anima/oracle/">Oracle</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
     <span class="caption-text">Hive</span>
     <ul class="subnav">
                 <li class="toctree-l3">
@@ -71,10 +85,6 @@
                 <li class="toctree-l3">
                     
     <a class="" href="../../hive/swarm/">Swarm</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../hive/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -122,11 +132,11 @@
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../assistant/looker/">Looker</a>
+    <a class="" href="../../assistant/reader/">Reader</a>
                 </li>
                 <li class="toctree-l3">
                     
-    <a class="" href="../../assistant/reader/">Reader</a>
+    <a class="" href="../../assistant/api/">API</a>
                 </li>
     </ul>
                 </li>
@@ -202,6 +212,7 @@
                 <h1 id="definition">Definition</h1>
 <p>The Mongo return a unique instance of Mongo. It content a list of methods that help write in mongo DB.</p>
 <h2 id="methods">Methods</h2>
+<h3 id="agents">Agents</h3>
 <p><strong>getAgentByIdentifier</strong>: Return the agent by Identifer. <code>type:Object</code></p>
 <p><strong>getAgentByName</strong>: Like  <code>getAgentByIdentifier</code> but by name. <code>type:Object</code></p>
 <p><strong>updateAgentByName</strong>: Update agente by name. <code>type:Boolean</code></p>
@@ -212,25 +223,33 @@
 <p><strong>getAgentQuery</strong>: Generic. <code>type:List</code></p>
 <p><strong>getAgentsActiveBySwarm</strong>: Only active agents in swarm by <code>identifier</code>. <code>type:List</code></p>
 <p><strong>getAgentsEndWellBySwarm</strong>: Return a list with agents that end well. <code>type:List</code></p>
+<h3 id="users">Users</h3>
 <p><strong>insertUser</strong>: Create a new user. <code>type:String:Identifier</code></p>
 <p><strong>updateUserInformation</strong>: Updat the email and date of user. <code>type:Boolean</code></p>
 <p><strong>getUsersQuery</strong>: Generic. <code>type:List</code></p>
 <p><strong>removeUsers</strong>: Remove user from mongo db. <code>type:Boolean</code></p>
+<h3 id="streets">Streets</h3>
 <p><strong>getStreetByIdOSM</strong>: Return the first street by <code>identifier</code>. <code>type:Object</code></p>
 <p><strong>getStreetByName</strong>: Return the first street by <code>street name</code>. <code>type:Object</code></p>
 <p><strong>updateStreetById</strong>: Update the street with id <code>identifier</code>. <code>type:Boolean</code></p>
 <p><strong>getStreetQuery</strong>: Generic. <code>type:List</code></p>
+<h3 id="wishlists">WishLists</h3>
 <p><strong>insertWishList</strong>: Insert a wish List that is a street that pretend visit. <code>type:Boolean</code></p>
 <p><strong>removeWishList</strong>: Remove a wish List by <code>query</code>. <code>type:Boolean</code></p>
 <p><strong>getWishListById</strong>: get wishList by <code>id</code>. <code>type:Object</code></p>
+<h3 id="swarms">Swarms</h3>
 <p><strong>insertSwarm</strong>: Insert a new swart at database . <code>type:String:Identifier</code></p>
 <p><strong>getSwarmByIdentifier</strong>: Return the first object with <code>identifier</code> . <code>type:Object</code></p>
 <p><strong>updateSwarmByIdentifier</strong>: update the swarm by <code>identifier</code>. <code>type:Boolean</code></p>
+<h3 id="log">Log</h3>
 <p><strong>addLog</strong>: add log in a swarm <code>id</code>. <code>type:Boolean</code></p>
+<h3 id="wish">Wish</h3>
 <p><strong>updateWishById</strong>: update the wish by <code>id</code>. <code>type:Object</code></p>
 <p><strong>getWishListByIdentifier</strong>: update the wish List by <code>Identifier</code>. <code>type:List</code></p>
 <p><strong>getWishListNoProccessedByIdentifier</strong>: return only the streets in wishList not processed. <code>type:List</code></p>
 <p><strong>updateWishListById</strong>: Upodat the wish list with <code>data</code>. <code>type:Boolean</code></p>
+<h3 id="graffiti">Graffiti</h3>
+<p><strong>insertGraffiti</strong>: Insert a graffiti in mongodb. <code>type:String:Identifier</code></p>
               
             </div>
           </div>
@@ -255,12 +274,12 @@
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -274,7 +293,10 @@
       
     </span>
 </div>
+    <script>var base_url = '../../..';</script>
     <script src="../../../js/theme.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
 
 </body>
 </html>

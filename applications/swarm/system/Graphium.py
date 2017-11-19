@@ -9,6 +9,7 @@ class Graphium:
     osm         = None
     swarm       = None
     gmaps       = None
+    scissor     = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
@@ -69,6 +70,13 @@ class Graphium:
             print "ERROR to update gmaps absolute path"
             print traceback.format_exc()
 
+        try:
+            with open(self.config['path_root']+self.config['path_config']+'scissor.json', 'r') as f:
+                self.scissor = json.load(f)
+        except:
+            print "ERROR to update scissor absolute path"
+            print traceback.format_exc()
+
     def path_config(self):
         return self.config['path_root']+self.config['path_config']
 
@@ -80,6 +88,9 @@ class Graphium:
 
     def path_picture(self):
         return self.config['path_root']+self.config['path_picture']
+
+    def path_model(self):
+        return self.config['path_root']+self.config['path_model']
 
     def version(self):
         return self.config['version']
