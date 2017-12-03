@@ -41,12 +41,12 @@ class Agent(Thread):
             self._logger    = Logger(swarm_identifier)
         else:
             self._logger    = logger
-            
+
         self._g             = Graphium()
         self._mongo         = Mongo()
         self._helper        = Helper()
         self._geospatial    = GeoSpatial(self._logger)
-        self._looker        = Looker(self._logger)
+        self._looker        = Looker(swarm_identifier,self._logger)
 
         self._swarm_identifier  = swarm_identifier
         self._swarm_at_mongo    = self._mongo.getSwarmByIdentifier(swarm_identifier)

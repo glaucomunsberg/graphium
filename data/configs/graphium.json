@@ -2,7 +2,7 @@
   "log_level": "INFO",
   "path_root": "/Users/glaucomunsberg/Projects/graphium/",
   "path_dataset": "data/datasets/",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "path_log": "data/logs/",
   "path_config": "data/configs/",
   "path_picture": "data/pictures/",

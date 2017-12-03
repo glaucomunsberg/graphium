@@ -67,6 +67,13 @@ The Mongo return a unique instance of Mongo. It content a list of methods that h
 
 **updateSwarmByIdentifier**: update the swarm by `identifier`. `type:Boolean`
 
+**countOneToMapsSwarmByIdentifer**: Sum (increments) one at `num_map_api_request` attribute.
+
+**getMapsCounterSwarmByIdentifer**: Get the `num_map_api_request` value. `type:Integer`
+
+**setMapsCounterSwarmByIdentifer**: Set the `value` to `num_map_api_request` has default.
+
+
 ### Log
 
 **addLog**: add log in a swarm `id`. `type:Boolean`

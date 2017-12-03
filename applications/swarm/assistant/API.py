@@ -1,28 +1,40 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import urllib2, os, traceback, json
+import urllib2, os, traceback, json, time
 
 from osmapi import OsmApi
+from time import sleep
+from datetime import datetime
 
 from system.Graphium import Graphium
 from system.Logger import Logger
+from system.Mongo import Mongo
+from system.Helper import Helper
 
 class API:
 
-    _instance   = None
-    _my_api     = None
-    _g          = None
-    _logger     = None
+    _instance           = None
+    _my_api             = None
+    _g                  = None
+    _logger             = None
+    _helper             = None
+    _mongo              = None
+    _swarm_identifier   = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(API, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
-    def __init__(self,logger=None):
-        self._my_api    = OsmApi(username = u"glaucomunsberg", password = u"********")
-        self._g         = Graphium()
+    def __init__(self,swarm_identifier,logger=None):
+
+        self._swarm_identifier  = swarm_identifier
+        self._my_api            = OsmApi(username = u"glaucomunsberg", password = u"********")
+        self._g                 = Graphium()
+        self._mongo             = Mongo()
+        self._helper            = Helper()
+
         if logger != None:
             self._logger = logger
         else:
@@ -63,6 +75,33 @@ class API:
         s_width = self._g.gmaps['width']
         s_height= self._g.gmaps['height']
 
+        # if limit of requests
+        #   get time elapsed and sleep x minutes until complete 24h
+        if self._mongo.getMapsCounterSwarmByIdentifer(self._swarm_identifier) >= self._g.gmaps['limit_maps_by_day']:
+
+            swarm_info      = self._mongo.getSwarmByIdentifier(self._swarm_identifier)
+
+            start_at        = datetime.strptime(swarm_info['start_at'], '%Y-%m-%d %H:%M:%S')
+            now_is          = datetime.now()
+
+            elapsed         = now_is - start_at
+            sleep_hours     = (elapsed.seconds//60)//60
+            sleep_seconds   = float((24 - sleep_hours) * 60 * 60)
+
+            print "API: I will sleep {0} hours or {1} seconds! Zzz.".format(24-sleep_hours,sleep_seconds)
+            self._logger.info("API: I will sleep {0} hours or {1} seconds! Zzz.".format(24-sleep_hours,sleep_seconds))
+
+            sleep(sleep_seconds)
+
+            print "API: I woke up at {0}!".format(self._helper.getTimeNow())
+            self._logger.info("API: I woke up {0}!".format(self._helper.getTimeNow()))
+
+            if self._mongo.getMapsCounterSwarmByIdentifer(self._swarm_identifier) >= self._g.gmaps['limit_maps_by_day']:
+                self._mongo.setMapsCounterSwarmByIdentifer(self._swarm_identifier,1)
+
+        self._mongo.countOneToMapsSwarmByIdentifer(self._swarm_identifier)
+
+
         file_photo_metadata = self.getPanoInfoByPoint(lat,lng)
         if file_photo_metadata['status'] == "OK":
             file_name   = file_photo_metadata['pano_id']+"_h_"+str(heading)+"_p_"+str(pitch)+".jpeg"
@@ -75,17 +114,17 @@ class API:
 
                     with open(directory+file_name,'wb') as output:
                         output.write(file_photo.read())
-                    return {'status':file_photo_metadata['status'],'pano_id':file_photo_metadata['pano_id'],"image_path":directory+file_name,"lat":file_photo_metadata['location']['lat'],"lng":file_photo_metadata['location']['lng']}
+                    return {'status':file_photo_metadata['status'],'pano_id':file_photo_metadata['pano_id'],"image_path":directory+file_name,"lat":file_photo_metadata['location']['lat'],"lng":file_photo_metadata['location']['lng'],"heading":heading,"pitch":pitch}
                 except Exception as error:
                     print 'ERROR! Data json'
                     print file_photo_metadata
                     print traceback.format_exc()
                 return None
             else:
-                return {'status':file_photo_metadata['status'],'pano_id':file_photo_metadata['pano_id'],"image_path":directory+file_name,"lat":file_photo_metadata['location']['lat'],"lng":file_photo_metadata['location']['lng']}
+                return {'status':file_photo_metadata['status'],'pano_id':file_photo_metadata['pano_id'],"image_path":directory+file_name,"lat":file_photo_metadata['location']['lat'],"lng":file_photo_metadata['location']['lng'],"heading":heading,"pitch":pitch}
         else:
             self._logger.info("API: Error to get pano by point from point {0},{1} error '{2}'.".format(lat,lng,file_photo_metadata['status']))
-            return {'status':file_photo_metadata['status'],'pano_id':"","image_path":"","lat":lat,"lng":lng}
+            return {'status':file_photo_metadata['status'],'pano_id':"","image_path":"","lat":lat,"lng":lng,"heading":heading,"pitch":pitch}
 
     # getPanoInfoByPoint
     #   get the information about pano
@@ -160,12 +199,13 @@ class API:
         try:
             response = urllib2.urlopen(url_info)
             data = json.loads(response.read())
-            if "error" in data.keys():
-
+            if not "error" in data.keys():
                 return_json['address']  = data['address']['road']
                 return_json['country']  = data['address']['country']
                 return_json['state']    = data['address']['state']
                 return_json['city']     = data['address']['city']
+                return_json['osm_id']   = data['osm_id']
+                return_json['osm_type'] = data['osm_type']
             else:
                 return_json['status'] = "ERROR"
                 print "API: Error to get nominatim from way_id {0} error '{1}'.".format(way_id,data['error'])
@@ -173,7 +213,8 @@ class API:
 
         except Exception as error:
             self._logger.info("API: Error to get nominatim from way_id {0} url '{1}'.".format(way_id,url_info))
-            print "API: Error to get nominatim from way_id {0} url '{1}'.".format(way_id,url_info)
+            print "API: Exception!!! Error to get nominatim from way_id {0} url '{1}'.".format(way_id,url_info)
+            print traceback.format_exc()
             return_json['status'] = "ERROR"
 
         return return_json

@@ -4,6 +4,8 @@
 
 ## Params
 
+**swarm_identifier**: a string with swarm identifier. `type:String`
+
 **logger**: a instance of logger or `None`. `type:Logger`
 
 

@@ -33,14 +33,14 @@ class GeoSpatial:
     def getIntermediatePointsFromTwoDots(self,dot1,dot2,distanceMax=13):
         lista_to_return = []
         distanceBetween = self.getDistance(dot1,dot2)
-        print "Dots:",dot1,dot2
+        #print "Dots:",dot1,dot2
 
-        if distanceBetween <= 13:
-            print 'distanceBetween '+str(distanceBetween)+' <= 13m'
+        if distanceBetween <= distanceMax:
+            print 'distanceBetween '+str(distanceBetween)+' <= '+str(distanceMax)+'m'
             lista_to_return = [dot1,dot2]
             return lista_to_return
         else:
-            print 'distanceBetween '+str(distanceBetween)+' > 13m'
+            print 'distanceBetween '+str(distanceBetween)+' > '+str(distanceMax)+'m'
 
             lat1    = dot1[0]
             lng1    = dot1[1]
@@ -51,16 +51,16 @@ class GeoSpatial:
 
             lng_diff    = abs(float(abs(lng1)-abs(lng2)))
 
-            print 'lat_diff',lat_diff,'lng_diff',lng_diff
+            #print 'lat_diff',lat_diff,'lng_diff',lng_diff
 
             divisibleBy    = distanceBetween/float(distanceMax)
-            print 'divisibleBy',divisibleBy
+            #print 'divisibleBy',divisibleBy
             lat_bit     = lat_diff/float(int(divisibleBy))
             lng_bit     = lng_diff/float(int(divisibleBy))
-            print 'lat_bit',lat_bit,'lng_bit',lng_bit
+            #print 'lat_bit',lat_bit,'lng_bit',lng_bit
 
             for i in range(int(divisibleBy)):
-                print 'i',i
+
                 if lat1 >= lat2:
                     new_lat = lat1-(i*lat_bit)
                 else:
@@ -71,9 +71,8 @@ class GeoSpatial:
                 else:
                     new_lng = lng1+(i*lng_bit)
 
-
                 to_append = tuple([new_lat,new_lng])
-                print 'to_append',to_append
+                #print 'to_append',i,to_append
                 lista_to_return.append(to_append)
             # if different need put the exact point =D
             if int(divisibleBy) != divisibleBy:

@@ -1,5 +1,13 @@
 # Release Notes
 
+## Version 0.0.4
+
+* `Anima`: fixing insertGraffiti call
+* `Anima`: `Looker.py` receive the swarm_identifier now
+* `Assistant`: Into `API.py` the limit of google maps API request
+* `Hive`: `Swarm.py` improved to set the date start and number of request from agents in google maps api
+* `System`: improved the `Mongo.py` to google maps interactions
+
 ## Version 0.0.3
 
 * `Anima`: The `Looker.py` moved into Package and create

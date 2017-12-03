@@ -4,9 +4,9 @@
 
 ## Params
 
-**usermme**: name in API. `type:Stirng`
+**swarm_identifier**: swarm identifier. `type:Stirng`
 
-**password**: password in API. `type:Stirng`
+**logger**: Logger to use in API. `type:Logger`
 
 
 ## Methods

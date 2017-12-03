@@ -213,9 +213,9 @@ class Mongo:
     #   create a session of swarm and send the basic information
     #   return session ID
     #
-    def insertSwarm(self, identifier, num_agent,user_email="admin@graphium", name='default', host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, active=True, logs=[]):
+    def insertSwarm(self, identifier, num_agent,user_email="admin@graphium", name='default', start_at="", host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, active=True):
         self.__collection = self.__db.swarm
-        dataToSend = {'identifier':identifier, 'name':name, 'num_agent':num_agent, 'user_email':user_email, 'host':host, 'active':active, 'logs':[], 'end_at':None, 'end_well':True, 'qmi':0.0, 'seconds_to_check_agents': seconds_to_check_agents,'city_id':city_id,'cycles_number':cycles_number}
+        dataToSend = {'identifier':identifier, 'name':name, 'num_agent':num_agent, 'user_email':user_email, 'host':host, 'active':active, 'start_at':start_at, 'end_at':None, 'end_well':True, 'qmi':0.0, 'seconds_to_check_agents': seconds_to_check_agents, 'city_id':city_id, 'cycles_number':cycles_number, 'num_map_api_request':0 }
         return self.__collection.insert_one(dataToSend).inserted_id
 
     # getSwarmByIdentifier
@@ -232,16 +232,26 @@ class Mongo:
         self.__collection = self.__db.swarm
         self.__collection.update({'identifier':identifier},{"$set":data},upsert=False)
 
-    # addLog
-    #   adding on more log at one session
+    # countOneToMapsSwarmByIdentifer
+    #   count plus one at num_map_api_request field in swarm
     #
-    def addLog(self,message,level,swarm_session):
+    def countOneToMapsSwarmByIdentifer(self,identifier):
         self.__collection = self.__db.swarm
-        swarm = self.__collection.find_one({'identifier':swarm_session})
-        if swarm != None:
-            swarm['logs'].append({'level':level,'message':message})
-            self.__collection.update({'swarm_identifier':swarm_session},{"$set":swarm},upsert=False)
+        self.__collection.update({'identifier':identifier}, {'$inc': {'num_map_api_request': 1}})
 
+    # getMapsCounterSwarmByIdentifer
+    #   return the num_map_api_request number
+    #
+    def getMapsCounterSwarmByIdentifer(self,identifier):
+        self.__collection = self.__db.swarm
+        return self.__collection.find_one({'identifier':identifier})['num_map_api_request']
+
+    # setMapsCounterSwarmByIdentifer
+    #   set at num_map_api_request the value
+    #
+    def setMapsCounterSwarmByIdentifer(self,identifier,value=0):
+        self.__collection = self.__db.swarm
+        self.__collection.update({'identifier':identifier}, {'$set': {'num_map_api_request': value}})
 
 
     ############ Wish List ############
@@ -282,9 +292,7 @@ class Mongo:
     #   insert the graffiti at MongoDB
     #   return the id
     #
-    def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address):
-        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country,'state':state,'city':city,'address':address}
+    def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address,swarm_identifier):
+        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'swarm_identifier':swarm_identifier}
         self.__collection = self.__db.graffiti
         return self.__collection.insert_one(dataToSend).inserted_id
-
-    

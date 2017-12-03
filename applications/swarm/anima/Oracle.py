@@ -72,10 +72,12 @@ class Oracle:
         self._logger.info('Oracle: Appending image {0} to predict'.format(image_path))
         predictions     = self.model.predict(x)
         nameProbability = decode_predictions(predictions, top=1)[0]
-        print 'Probabilities', nameProbability
-        print 'Probability  ', nameProbability[0][0]
-        print 'Image Path   ', image_path
+        #print 'Probabilities', nameProbability
+        #print 'Probability  ', nameProbability[0][0]
+        #print 'Image Path   ', image_path
         if nameProbability[0][1] == "comic book" or nameProbability[0][0] == "n06596364":
+            print 'Probability  ', nameProbability[0][0]
+            print 'Image Path   ', image_path
             return True
         else:
             return False

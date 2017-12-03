@@ -21,12 +21,12 @@ class Looker:
     geos        = None
 
 
-    def __init__(self,logger=None):
+    def __init__(self,swarm_identifier,logger=None):
 
-        self._g         = Graphium()
-        self._helper    = Helper()
-        self._mongo     = Mongo()
-
+        self._g                     = Graphium()
+        self._helper                = Helper()
+        self._mongo                 = Mongo()
+        self._swarm_identifier      = swarm_identifier
 
         if logger == None:
             self._logger    = Logger()
@@ -34,7 +34,7 @@ class Looker:
             self._logger    = logger
 
         self.geos       = GeoSpatial(self._logger)
-        self._api       = API(self._logger)
+        self._api       = API(self._swarm_identifier,self._logger)
         self._oracle    = Oracle("20170821191051",self._logger)
 
     def driveFromPointToPoint(self,dot1,dot2,way_osm_id):
@@ -71,11 +71,11 @@ class Looker:
         if self._oracle.predictInPano(dataPoint['image_path']):
             streetMetadata = self._api.getStreetGeoCodeInfoFromOSM(way_osm_id)
             if streetMetadata['status'] != "OK":
-                self._mongo.insertGraffiti(dataPoint['lat'],dataPoint['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],dataPoint['country'],dataPoint['state'],dataPoint['city'],dataPoint['street'])
+                self._mongo.insertGraffiti(dataPoint['lat'],dataPoint['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],streetMetadata['country'],streetMetadata['state'],streetMetadata['city'],streetMetadata['address'],self._swarm_identifier)
             else:
                 streetMetadata = self._api.getStreetGeocodeInfoFromMaps(dataPoint['lat'],dataPoint['lng'])
                 if streetMetadata['status'] != "OK":
-                    self._mongo.insertGraffiti(streetMetadata['lat'],streetMetadata['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],dataPoint['country'],dataPoint['state'],dataPoint['city'],dataPoint['street'])
+                    self._mongo.insertGraffiti(streetMetadata['lat'],streetMetadata['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],streetMetadata['country'],streetMetadata['state'],streetMetadata['city'],streetMetadata['address'],self._swarm_identifier)
                 else:
                     print "Looker: CAN'T insert street without metadata in point {0} at way_osm_id {1}".format(dataPoint,way_osm_id)
                     self._logger.info("Looker: CAN'T insert street without metadata in point {0} at way_osm_id {1}".format(dataPoint,way_osm_id))

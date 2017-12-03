@@ -60,7 +60,8 @@ Keys inside attribute Gmap:
   {
     "width": 640,
     "height": 450,
-    "google_key": "AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
+    "google_key": "AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM",
+    "limit_maps_by_day": 25000
   }
 
   **scissor** : the metadata of scissor used has default. The file `data/configs/scissor.json` is load to system. `type:Dic`
