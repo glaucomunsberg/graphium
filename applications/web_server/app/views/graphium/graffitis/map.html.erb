@@ -1,0 +1,225 @@
+<%=breadcrumbs [{:name => 'Home',:path => '/'},{:name => 'Graffitis', :path => '/graphium/graffitis'}]%>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfw7x1Y5XXJXcGwQAFGG_069ZKEgpGEBE&callback=initTheMap&libraries=visualization" defer></script>
+
+<div class="row" style="margin-top:40px">
+  <div class='col s7' id='div_map'>
+
+  </div>
+  <div class='col s5'>
+    <h5>Controllers</h5>
+    <div class="input-field col s6">
+        <select id='swarm_city' onchange="changeCenter()">
+            <option value="" disabled selected>Cities available</option>
+            <%Graphium::City.all.each do |city|%>
+                <option value="<%=city.name%>" lat="<%=city.lat%>" lng="<%=city.lng%>"><%=city.name%></option>
+            <%end%>
+        </select>
+        <label>Choose the city</label>
+    </div>
+    <div class="input-field col s6">
+        <select id='swarm_model' onchange="changeVisualization()">
+            <option value="map" selected >Map of points</option>
+            <option value="heatmap" >HeatMap map</option>
+        </select>
+        <label>Visualization mode</label>
+    </div>
+    <h5 style="margin-top:40px">Preview</h5>
+    <div class="row" id='preview' style="padding:0px 20px">
+      <img class='row materialboxed' style="width: 100%; height: auto;margin-left: 2px;" >
+      <div class="col s6">
+        <p id='preview_lat'></p>
+        <p id='preview_lng'></p>
+      </div>
+      <div class="col s6">
+        <p id='preview_heading'></p>
+        <p id='preview_pitch'></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var graphium  = []
+  var city      = ""
+  var map       = null;
+  var heatmap   = null
+  var markers   = [];
+  var points    = [];
+  var map_type  = "map"
+
+  <%
+    position = 0
+    @graphium_graffitis.each do |graphium_graffiti| %>
+      graphium[<%=position%>] = {"lat":<%= graphium_graffiti.lat %>,"lng":<%= graphium_graffiti.lng %>,"heading":<%= graphium_graffiti.heading%>,"pitch": <%= graphium_graffiti.pitch %>,city: '<%= graphium_graffiti.city %>'}
+    <%position+=1%>
+  <% end %>
+
+  $(document).ready(function(){
+
+      $('.modal').modal()
+
+      $('select').material_select();
+
+  });
+
+  function initTheMap() {
+      // Start map
+      map = new google.maps.Map(document.getElementById('div_map'), {
+          center: {lat: -31.769016, lng: -52.3347313},
+          zoom: 13
+      });
+      // show infowindow location
+      infoWindow = new google.maps.InfoWindow({map: map});
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            //lat: position.coords.latitude,
+            //lng: position.coords.longitude
+            lat: -31.769016,
+            lng: -52.3347313
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Sua localização');
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+      if(map_type=='map'){
+        setPins()
+      }else{
+        setHeatmap()
+      }
+  }
+
+  function changeCenter(){
+
+    swarm_city = document.querySelector('#swarm_city');
+    swarm_city = swarm_city.options[swarm_city.selectedIndex];
+    map.setCenter(new google.maps.LatLng(parseFloat($(swarm_city).attr('lat')) ,parseFloat($(swarm_city).attr('lng'))));
+    map.setZoom(15);
+    city = $(swarm_city).attr('value')
+    changeVisualization()
+  }
+
+  function changeVisualization(){
+    swarm_city = document.querySelector('#swarm_model');
+    swarm_city = swarm_city.options[swarm_city.selectedIndex];
+    if($(swarm_city).attr('value')=="map"){
+      setPins();
+    }else{
+      setHeatmap();
+    }
+  }
+
+  function reset(){
+    document.querySelector('#preview img').style.display='none'
+    $('#preview_lat').html('')
+    $('#preview_lng').html('')
+    $('#preview_pitch').html('')
+    $('#preview_heading').html('')
+    if(heatmap!=null){
+      heatmap.setMap(null)
+    }
+    points = []
+    for(var a=0;a< markers.length;a++){
+      markers[a].setMap(null)
+    }
+    markers = []
+  }
+  function setHeatmap(){
+    reset()
+
+    for(var a=0;a < graphium.length;a++){
+
+      if(city!=""){
+        if(city == graphium[a]['city']){
+          points.push(new google.maps.LatLng(parseFloat(graphium[a]['lat']), parseFloat(graphium[a]['lng'])))
+        }
+      }else{
+        points.push(new google.maps.LatLng(parseFloat(graphium[a]['lat']), parseFloat(graphium[a]['lng'])))
+      }
+
+    }
+
+    heatmap = new google.maps.visualization.HeatmapLayer({
+      data: points,
+      map: map
+    });
+    heatmap.setMap(heatmap.getMap())
+  }
+
+  function setPins(){
+
+    reset()
+
+    for(var a=0;a < graphium.length;a++){
+
+      if(city== "" || city == graphium[a]['city'] ){
+        var myLatlng = {lat: parseFloat(graphium[a]['lat']), lng: parseFloat(graphium[a]['lng'])};
+
+        console.log("Posicao",a)
+        var date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        hours = date.getHours();
+        minutes = date.getMinutes();
+        seconds = date.getSeconds();
+
+        url_icon = "/assets/analytics/graffiti.png";
+
+        var marker_name = year+""+month+""+day+""+hours+""+minutes+""+seconds+"";
+
+        var marker = new google.maps.Marker({
+            icon: url_icon,
+            position: myLatlng,
+            map: map,
+            title: marker_name,
+            animation: google.maps.Animation.DROP,
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function(){
+            console.log('mudou o centro do',marker.title)
+        })
+
+        marker.addListener('click', function(e) {
+          console.log(e)//map.setZoom(15);
+          for(var a=0;a < graphium.length;a++){
+            if(graphium[a]['lat']==e.latLng.lat()){
+              var myLatlng = {lat: parseFloat(graphium[a]['lat']), lng: parseFloat(graphium[a]['lng'])};
+              map.setCenter(myLatlng);
+              document.querySelector('#preview img').style.display = ''
+              document.querySelector('#preview img').src = 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location='+graphium[a]['lat']+','+graphium[a]['lng']+'&heading='+graphium[a]['heading']+'&pitch='+graphium[a]['pitch']+'&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM'
+              $('#preview_lat').html("Lat: <b>"+graphium[a]['lat']+"</b>")
+              $('#preview_lng').html("Lng: <b>"+graphium[a]['lng']+"</b>")
+              $('#preview_pitch').html("Pitch: <b>"+graphium[a]['pitch']+"</b>")
+              $('#preview_heading').html("Heading: <b>"+graphium[a]['heading']+"</b>")
+            }
+          }
+
+        });
+
+        markers.push(marker);
+
+        $('#list').append("<li id='"+marker_name+"' style='cursor:pointer' onclick=\"setCenterFromMarker('"+marker_name+"')\" class='collection-item'><div>Marker "+(markers.length)+"<a class='secondary-content'><i onclick=\"removeMarker('"+marker_name+"')\" class='material-icons'>highlight_off</i></a></div></li>");
+      }
+
+
+
+
+    }
+  }
+</script>
+
+<style>
+    #div_map {
+        min-height: 300px;
+        padding: 10px
+      }
+</style>

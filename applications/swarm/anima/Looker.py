@@ -68,17 +68,26 @@ class Looker:
 
     def checkPointToPredict(self,dataPoint,way_osm_id):
 
-        if self._oracle.predictInPano(dataPoint['image_path']):
-            streetMetadata = self._api.getStreetGeoCodeInfoFromOSM(way_osm_id)
-            if streetMetadata['status'] != "OK":
-                self._mongo.insertGraffiti(dataPoint['lat'],dataPoint['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],streetMetadata['country'],streetMetadata['state'],streetMetadata['city'],streetMetadata['address'],self._swarm_identifier)
-            else:
-                streetMetadata = self._api.getStreetGeocodeInfoFromMaps(dataPoint['lat'],dataPoint['lng'])
-                if streetMetadata['status'] != "OK":
-                    self._mongo.insertGraffiti(streetMetadata['lat'],streetMetadata['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],streetMetadata['country'],streetMetadata['state'],streetMetadata['city'],streetMetadata['address'],self._swarm_identifier)
-                else:
-                    print "Looker: CAN'T insert street without metadata in point {0} at way_osm_id {1}".format(dataPoint,way_osm_id)
-                    self._logger.info("Looker: CAN'T insert street without metadata in point {0} at way_osm_id {1}".format(dataPoint,way_osm_id))
+        prediction = self._oracle.predictInPano(dataPoint['image_path'])
+        if prediction["prediction"]:
+
+            #
+            # INFORMATION OF COUNTRY,CITY AND STATE is EMPTY
+            #
+            self._mongo.insertGraffiti(dataPoint['lat'],dataPoint['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],"","","","",prediction["probability"],self._swarm_identifier)
+            #
+            # GOOGLE INFORMATION ABOUT COUNTRY, CITY AND STATE
+            #
+            #streetMetadata = self._api.getStreetGeoCodeInfoFromOSM(way_osm_id)
+            #if streetMetadata['status'] != "OK":
+            #    self._mongo.insertGraffiti(dataPoint['lat'],dataPoint['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],streetMetadata['country'],streetMetadata['state'],streetMetadata['city'],streetMetadata['address'],prediction["probability"],self._swarm_identifier)
+            #else:
+            #    streetMetadata = self._api.getStreetGeocodeInfoFromMaps(dataPoint['lat'],dataPoint['lng'])
+            #    if streetMetadata['status'] != "OK":
+            #        self._mongo.insertGraffiti(streetMetadata['lat'],streetMetadata['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],streetMetadata['country'],streetMetadata['state'],streetMetadata['city'],streetMetadata['address'],prediction["probability"],self._swarm_identifier)
+            #    else:
+            #        print "Looker: CAN'T insert street without metadata in point {0} at way_osm_id {1}".format(dataPoint,way_osm_id)
+            #        self._logger.info("Looker: CAN'T insert street without metadata in point {0} at way_osm_id {1}".format(dataPoint,way_osm_id))
             # get the street information suchs city, country and address
             # put it in dataset
         else:

@@ -292,7 +292,7 @@ class Mongo:
     #   insert the graffiti at MongoDB
     #   return the id
     #
-    def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address,swarm_identifier):
-        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'swarm_identifier':swarm_identifier}
+    def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address,probability,swarm_identifier):
+        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'probability':float(probability), 'swarm_identifier':swarm_identifier}
         self.__collection = self.__db.graffiti
         return self.__collection.insert_one(dataToSend).inserted_id

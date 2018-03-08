@@ -167,14 +167,15 @@ class Reader:
 
         if city == None:
             city = {}
-            city['name']   = 'Unnamed'
-            city['lat']    = 0.0
-            city['lng']    = 0.0
-            city['osm_node_id'] = 0
-            city['state_code'] = ""
-            city['country'] = ""
-            city['country_code'] = ""
-            city['population'] = 0
+            city['name']            = 'Unnamed'
+            city['lat']             = 0.0
+            city['lng']             = 0.0
+            city['osm_node_id']     = 0
+            city['state']           = ""
+            city['state_code']      = ""
+            city['country']         = ""
+            city['country_code']    = ""
+            city['population']      = 0
 
         self.city = self.getCityAndCoutry(city['name'],city['country_code'])
         if self.city == None:

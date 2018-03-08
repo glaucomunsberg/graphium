@@ -1,0 +1,42 @@
+<%=breadcrumbs [{:name => 'Home',:path => '/'},{:name => 'Agents', :path => '/graphium/agent'}]%>
+<table class="highlight">
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>Swarm Identifier</th>
+          <th>Active</th>
+          <th>Last Lat/Lng</th>
+          <th>Cycles</th>
+          <th>Nº Streets Visited</th>
+          <th>On map</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <%@agents.each do |agent|%>
+            <tr>
+                <td><%=agent.name%></td>
+                <td><%=agent.swarm_identifier%></td>
+                <%if agent.active%>
+                    <td><i class="material-icons">location_on</i></td>
+                <%else%>
+                    <td><i class="material-icons">location_off</i></td>
+                <%end%>
+                
+                <td><%=agent.last_lat%>/<%=agent.last_lng%></td>
+                <td><%=agent.cycles%></td>
+                <td><%=agent['visited_streets'].length%></td>
+                <td><i class="material-icons" style='cursor:pointer' onclick="location.href='/graphium/analytics/history?swarmId=<%=agent.swarm_identifier%>'">map</i></td>
+              </tr>
+        <%end%>
+        <%if @agents.length == 0%>
+            <tr>
+                <td style="text-align: center;" colspan='5'>Nenhum agente ativo</td>
+            </tr>
+        <%else%>
+            <tr>
+                <td style="text-align: left;" colspan='7'><b>Total <%=@agents.length%></b></td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>

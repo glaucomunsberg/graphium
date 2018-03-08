@@ -1,0 +1,2 @@
+module Graphium::GraffitisHelper
+end

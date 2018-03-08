@@ -8,7 +8,7 @@ def main():
 
 
     parser.add_argument('--mode',type=str, default="", help='try the mode reader or swarm')
-    # Helper
+    # Reader
     parser.add_argument('--osm_path',type=str, default="city_pelotas/ex_pelotas.osm", help='path do city.osm')
     # Swarm
     parser.add_argument('--swarm_identifier',type=str, default=None, help='Identifier of swarm. Empty the instance will be created else get information from db')

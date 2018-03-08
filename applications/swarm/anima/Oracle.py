@@ -78,6 +78,6 @@ class Oracle:
         if nameProbability[0][1] == "comic book" or nameProbability[0][0] == "n06596364":
             print 'Probability  ', nameProbability[0][0]
             print 'Image Path   ', image_path
-            return True
+            return {"prediction":True,"probability":nameProbability}
         else:
-            return False
+            return {"prediction":False,"probability":nameProbability}

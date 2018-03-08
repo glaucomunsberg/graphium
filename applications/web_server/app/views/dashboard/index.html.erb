@@ -1,0 +1,147 @@
+<%=breadcrumbs%>
+<%
+    @swarms_actives.each do | swarm |
+        %>
+            <div loader class="row valign-wrapper z-depth-1" style='background-color: #4DB6AC; color:white; border-radius: 2px; margin: 20px 0px 10px 0px; padding: 0px 10px; cursor:pointer; height: 40px;' >
+                <div class='col' onclick="location.href='/graphium/analytics?swarmId=<%=swarm['identifier']%>'">
+                    <i class="material-icons loading_spinner" style="margin-top: 5px;">sync</i>
+                </div>
+                <div class="col s12" onclick="location.href='/graphium/analytics?swarmId=<%=swarm['identifier']%>'"> 
+                    Swarm '<%=swarm['name']%>' is running. Go to.
+                </div>
+                <div clear class='col' onclick="$(document.querySelector('div[clear]').parentElement).hide()">
+                    <i class="material-icons" style="margin-top: 5px;">clear</i>
+                </div>
+            </div>
+        <%
+    end
+%>
+<div class='row' style="margin-top:10px">
+    <div class='col s4'>
+        <div class="row">
+            <div class="col s12 ">
+              <div class="card">
+                <div class="card-image">
+                  <img src="/assets/dashboard/agents_on_street.png">
+                  <span class="card-title">Real-time analysis</span>
+                  <a href='/graphium/analytics' class="btn-floating btn-large halfway-fab waves-effect waves-light"><i class="material-icons">open_in_browser</i></a>
+                </div>
+                <div class="card-content">
+                  <p>Analyze agents that are in real time by analyzing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class='col s4'>
+        <div class="row">
+            <div class="col s12">
+              <div class="card">
+                <div class="card-image">
+                  <img src="/assets/dashboard/agents.png">
+                  <span class="card-title">Swarm History</span>
+                  <a href='/graphium/analytics/history' class="btn-floating btn-large halfway-fab waves-effect waves-light"><i class="material-icons">open_in_browser</i></a>
+                </div>
+                <div class="card-content">
+                  <p>See the history of swarms who have execution</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class='col s4'>
+        <div class="row">
+            <div class="col s12 ">
+              <div class="card">
+                <div class="card-image">
+                  <img src="/assets/dashboard/city.png">
+                  <span class="card-title">Cities</span>
+                  <a href='/graphium/cities' class="btn-floating btn-large halfway-fab waves-effect waves-light"><i class="material-icons">open_in_browser</i></a>
+                </div>
+                <div class="card-content">
+                  <p>See the cities that are registered in the graphium</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col s4'>
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="/assets/dashboard/profile_background.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Profile<i class="material-icons right">more_vert</i></span>
+              <p><a href="#" onclick="location.href='users/edit'"><%=current_user.first_name+" "+current_user.last_name%></a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><%=current_user.first_name+" "+current_user.last_name%><i class="material-icons right">close</i></span>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="icon_prefix"disabled type="text" class="validate" value='<%=current_user.first_name+" "+current_user.last_name%>'>
+                      <label for="icon_prefix" disabled>First Name</label>
+                    </div>
+                  </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">email</i>
+                          <input disabled id="icon_prefix" type="text" class="validate" value='<%=current_user.email%>'>
+                          <label for="icon_prefix" disabled>Email Name</label>
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">directions_walk</i>
+                          <input disabled id="icon_prefix" type="text" class="validate" value='<%=current_user.last_sign_in_at%>'>
+                          <label for="icon_prefix" disabled>Last sign in</label>
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+    </div>
+    <div class='col s4'>
+        <div class="row">
+            <div class="col s12 ">
+              <div class="card">
+                <div class="card-image">
+                  <img src="/assets/dashboard/streets.png">
+                  <span class="card-title">Streets</span>
+                  <a href='/graphium/street' class="btn-floating btn-large halfway-fab waves-effect waves-light"><i class="material-icons">open_in_browser</i></a>
+                </div>
+                <div class="card-content">
+                  <p>See the streets that are registered in the graphium</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="col s4">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="http://lorempixel.com/100/190/technics/4">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <h4>Configuration and Others</h4>
+              <p>See system settings among other things</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Access here</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<%if @swarms_actives.length == 0 %>
+    <div style="position: fixed; bottom: 20px; z-index: 9999; right: 10%;"  class='tooltipped' data-position="top" data-delay="50" data-tooltip="Launch a swarm">
+        <a onclick="location.href='/graphium/swarm/launcher'" class="btn btn-floating btn-large pulse"><i class="material-icons">add</i></a>
+    </div>
+<%end%>
