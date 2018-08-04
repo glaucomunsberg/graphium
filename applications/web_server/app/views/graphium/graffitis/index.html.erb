@@ -3,29 +3,71 @@
 <table class="highlight">
   <thead>
     <tr>
-      <th>City</th>
-      <th>State</th>
+      <th>image</th>
+      <th>Pano ID</th>
       <th>Lat/Lng</th>
-      <th>Country</th>
-      <th>Address</th>
       <th>See Image</th>
+      <th>Open Image</th>
     </tr>
   </thead>
 
   <tbody>
     <% @graphium_graffitis.each do |graphium_graffiti| %>
       <tr>
-        <td><%= graphium_graffiti.city %></td>
-        <td><%= graphium_graffiti.state %></td>
+        <td><img src='https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= graphium_graffiti.lat %>,<%= graphium_graffiti.lng %>&heading=<%= graphium_graffiti.heading %>&pitch=<%= graphium_graffiti.pitch %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM' width="auto" height="70px"></td>
+        <td><%= graphium_graffiti.pano_id %></td>
         <td><%= graphium_graffiti.lat %>/<%= graphium_graffiti.lng %></td>
-        <td><%= graphium_graffiti.country %></td>
-        <td><%= graphium_graffiti.address %></td>
         <td><i class="material-icons" style='cursor:pointer' onclick="window.open( 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= graphium_graffiti.lat %>,<%= graphium_graffiti.lng %>&heading=<%= graphium_graffiti.heading %>&pitch=<%= graphium_graffiti.pitch %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM', '_blank')">open_in_new</i></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<div id='carousel' class="center row" style="margin-top:10px;display:none;">
+  <div class="col m12 carousel carousel-slider" style="height:600px" data-indicators="true">
+    <% @graphium_graffitis.each do |graphium_graffiti| %>
+      <a class="carousel-item" target="_blank" href="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= graphium_graffiti.lat %>,<%= graphium_graffiti.lng %>&heading=<%= graphium_graffiti.heading %>&pitch=<%= graphium_graffiti.pitch %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"><img src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= graphium_graffiti.lat %>,<%= graphium_graffiti.lng %>&heading=<%= graphium_graffiti.heading %>&pitch=<%= graphium_graffiti.pitch %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"></a>
+    <% end %>
+  </div>
+  <div class="col m12">
+    <div class="row" style="margin-top:20px">
+      <a class="waves-effect waves-light btn" onclick="$('.carousel').carousel('prev');"><i class="material-icons left">keyboard_arrow_left</i>Anterior</a>
+      <a class="waves-effect waves-light btn" onclick="$('.carousel').carousel('next');"><i class="material-icons right">keyboard_arrow_right</i>Próximo</a>
+    </div>
+  </div>
+</div>
+<div class="row right">
+  <div class="col s12 ">
+    <%=@graphium_graffitis.length%> grafites
+  </div>
+</div>
 <br>
+<a id='view_carousel' class="btn-floating btn-large waves-effect waves-light" onclick="switchModel()" style='position: fixed; bottom: 20px; right: 160px;' ><i class="material-icons">view_carousel</i></a>
+<a id='view_list' class="btn-floating btn-large waves-effect waves-light" onclick="switchModel()" style='position: fixed; bottom: 20px; right: 160px;display:none' ><i class="material-icons">list</i></a>
 
 <a class="btn-floating btn-large waves-effect waves-light" onclick="location.href='/graphium/graffitis/map'" style='position: fixed; bottom: 20px; right: 100px;'><i class="material-icons">map</i></a>
+<script>
+
+  var carousel = false;
+  function switchModel(){
+
+    if(carousel){
+      $('#view_carousel').css('display','');
+      $('#view_list').css('display','none');
+      $('#carousel').css('display','none');
+      $('.highlight').css('display','');
+    }else{
+      $('#view_carousel').css('display','none')
+      $('#view_list').css('display','');
+      $('#carousel').css('display','');
+      $('.highlight').css('display','none');
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+    }
+    carousel = !carousel
+  }
+
+  $(document).ready(function(){
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+  });
+
+</script>

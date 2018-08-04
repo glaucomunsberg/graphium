@@ -24,7 +24,7 @@
                 <div class="collapsible-body">
                     <div class='row'>
                         <a id='play_and_stop' onClick="hearing_swarm()" class="col s2 tooltipped" style='cursor:pointer' data-position="bottom" data-delay="50" data-tooltip="Start or stop to hearing the swarm" ><i class="material-icons">sync</i>
-                        </a>  
+                        </a>
                         <a onClick="update()" class="col s1 offset-s6 tooltipped" style='cursor:pointer' data-position="bottom" data-delay="50" data-tooltip="Read the last stage from swarm"><i class="material-icons" >rotate_left</i></a>
                         <a id='delete' onClick="clean()" class="col s1 tooltipped" style='cursor:pointer' data-position="bottom" data-delay="50" data-tooltip="clear the map"><i class="material-icons" >delete_sweep</i>
                         </a>
@@ -91,7 +91,7 @@
                   <div class="collapsible-header"><i class="material-icons">notifications_none</i>Notifications</div>
                   <div id='street_names' class="collapsible-body"><span>None</span></div>
             </li>
-            
+
         </ul>
     </div>
 </div>
@@ -110,15 +110,14 @@
       };
     var visited_streets = []
     var agents = []
-    var swarm_active = false; 
+    var swarm_active = false;
     var swarm_identifier = 0;
     var update_on_map = 10;
     var show_jump_on_map = false;
     function clean(){
         for(var a=0; a < markers.length;a++){
           markers[a].setMap(null);
-
-        }  
+        }
         for(var a=0; a <lines.length;a++){
           lines[a].setMap(null);
         }
@@ -128,7 +127,7 @@
         $('#street_names').html('<span>Nenhuma</span>');
         console.log('clean')
     }
-    
+
     function initTheMap() {
         // Start map
         map = new google.maps.Map(document.getElementById('map'), {
@@ -159,21 +158,21 @@
           }
         console.log('iniciou o mapa');
     }
-    
+
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       infoWindow.setPosition(pos);
       infoWindow.setContent(browserHasGeolocation ?
                             'Error: O serviço de localização falhou.' :
                             'Error: Seu navegador não tem suporte de geolocalização.');
     }
-    
+
     function addMarker(position,name,lat,lng){
         agent_num = position.toString()
         agent_num = agent_num.substring(0,1)
         url_icon = "/assets/analytics/agent_"+agent_num+".png";
-        
+
         latLng = new google.maps.LatLng(lat, lng);
-        
+
         marker = new google.maps.Marker({
               icon: url_icon,
               position: latLng,
@@ -184,13 +183,13 @@
         console.log('adding marker!',lat,lng)
         markers.push(marker)
     }
-    
+
     function addLine(color,lat_1,lng_1,lat_2,lng_2,jump){
         var latLngCoordenates = [
             {lat: lat_1, lng: lng_1},
             {lat: lat_2, lng: lng_2},
         ];
-        
+
         line_finish = ""
         if(jump === false){
             line_finish = new google.maps.Polyline({
@@ -219,22 +218,19 @@
                 lines.push(line_finish)
                 line_finish.setMap(map);
             }
-            
         }
-        
-        
     }
-    
+
     function addNameToHtml(position,name,color,lat,lng){
-        
+
         agent_num = position.toString()
         agent_num = agent_num.substring(0,1)
         url_icon = "/assets/analytics/agent_"+agent_num+".png";
-        
+
         the_html= "<li class='collection-item avatar' style='cursor:pointer' onclick=\"location.href='/graphium/agent'\"><img src='"+url_icon+"' alt='' style='width: auto !important;' class='circle'><span class='title'>"+name+"</span><p>"+lat+"<br>"+lng+"</p><a href='#!' class='secondary-content'></a></li>"
         return the_html;
     }
-    
+
     function finishSwarm(){
         $.ajax({
             url: "/graphium/analytics/finishSwarm",
@@ -243,21 +239,21 @@
               swarm_identifier: swarm_identifier
             },
             complete: function(){
-              
+
             },
             success: function($data) {
                 if($data === true){
                     Materialize.toast('The swarm was stoped! ', 2000,'rounded')
                 }else{
                     Materialize.toast('Not was possible to stop the swarm. Try again later ', 2000,'rounded')
-                }                
+                }
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 Materialize.toast('Not was possible to stop the swarm. Try again later ', 2000,'rounded')
             }
         });
     }
-    
+
     function update(){
         console.log('update!');
         $.ajax({
@@ -269,8 +265,8 @@
             complete: function(){
               for(var a=0; a < markers.length;a++){
                   //markers[a].setMap(null);
-                  
-              }  
+
+              }
               for(var a=0; a <lines.length;a++){
                   ///lines[a].setMap(null);
               }
@@ -294,7 +290,7 @@
                     swarm_identifier = 0;
                     Materialize.toast('No active swarm', 2000,'rounded');
                     hearing_swarm();
-                    
+
                 }else{
                     // Swarm information
                     swarm_active = true
@@ -311,60 +307,63 @@
                     $('#informations').html(swarm_info);
                     document.querySelector('#end_start i').style.color= '';
                     document.querySelector('#end_start i').style.cursor= 'pointer';
-                    
+                    for(var a=0; a < markers.length;a++){
+                      markers[a].setMap(null);
+                    }
+                    markers = []
                     // Agent Informations
                     the_html_to_show = "<ul class='collection'>"
                     for(var a=0;a < $data.agents.length;a++){
-                        
+
                         if(!$data.agents[a].active){
                             name = $data.agents[a].name + " (inative)"
                         }else{
                             name = $data.agents[a].name
                         }
-                        
+
                         the_html_to_show += addNameToHtml(a,name,$data.agents[a].color,$data.agents[a].last_street,$data.agents[a].last_lat+", "+$data.agents[a].last_lng);
                         addMarker(a,$data.agents[a].name,$data.agents[a].last_lat, $data.agents[a].last_lng);
-                        
+
                         for(var b=0; b < $data.agents[a].pathbread.length;b++){
-                            
+
                            if(b!=0 && b < $data.agents[a].pathbread.length-2){
                               addLine($data.agents[a].color, $data.agents[a].pathbread[b].lat, $data.agents[a].pathbread[b].lng,
-                                      $data.agents[a].pathbread[b+1].lat, $data.agents[a].pathbread[b+1].lng,$data.agents[a].pathbread[b].jump) 
+                                      $data.agents[a].pathbread[b+1].lat, $data.agents[a].pathbread[b+1].lng,$data.agents[a].pathbread[b].jump)
                            }
-                           
+
                         }
-                        
+
                         for(var b=0; b < $data.agents[a].visited_streets.length;b++){
                             if($data.agents[a].visited_streets[b]!=""){
                                 visited_streets.push($data.agents[a].visited_streets[b])
                             }
-                            
+
                         }
-                        
+
                     }
-                    
+
                     var uniqueNames = [];
                     $.each(visited_streets, function(i, el){
                         if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
                     });
-                    
+
                     streets_to_show = "<table class='highlight'><tbody>";
                     for(var a=0;a< uniqueNames.length;a++){
                         streets_to_show +="<tr>"+uniqueNames[a]+"</br></tr>";
                     }
                     streets_to_show += "</tbody></table>";
-                    
+
                     $('#street_names').html(streets_to_show);
-                    
+
                     the_html_to_show +="</ul>"
                     $('#agent_sleeping').hide();
                     $('#agent_disconnected').hide();
                     $('#agent_showing').html(the_html_to_show);
                     $('#agent_showing').show();
-                    
+
                 }
                 Materialize.toast('atualizado', 500,'rounded')
-                
+
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 console.log('error',thrownError);
@@ -382,38 +381,38 @@
             }
         });
     }
-    
+
     function hearing_swarm(){
         if(play != true){
-            $("#play_and_stop").html('<i class="material-icons">sync_disabled</i>'); 
+            $("#play_and_stop").html('<i class="material-icons">sync_disabled</i>');
         }else{
-            $("#play_and_stop").html('<i class="material-icons">sync</i>'); 
+            $("#play_and_stop").html('<i class="material-icons">sync</i>');
         }
         play = !play;
     }
-    
+
     function endExecutation(){
         if(document.querySelector('#end_start i').style.color == ""){
             $('#modal1').modal('open');
         }
     }
-    
+
     $(document).ready(function(){
-        
+
         document.querySelector("div[class='container']").style.padding = '0px 10px';
         $("div[class='container']").removeClass('container')
-        
+
         $('#map').width($('#column_left').width()+"px");
         $('#map').css('min-height',$(window).height()-174+"px");
         $('.collapsible').collapsible('open', 0);
-        
+
         $('.tooltipped').tooltip({delay: 50});
-        
+
         $('.modal').modal();
     });
-    
+
     setInterval(function(){
-        
+
         if(play){
             update_on_map = parseInt(document.querySelector('#update_on_map').value);
             time_out = 1000*update_on_map;
@@ -421,14 +420,14 @@
             update();
         }
     }, time_out)
-    
+
     <% if params[:swarmId] != nil%>
         // play from param swarmId
         swarm_identifier = "<%=params[:swarmId]%>";
         hearing_swarm();
         Materialize.toast('Play from param', 1000)
     <%end%>
-    
+
 </script>
 <style>
     #map {

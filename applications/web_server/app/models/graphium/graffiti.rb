@@ -8,6 +8,7 @@ class Graphium::Graffiti
   field :pitch, type: Integer
   field :heading, type: String
   field :address, type: String
+  field :pano_id, type: String
 
   store_in collection: "graffiti", database: "graphium"
 end

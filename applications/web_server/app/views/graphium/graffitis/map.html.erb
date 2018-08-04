@@ -193,7 +193,7 @@
           for(var a=0;a < graphium.length;a++){
             if(graphium[a]['lat']==e.latLng.lat()){
               var myLatlng = {lat: parseFloat(graphium[a]['lat']), lng: parseFloat(graphium[a]['lng'])};
-              map.setCenter(myLatlng);
+              //map.setCenter(myLatlng);
               document.querySelector('#preview img').style.display = ''
               document.querySelector('#preview img').src = 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location='+graphium[a]['lat']+','+graphium[a]['lng']+'&heading='+graphium[a]['heading']+'&pitch='+graphium[a]['pitch']+'&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM'
               $('#preview_lat').html("Lat: <b>"+graphium[a]['lat']+"</b>")
