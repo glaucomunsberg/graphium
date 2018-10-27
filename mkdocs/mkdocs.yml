@@ -1,7 +1,9 @@
 site_name: Graphium
 site_description: Graphium allow you look in street for elements learned in IA's model.
 pages:
-    - Home: 'index.md'
+    - Welcome: 'index.md'
+    - Installation: 'about/installation.md'
+    - Run Application: 'about/execution.md'
     - Swarm:
         - About Swarm: 'swarm/index.md'
         - Anima:
@@ -16,8 +18,10 @@ pages:
           - Helper: 'swarm/system/helper.md'
           - Logger: 'swarm/system/logger.md'
           - Logger: 'swarm/system/mongo.md'
+          - Session: 'swarm/system/session.md'
         - Assistant:
           - GeoSpatial: 'swarm/assistant/geospatial.md'
+          - GoogleAPI: 'swarm/assistant/googleapi.md'
           - Reader: 'swarm/assistant/reader.md'
           - API: 'swarm/assistant/api.md'
 
@@ -26,6 +30,7 @@ pages:
     - About:
         - 'License': 'about/license.md'
         - 'Release Notes': 'about/release-notes.md'
-theme: readthedocs
 site_author: 'Glauco Roberto Munsberg'
 site_url: 'http://www.glaucomunsberg.com/'
+theme:
+  name: 'material'

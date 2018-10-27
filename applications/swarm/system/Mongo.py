@@ -213,7 +213,7 @@ class Mongo:
     #   create a session of swarm and send the basic information
     #   return session ID
     #
-    def insertSwarm(self, identifier, num_agent,user_email="admin@graphium", name='default', start_at="", host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, active=True):
+    def insertSwarm(self, identifier, num_agent,user_email="admin@graphium.com", name='default', start_at="", host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, active=True):
         self.__collection = self.__db.swarm
         dataToSend = {'identifier':identifier, 'name':name, 'num_agent':num_agent, 'user_email':user_email, 'host':host, 'active':active, 'start_at':start_at, 'end_at':None, 'end_well':True, 'qmi':0.0, 'seconds_to_check_agents': seconds_to_check_agents, 'city_id':city_id, 'cycles_number':cycles_number, 'num_map_api_request':0 }
         return self.__collection.insert_one(dataToSend).inserted_id
@@ -230,7 +230,19 @@ class Mongo:
     #
     def updateSwarmByIdentifier(self,identifier,data):
         self.__collection = self.__db.swarm
-        self.__collection.update({'identifier':identifier},{"$set":data},upsert=False)
+        self.__collection.update({'identifier': identifier}, {"$set": data}, upsert=False)
+
+    def get_session(self):
+        self.__collection = self.__db.session
+        return self.__collection.find_one({})
+
+    def update_session(self, data):
+        self.__collection = self.__db.session
+        self.__collection.update({}, {"$set": data}, upsert=False)
+
+    def create_session(self, data):
+        self.__collection = self.__db.session
+        self.__collection.insert_one(data)
 
     # countOneToMapsSwarmByIdentifer
     #   count plus one at num_map_api_request field in swarm
@@ -293,6 +305,6 @@ class Mongo:
     #   return the id
     #
     def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address,probability,swarm_identifier):
-        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'probability':float(probability), 'swarm_identifier':swarm_identifier}
+        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'probability':str(probability), 'swarm_identifier':swarm_identifier}
         self.__collection = self.__db.graffiti
         return self.__collection.insert_one(dataToSend).inserted_id

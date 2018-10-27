@@ -103,3 +103,6 @@ ENV/
 # picture directory
 data/pictures/google_street_view/*.jpeg
 data/pictures/scissor/*.jpeg
+
+# Ruby on Rails cache
+/applications/web_server/tmp/cache/

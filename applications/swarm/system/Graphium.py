@@ -1,19 +1,23 @@
-import json, traceback, os
+import json
+import traceback
+import os
+
 
 class Graphium:
 
-    _instance   = None
+    _instance = None
 
-    config      = None
-    mongodb     = None
-    osm         = None
-    swarm       = None
-    gmaps       = None
-    scissor     = None
+    config = None
+    mongodb = None
+    osm = None
+    swarm = None
+    gmaps = None
+    scissor = None
+    oracle = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super(Helper, cls).__new__(cls, *args, **kwargs)
+            cls._instance = super(Graphium, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
     def __init__(self):
@@ -28,8 +32,9 @@ class Graphium:
         try:
             with open('../../data/configs/graphium.json', 'r') as f:
                 self.config = json.load(f)
-        except:
+        except Exception, e:
             print "ERROR to load graphium.json"
+            print e
             print traceback.format_exc()
             return
 
@@ -38,44 +43,61 @@ class Graphium:
             try:
                 with open('../../data/configs/graphium.json', 'w') as f:
                     json.dump(self.config, f)
-            except:
+            except Exception, e:
                 print "ERROR to update config absolute path"
+                print e
                 print traceback.format_exc()
 
         try:
             with open(self.config['path_root']+self.config['path_config']+'mongodb.json', 'r') as f:
                 self.mongodb = json.load(f)
-        except:
+        except Exception, e:
             print "ERROR to update mongodb absolute path"
+            print e
             print traceback.format_exc()
 
         try:
             with open(self.config['path_root']+self.config['path_config']+'osm.json', 'r') as f:
                 self.osm = json.load(f)
-        except:
+        except Exception, e:
             print "ERROR to update osm absolute path"
+            print e
             print traceback.format_exc()
 
         try:
             with open(self.config['path_root']+self.config['path_config']+'swarm.json', 'r') as f:
                 self.swarm = json.load(f)
-        except:
+        except Exception, e:
             print "ERROR to update swarm absolute path"
+            print e
             print traceback.format_exc()
 
         try:
             with open(self.config['path_root']+self.config['path_config']+'gmaps.json', 'r') as f:
                 self.gmaps = json.load(f)
-        except:
+        except Exception, e:
             print "ERROR to update gmaps absolute path"
+            print e
             print traceback.format_exc()
 
         try:
             with open(self.config['path_root']+self.config['path_config']+'scissor.json', 'r') as f:
                 self.scissor = json.load(f)
-        except:
+        except Exception, e:
             print "ERROR to update scissor absolute path"
+            print e
             print traceback.format_exc()
+
+        try:
+            with open(self.config['path_root']+self.config['path_config']+'oracle.json', 'r') as f:
+                self.oracle = json.load(f)
+        except Exception, e:
+            print "ERROR to update oracle absolute path"
+            print e
+            print traceback.format_exc()
+
+        if not len(self.gmaps['google_console_key']) == len(self.gmaps['limit_request_by_key']):
+            print "WARNING 'google_console_key','limit_request_by_key' and 'limit_second_by_key' is wrong size!"
 
     def path_config(self):
         return self.config['path_root']+self.config['path_config']

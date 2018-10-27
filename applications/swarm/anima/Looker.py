@@ -12,32 +12,31 @@ from Oracle import Oracle
 
 class Looker:
 
-    _g          = None
-    _helper     = None
-    _logger     = None
-    _mongo      = None
-    _api        = None
-    _oracle     = None
-    geos        = None
+    _g = None
+    _helper = None
+    _logger = None
+    _mongo = None
+    _api = None
+    _oracle = None
+    geos = None
 
+    def __init__(self, swarm_identifier, logger=None):
 
-    def __init__(self,swarm_identifier,logger=None):
+        self._g = Graphium()
+        self._helper = Helper()
+        self._mongo = Mongo()
+        self._swarm_identifier = swarm_identifier
 
-        self._g                     = Graphium()
-        self._helper                = Helper()
-        self._mongo                 = Mongo()
-        self._swarm_identifier      = swarm_identifier
-
-        if logger == None:
-            self._logger    = Logger()
+        if logger is None:
+            self._logger = Logger()
         else:
-            self._logger    = logger
+            self._logger = logger
 
-        self.geos       = GeoSpatial(self._logger)
-        self._api       = API(self._swarm_identifier,self._logger)
-        self._oracle    = Oracle("20170821191051",self._logger)
+        self.geos = GeoSpatial(self._logger)
+        self._api = API(self._swarm_identifier, self._logger)
+        self._oracle = Oracle(self._logger)
 
-    def driveFromPointToPoint(self,dot1,dot2,way_osm_id):
+    def driveFromPointToPoint(self, dot1, dot2, way_osm_id):
         self._logger.info("Looker: Check dot {0} and {1}".format(dot1,dot2))
         #   slice two points to in two or many points
         #   get the orientation of route

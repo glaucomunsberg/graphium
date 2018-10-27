@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc412824-49c0-40c5-b73a-408fc69af10f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Graphium_CONF.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/swarm/system/Session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/swarm/test/GoogleTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/applications/swarm/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/configs/oracle.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mkdocs/docs/about/execution.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mkdocs/docs/about/installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/googleapi.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/system/session.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/anima/Looker.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/anima/Looker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/anima/Oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/anima/Oracle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/assistant/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/assistant/API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/assistant/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/test/test_geocode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Graphium.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Graphium.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Mongo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0J/0JJLmIu99IQm0hyTry-fzjxTStUABw-PQWfsvrlupzo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0J/0JJLmIu99IQm0hyTry-fzjxTStUABw-PQWfsvrlupzo.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0a/0aGeAFdkkl52TRWYB9pigWWyTn7RFSIl4viFgYJQq3I.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0a/0aGeAFdkkl52TRWYB9pigWWyTn7RFSIl4viFgYJQq3I.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/2Z/2ZGRiE9coB6TvzD66Ns88RqrGAo5s1GoO1r8oIWElzI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/2Z/2ZGRiE9coB6TvzD66Ns88RqrGAo5s1GoO1r8oIWElzI.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7A/7AQoToBcuO4ynRpzeec1Hk5f_f4OAjMFEv8GQQUlNXg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7A/7AQoToBcuO4ynRpzeec1Hk5f_f4OAjMFEv8GQQUlNXg.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7b/7baje7zPfX20G1VEqvB9O70NwXYO7wZfl5JiR6Rcp6U.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7b/7baje7zPfX20G1VEqvB9O70NwXYO7wZfl5JiR6Rcp6U.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8W9pIxNWCSTQayhht5KAf29v1BORPEFSJOi3PVdNQjI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8W9pIxNWCSTQayhht5KAf29v1BORPEFSJOi3PVdNQjI.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8WUpp_94qXvCK0ut_pm7Ec7dQxtMNb4t7VxYQzEkjc4.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8WUpp_94qXvCK0ut_pm7Ec7dQxtMNb4t7VxYQzEkjc4.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9K/9KBUXyxW_eSdUKTFbtVJCzYEaHn-PWbAVr6BoHUaUGs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9K/9KBUXyxW_eSdUKTFbtVJCzYEaHn-PWbAVr6BoHUaUGs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9l/9lFsKAbaMhccheGkXikzz4EGD1cQp320DL2AzMYxv-Q.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9l/9lFsKAbaMhccheGkXikzz4EGD1cQp320DL2AzMYxv-Q.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/AN/ANVey4PweZT2ruwUvcY52lmlhB5hTHDS8MX3jOxBzss.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/AN/ANVey4PweZT2ruwUvcY52lmlhB5hTHDS8MX3jOxBzss.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Bh/BHWo9NA7RYHktYU6QKD-7QdPoiroGqFk4ugUFlkWViM.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Bh/BHWo9NA7RYHktYU6QKD-7QdPoiroGqFk4ugUFlkWViM.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/C9/C90gI-TR-MK9Tk7mxOgnUAaUt6fzEyPHOo41WvUzk3I.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/C9/C90gI-TR-MK9Tk7mxOgnUAaUt6fzEyPHOo41WvUzk3I.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ch/CheC8zNHfvxpOH2wDo52IBPl0nOKc2vGEJ3zG8ZMi0Q.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ch/CheC8zNHfvxpOH2wDo52IBPl0nOKc2vGEJ3zG8ZMi0Q.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/CO0jzxuK4OCPmf4ZZiMPih00O9nSfseXyptCdSbxaQo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/CO0jzxuK4OCPmf4ZZiMPih00O9nSfseXyptCdSbxaQo.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/Co-qaRao4BL8o8xFGk7RXlEXyH78Jor09foHIueCveI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/Co-qaRao4BL8o8xFGk7RXlEXyH78Jor09foHIueCveI.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Cr/Cr02RUS8P3wc1tBM0v--wxXRq545d3z9vdMwLgL1IH0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Cr/Cr02RUS8P3wc1tBM0v--wxXRq545d3z9vdMwLgL1IH0.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/DO/DOKDxMHkugwjYNiHI9UYpFsLd3cm4leivgHA_l3vtXk.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/DO/DOKDxMHkugwjYNiHI9UYpFsLd3cm4leivgHA_l3vtXk.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Et/Et7b_sQwP05Buo2gE8bECcS28y4hwD-NZwg83fyALwo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Et/Et7b_sQwP05Buo2gE8bECcS28y4hwD-NZwg83fyALwo.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/FS/FS7SjLf3d2HCJG4041nrpJWi_I5EwYVi7bduNL_jCCM.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/FS/FS7SjLf3d2HCJG4041nrpJWi_I5EwYVi7bduNL_jCCM.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Fp/FpxPAkVRUsaKfsv2uJt7Mi9ZCU1GY1ZmfQWO9a0_Oow.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Fp/FpxPAkVRUsaKfsv2uJt7Mi9ZCU1GY1ZmfQWO9a0_Oow.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/G_/G_tTxWklzKs96ihD6PakGxciJYdIJpTszzZJ91jf8CE.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/G_/G_tTxWklzKs96ihD6PakGxciJYdIJpTszzZJ91jf8CE.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HB/HBW-1w8GQ-GNAXbobrY8YzG8eM915ryQ3UbBSZH4WaI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HB/HBW-1w8GQ-GNAXbobrY8YzG8eM915ryQ3UbBSZH4WaI.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HW/HWjx9eO49VAbX7ucZkPax8xRa9hqx1iqD4IJ4uj7ZlU.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HW/HWjx9eO49VAbX7ucZkPax8xRa9hqx1iqD4IJ4uj7ZlU.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Io/Io6PRqLPYO6qH-L91Lq6ckVufjREWWvVZxFG-waFmHw.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Io/Io6PRqLPYO6qH-L91Lq6ckVufjREWWvVZxFG-waFmHw.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Iu/IupF0YVUqJJHMMozuqiWx0DPOKeOhgWVp5xiyYFvxS8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Iu/IupF0YVUqJJHMMozuqiWx0DPOKeOhgWVp5xiyYFvxS8.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/K3/K3dO-QBoM8tlChbQhInOsgcp-u9Lp3z8AJTFJVk5S3E.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/K3/K3dO-QBoM8tlChbQhInOsgcp-u9Lp3z8AJTFJVk5S3E.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/KA/KAgPA7PwyfUgxsobiQ0pSFUHiraIWVwgQuqbFJbxj0k.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/KA/KAgPA7PwyfUgxsobiQ0pSFUHiraIWVwgQuqbFJbxj0k.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Kw/Kw9CulIvFVB8H-vI_o91EgNRTOO0kf4A3FWIZ5MzcnQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Kw/Kw9CulIvFVB8H-vI_o91EgNRTOO0kf4A3FWIZ5MzcnQ.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/M1/M10tzrUZqHTQCPOg3fY2i6a58tCEXhzIWg3m142J8EU.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/M1/M10tzrUZqHTQCPOg3fY2i6a58tCEXhzIWg3m142J8EU.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Nx/NXP0yir5uk3B_YQNFZQZ5QpFZnlkqv3CFoaDmmmj1gE.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Nx/NXP0yir5uk3B_YQNFZQZ5QpFZnlkqv3CFoaDmmmj1gE.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/OF/OfDcCEI12wQ6OiLs7bN0F-aFpSHZBY18ruhFTw2xVF4.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/OF/OfDcCEI12wQ6OiLs7bN0F-aFpSHZBY18ruhFTw2xVF4.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Oe/OeK5fas73AcAma3xLu-BW1qFgBL_kMyeYx9-8FzV_ns.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Oe/OeK5fas73AcAma3xLu-BW1qFgBL_kMyeYx9-8FzV_ns.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ov/Ovf5udC2I4P4-VmgNIun5QcwJA5Ms5oXymrsYkjYfmg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ov/Ovf5udC2I4P4-VmgNIun5QcwJA5Ms5oXymrsYkjYfmg.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/P0/P0lFxcEquo8p_JB1G1kL4h9hy--jOkVjvyWjFxqOEqk.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/P0/P0lFxcEquo8p_JB1G1kL4h9hy--jOkVjvyWjFxqOEqk.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Pp/PpRW1icio31ehNjkdJ0junHFL8VqavUbNmvf6SQGwwc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Pp/PpRW1icio31ehNjkdJ0junHFL8VqavUbNmvf6SQGwwc.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/QD/QD158taFtl-LMQH5DUwBa7jQg--pWFfFulVqouQ1Hrs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/QD/QD158taFtl-LMQH5DUwBa7jQg--pWFfFulVqouQ1Hrs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Qc/Qci_JYQYXfVCkg6I0TS5LeRov7_lwZy1cB1NkWp0X9s.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Qc/Qci_JYQYXfVCkg6I0TS5LeRov7_lwZy1cB1NkWp0X9s.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Re/Remxy4fpO4lAWvzwx0cZWLad66koczqfacrIi6sNFkc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Re/Remxy4fpO4lAWvzwx0cZWLad66koczqfacrIi6sNFkc.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ss/SsGB0ENEM2xHXiAjimVyPNKL5AOq8LMr5fpV_QpmqPY.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ss/SsGB0ENEM2xHXiAjimVyPNKL5AOq8LMr5fpV_QpmqPY.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ty/Tyls1WXMdDq7Et02mIulmokfp38XNXUEZyjyL2c-4_U.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ty/Tyls1WXMdDq7Et02mIulmokfp38XNXUEZyjyL2c-4_U.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ut/Ut8Ufsmos_5hQlcix8Xk1TiwvWe6kjU0vG1y_oVWXqg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ut/Ut8Ufsmos_5hQlcix8Xk1TiwvWe6kjU0vG1y_oVWXqg.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/VX/VXpVfGm2-Y9toEM0VQKD15NrUwHSM_HdTqiLKy3ea50.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/VX/VXpVfGm2-Y9toEM0VQKD15NrUwHSM_HdTqiLKy3ea50.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/X4/X46swcRfwqMkm0V26nfQ4jwuUSetfS0b-uoQhFDKau8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/X4/X46swcRfwqMkm0V26nfQ4jwuUSetfS0b-uoQhFDKau8.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Xj/XjyuWmGyCdE1x1NF7c8CbtZqlIePMfp-Tfb3pabVMEU.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Xj/XjyuWmGyCdE1x1NF7c8CbtZqlIePMfp-Tfb3pabVMEU.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/aO/aOaXhHzjxR5KLdz1yOrIE5LkDU4AyBn23B6DTnh3XFE.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/aO/aOaXhHzjxR5KLdz1yOrIE5LkDU4AyBn23B6DTnh3XFE.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ax/axriQmJPzBHvHHdueKA6fHHimVEXU6XgAzIP_0JeiwI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ax/axriQmJPzBHvHHdueKA6fHHimVEXU6XgAzIP_0JeiwI.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/e6/e6uMf2ZzEbX78Eh7OuabmiHRPNPU2THCvhcLvJIk02w.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/e6/e6uMf2ZzEbX78Eh7OuabmiHRPNPU2THCvhcLvJIk02w.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ht/hthn7IamMoeWPE8Ar1B7ij3AAWnfLvVR0RmczzgM37w.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ht/hthn7IamMoeWPE8Ar1B7ij3AAWnfLvVR0RmczzgM37w.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/iG/iGD4xtGZcIIlLKa1grozzI1C09Ybmg9OrO5awoLvCms.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/iG/iGD4xtGZcIIlLKa1grozzI1C09Ybmg9OrO5awoLvCms.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/jt/jtqtpnLC8QlZu98agBivnTJjO-QYFvNg27IuD2W6h04.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/jt/jtqtpnLC8QlZu98agBivnTJjO-QYFvNg27IuD2W6h04.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kF/kFxMKrAiHJV0rXZTaDZNgV3MgBBLd31lucxC4M6E8jY.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kF/kFxMKrAiHJV0rXZTaDZNgV3MgBBLd31lucxC4M6E8jY.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kb/kbHRnboBX4O32ltMIBADg6jUcIO40hHq_qW6azNurvg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kb/kbHRnboBX4O32ltMIBADg6jUcIO40hHq_qW6azNurvg.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kh/kh0cTrbkJqpCoBNy_mrgXyIIzeAZCRBfeMJXDLDmpyY.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kh/kh0cTrbkJqpCoBNy_mrgXyIIzeAZCRBfeMJXDLDmpyY.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/m8/m8o9-YElPSMnGsLjUYgRvTSTPVUgviAOCUWeljgqBQA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/m8/m8o9-YElPSMnGsLjUYgRvTSTPVUgviAOCUWeljgqBQA.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/n5/n5jC9rI6KOpZU08MzfM0rUENGL7ltDhH6wBqU3Z_rmc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/n5/n5jC9rI6KOpZU08MzfM0rUENGL7ltDhH6wBqU3Z_rmc.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/o9/o9C7zUfyoBD43_Wd7BXuj0FJdX4Shk7ZXX8A60Bfb4I.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/o9/o9C7zUfyoBD43_Wd7BXuj0FJdX4Shk7ZXX8A60Bfb4I.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qJ/qJn_NIAI6DaPHSPuy9uB5-8wGbzUyKZIeZMXwfIEqbs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qJ/qJn_NIAI6DaPHSPuy9uB5-8wGbzUyKZIeZMXwfIEqbs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qT/qTFvb3bjC3RuONdlPoigfbpz-ZkjqyJvbvy4CX1QQ5U.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qT/qTFvb3bjC3RuONdlPoigfbpz-ZkjqyJvbvy4CX1QQ5U.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qe/qeYKkDVUGVXeqNFhioLIP8fqEPok0aty5zuEqdLXhr0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qe/qeYKkDVUGVXeqNFhioLIP8fqEPok0aty5zuEqdLXhr0.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/s_/s_yK8b_bOIacjT10qM0Q6lZdDdRveAZw8nOya2Exrv0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/s_/s_yK8b_bOIacjT10qM0Q6lZdDdRveAZw8nOya2Exrv0.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/u0/u0dTuolU3RLfyNuTSPO0_G52qPv6QCktlmQ3p5yJ-Cs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/u0/u0dTuolU3RLfyNuTSPO0_G52qPv6QCktlmQ3p5yJ-Cs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/uv/uvMKyA2L7hWrNg5wtdlHFxJzJUT3ievFaNfPBDR_xVg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/uv/uvMKyA2L7hWrNg5wtdlHFxJzJUT3ievFaNfPBDR_xVg.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vM/vMqX_1VvXyaGtgc7dx2C8bBu_JrB1MGIONoHGZWsMw0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vM/vMqX_1VvXyaGtgc7dx2C8bBu_JrB1MGIONoHGZWsMw0.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vV/vV_GtsVsWHEnzYSIhX_7Ofc5589fPcoUspJFYy_I0lQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vV/vV_GtsVsWHEnzYSIhX_7Ofc5589fPcoUspJFYy_I0lQ.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vf/vfm6GzMJ97e7483Xj6Dc9Dl4CFdNTROYyW-MAXvkMnk.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vf/vfm6GzMJ97e7483Xj6Dc9Dl4CFdNTROYyW-MAXvkMnk.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/wn/wnywy8CQuf_jXye4bsTmhDJBk3Gdh9E2W42fx9cG-Kw.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/wn/wnywy8CQuf_jXye4bsTmhDJBk3Gdh9E2W42fx9cG-Kw.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/z0/z0eVzXd2K6iNmdzC56pRT44WXDtH0RRyY-WAXmanU70.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/z0/z0eVzXd2K6iNmdzC56pRT44WXDtH0RRyY-WAXmanU70.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/pids/server.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/configs/gmaps.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/configs/gmaps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/configs/graphium.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/configs/graphium.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pictures/google_street_view/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pictures/scissor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/mkdocs.yml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1468262383">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Graphium CONF" value="56" />
+          <entry key="Python Console" value="33" />
+          <entry key="json" value="29" />
+          <entry key="md" value="2260" />
+          <entry key="py" value="2621" />
+          <entry key="yml" value="167" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="29" />
+          <entry key="Markdown" value="2260" />
+          <entry key="Python" value="2710" />
+          <entry key="YAML" value="167" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="json" value="16" />
+          <entry key="md" value="19" />
+          <entry key="out" value="1" />
+          <entry key="py" value="41" />
+          <entry key="yml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.spring.boot.run.usages" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="16" />
+          <entry key="Markdown" value="19" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="41" />
+          <entry key="YAML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.spring.boot.mvc.usages" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/configs/oracle.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/swarm/anima/Oracle.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="12" />
+              <folding>
+                <element signature="e#47#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/release-notes.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="90">
+                <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/swarm/anima/Looker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="24" column="15" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="15" />
+              <folding>
+                <element signature="e#47#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/swarm/system/Mongo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>improve_count_by_key</find>
+      <find>g_key_usage_count</find>
+      <find>update_key_count_usageupdate_key_count_usage</find>
+      <find>logger</find>
+      <find>great_circle</find>
+      <find>self._logger</find>
+      <find>grmdsantos@inf.ufpel.edu.br</find>
+      <find>g_key_usage_last</find>
+      <find>google_console_key</find>
+      <find>update_key_data_start</find>
+      <find>update_session</find>
+      <find>Best position</find>
+      <find>time_now_string</find>
+      <find>print</find>
+      <find>update_key_count_usage</find>
+      <find>get_best_key_position</find>
+      <find>authorized</find>
+      <find>autorized</find>
+      <find>getMapsCounterSwarmByIdentifer</find>
+      <find>num_map_api_request</find>
+      <find>getSwarmByIdentifier</find>
+      <find>self._g.gmaps</find>
+      <find>get_authorization_key</find>
+      <find>key</find>
+      <find>authorizing_key</find>
+      <find>20170821191051</find>
+      <find>keras</find>
+      <find>geos</find>
+      <find>self._g</find>
+      <find>preprocess_input</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/applications/swarm</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/applications/swarm/Main.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/system/Helper.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/system/Logger.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/test/GoogleAPIManagement.py" />
+        <option value="$PROJECT_DIR$/data/configs/graphium.json" />
+        <option value="$PROJECT_DIR$/applications/swarm/system/Mongo.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/assistant/GoogleAPIManagement.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/GoogleTest.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/test/GoogleTest.py" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/swarm/system/session.md" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/index.md" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/about/environment.md" />
+        <option value="$PROJECT_DIR$/mkdocs/mkdocs.yml" />
+        <option value="$PROJECT_DIR$/applications/swarm/system/Session.py" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/googleapi.md" />
+        <option value="$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/assistant/API.py" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/about/execution.md" />
+        <option value="$PROJECT_DIR$/data/configs/oracle.json" />
+        <option value="$PROJECT_DIR$/applications/swarm/system/Graphium.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/anima/Looker.py" />
+        <option value="$PROJECT_DIR$/applications/swarm/anima/Oracle.py" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="729" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyInterpreterInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphium" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphium" type="462c0819:PsiDirectoryNode" />
+              <item name="applications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphium" type="462c0819:PsiDirectoryNode" />
+              <item name="applications" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphium" type="462c0819:PsiDirectoryNode" />
+              <item name="mkdocs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphium" type="462c0819:PsiDirectoryNode" />
+              <item name="mkdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphium" type="462c0819:PsiDirectoryNode" />
+              <item name="mkdocs" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/applications/swarm/test" />
+      <recent name="$PROJECT_DIR$/applications/swarm" />
+      <recent name="$PROJECT_DIR$/applications/swarm/assistant" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="graphium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc412824-49c0-40c5-b73a-408fc69af10f" name="Default Changelist" comment="" />
+      <created>1539870229236</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539870229236</updated>
+      <workItem from="1539870233060" duration="1120000" />
+      <workItem from="1540159616714" duration="1272000" />
+      <workItem from="1540161683259" duration="158000" />
+      <workItem from="1540161848902" duration="2090000" />
+      <workItem from="1540249323953" duration="2384000" />
+      <workItem from="1540418915313" duration="501000" />
+      <workItem from="1540593317523" duration="19842000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="27367000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26332796" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49919224" weight="0.20821919" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.20821919" />
+      <window_info anchor="right" x="0" y="0" width="270" height="600" id="Documentation" side_tool="true" weight="0.32956383" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="SciView" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2641357" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32876712" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49919224" weight="0.20821919" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50080776" side_tool="true" weight="0.20821919" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="SciView" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/swarm/system/graphium.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/Scissor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/system/Logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#47#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/Geospatial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/system/Helper.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/test/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/test/test_geocode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/hive/Agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/swarm/assistant/geospatial.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="188">
+            <caret line="18" lean-forward="true" selection-end-line="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/swarm/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/mkdocs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/swarm/system/mongo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-394" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/system/Session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/test/GoogleTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#46#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/swarm/system/session.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="300">
+            <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/swarm/assistant/googleapi.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="180">
+            <caret line="12" column="69" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/Teasas/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/API.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="203" column="50" selection-start-line="203" selection-start-column="41" selection-end-line="203" selection-end-column="50" />
+          <folding>
+            <element signature="e#47#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/Reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-852">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/execution.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="315">
+            <caret line="21" column="11" lean-forward="true" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/installation.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" selection-start-line="1" selection-end-line="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/nohup.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="979" column="30" selection-start-line="979" selection-start-column="30" selection-end-line="979" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/swarm.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/scissor.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/osm.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/mongodb.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/graphium.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/gmaps.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/system/Graphium.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/configs/oracle.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/anima/Looker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="15" />
+          <folding>
+            <element signature="e#47#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/system/Mongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/anima/Oracle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="e#47#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/release-notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7 (venv) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7 (venv)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>graphium</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

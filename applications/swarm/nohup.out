@@ -1,0 +1,1030 @@
+Using TensorFlow backend.
+2018-01-14 20:53:13.912149: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX
+Creating 3 agents
+distanceBetween 78.533630357 > 13m
+distanceBetween 67.7379692052 > 13m
+distanceBetween 128.538272626 > 13m
+distanceBetween 100.065233247 > 13m
+distanceBetween 228.510121643 > 13m
+distanceBetween 129.91581203 > 13m
+distanceBetween 25.92222754 > 13m
+distanceBetween 35.8254549051 > 13m
+distanceBetween 31.3251181549 > 13m
+distanceBetween 94.1646468703 > 13m
+distanceBetween 19.7076549187 > 13m
+distanceBetween 27.061388612 > 13m
+distanceBetween 118.529948947 > 13m
+distanceBetween 18.6049332068 > 13m
+distanceBetween 21.387389925 > 13m
+distanceBetween 43.4524032834 > 13m
+distanceBetween 10.5961592012 <= 13m
+distanceBetween 10.108074768 <= 13m
+distanceBetween 122.865957969 > 13m
+distanceBetween 32.8121627178 > 13m
+distanceBetween 113.480977613 > 13m
+distanceBetween 103.477453408 > 13m
+distanceBetween 20.2090951195 > 13m
+distanceBetween 86.8988559815 > 13m
+distanceBetween 13.9555681999 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/dcmnIDKxdipxAilD6Ha78w_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 221.90303889 > 13m
+distanceBetween 134.061390034 > 13m
+distanceBetween 29.846028624 > 13m
+distanceBetween 16.3671089992 > 13m
+distanceBetween 11.1365496886 <= 13m
+distanceBetween 12.3419441308 <= 13m
+distanceBetween 179.207350392 > 13m
+distanceBetween 222.908927628 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/LhstfKDUoXyPf8zF_Mmfnw_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 61.0340125924 > 13m
+distanceBetween 19.6909836526 > 13m
+distanceBetween 80.5786800566 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/EXcL09zj-y3opQ8p7oOx6A_h_245-224x224_resized.jpeg
+distanceBetween 63.1875050587 > 13m
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/-9ci080XMyZ-SW9H314mpA_h_245-224x224_resized.jpeg
+distanceBetween 9.6030202197 <= 13m
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 129.800244067 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/-9ci080XMyZ-SW9H314mpA_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 62.4698454866 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/U8ePsVZ6PT1v27EkGsutkg_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 45.8547760904 > 13m
+distanceBetween 21.3962984727 > 13m
+distanceBetween 26.1961246434 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/w48IoKD186xpJVOrmMRG1A_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Ot7-gItJBbdBK2OZzcg3Jw_h_245-224x224_resized.jpeg
+distanceBetween 33.5255455784 > 13m
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 8.32682013461 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/ywx-nf4qJwwS_Rzua725Wg_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 54.1958453387 > 13m
+distanceBetween 11.1613625564 <= 13m
+distanceBetween 80.5635392941 > 13m
+distanceBetween 83.5265836088 > 13m
+distanceBetween 148.106407184 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/zOXUe1lKS_ESNEayJ5x3KQ_h_65-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 107.713247495 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/lRrjMuF2aiYXFMr2O08CPg_h_245-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 222531033 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=222531033'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 76.22980113 > 13m
+distanceBetween 111.504170941 > 13m
+distanceBetween 243.574557306 > 13m
+distanceBetween 113.135000284 > 13m
+distanceBetween 32.47341155 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/-uwvgZqbCkZoN2wbfhPUog_h_312-224x224_resized.jpeg
+distanceBetween 38.5011392991 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/cTCMthiQ-HOkJg8GBb3dlw_h_319-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 368396523 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=368396523'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/82k-yr5LsE5AUtCHdLCFVA_h_312-224x224_resized.jpeg
+distanceBetween 31.6037381941 > 13m
+distanceBetween 87.7519625191 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/82k-yr5LsE5AUtCHdLCFVA_h_312-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/82k-yr5LsE5AUtCHdLCFVA_h_312-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/82k-yr5LsE5AUtCHdLCFVA_h_312-224x224_resized.jpeg
+distanceBetween 46.9046815106 > 13m
+distanceBetween 13.4505207818 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/jAAMWBnZPoZbKt4N7fRgfA_h_139-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 368396523 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=368396523'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 76.3236157657 > 13m
+distanceBetween 10.5608867059 <= 13m
+distanceBetween 197.224065979 > 13m
+distanceBetween 115.38543816 > 13m
+distanceBetween 30.6639169291 > 13m
+distanceBetween 69.6869038375 > 13m
+distanceBetween 153.232240491 > 13m
+distanceBetween 126.360412517 > 13m
+distanceBetween 62.6824008774 > 13m
+distanceBetween 77.4064668557 > 13m
+distanceBetween 202.278687114 > 13m
+distanceBetween 2.57986537807 <= 13m
+distanceBetween 92.5470377365 > 13m
+distanceBetween 81.5040467802 > 13m
+distanceBetween 90.6857235521 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/qym9hksfUArpTA7hkf1cpw_h_148-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/JGf5i1ljYL-zLr6Xpq8iRg_h_405-224x224_resized.jpeg
+distanceBetween 73.6935840295 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/JGf5i1ljYL-zLr6Xpq8iRg_h_408-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/VthYc5QRuLxLX-iuCqZnzA_h_328-224x224_resized.jpeg
+distanceBetween 40.0053222807 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/VthYc5QRuLxLX-iuCqZnzA_h_328-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/semN8t_8po-1q4XnyBsOeg_h_328-224x224_resized.jpeg
+distanceBetween 18.4954688998 > 13m
+distanceBetween 52.9761165092 > 13m
+distanceBetween 9.32615490546 <= 13m
+distanceBetween 14.9636604135 > 13m
+distanceBetween 10.4547120269 <= 13m
+distanceBetween 14.7030760887 > 13m
+distanceBetween 35.1909733248 > 13m
+distanceBetween 56.0755117129 > 13m
+distanceBetween 53.2093196755 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/zR9YyK6s25IAkmOb9JZBvA_h_73-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 333297686 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=333297686'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 21.2042333429 > 13m
+distanceBetween 54.0398950773 > 13m
+distanceBetween 21.0232592113 > 13m
+distanceBetween 25.7506327098 > 13m
+distanceBetween 18.2154474328 > 13m
+distanceBetween 87.0414037682 > 13m
+distanceBetween 47.603526361 > 13m
+distanceBetween 75.0793897354 > 13m
+distanceBetween 148.717940641 > 13m
+distanceBetween 32.5437174438 > 13m
+distanceBetween 65.9161251581 > 13m
+distanceBetween 53.566577397 > 13m
+distanceBetween 98.0712696383 > 13m
+distanceBetween 96.9528877671 > 13m
+distanceBetween 28.4596396814 > 13m
+distanceBetween 22.3628854299 > 13m
+distanceBetween 56.438774406 > 13m
+distanceBetween 86.8675757358 > 13m
+distanceBetween 127.362982977 > 13m
+distanceBetween 62.5554044539 > 13m
+distanceBetween 36.8718947062 > 13m
+distanceBetween 16.1418196045 > 13m
+distanceBetween 19.5835656865 > 13m
+distanceBetween 78.2283798476 > 13m
+distanceBetween 129.964705937 > 13m
+distanceBetween 110.760711155 > 13m
+distanceBetween 39.5023584755 > 13m
+distanceBetween 146.40551455 > 13m
+distanceBetween 109.166299937 > 13m
+distanceBetween 84.4868994193 > 13m
+distanceBetween 21.4561505733 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/PhqQp9TRs0WIkdrwGgkVcg_h_-24-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203168783 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203168783'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 116.787213975 > 13m
+distanceBetween 25.5508707653 > 13m
+distanceBetween 63.2242423732 > 13m
+distanceBetween 125.136914907 > 13m
+distanceBetween 11.2134642621 <= 13m
+distanceBetween 20.653312248 > 13m
+distanceBetween 85.5460534424 > 13m
+distanceBetween 4.78180034735 <= 13m
+distanceBetween 129.75227721 > 13m
+distanceBetween 45.0368190095 > 13m
+distanceBetween 62.6129382887 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/gLZnKdHn7fAjaJ7SsK27xA_h_80-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 223783730 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=223783730'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 87.4741134137 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/uVJX2vAkaMyGDZeFiG5zsA_h_71-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 223783730 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=223783730'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Y95kLwXZquAQEXDpnJs0UA_h_251-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 223783730 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=223783730'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/cvNbJxLlXh9CW6UCxk4eUQ_h_71-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 223783730 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=223783730'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 124.366627042 > 13m
+distanceBetween 14.2572017942 > 13m
+distanceBetween 8.91435549503 <= 13m
+distanceBetween 155.552422095 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/7Et-SOQN2NI8_I_y5m_Mww_h_240-224x224_resized.jpeg
+API: Error to get nominatim from way_id 108168739 error 'Unable to geocode'.
+distanceBetween 6.71947804834 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/u0svdYhgz3Z74xCJ2WuXsQ_h_252-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 223783730 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=223783730'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 10.9566180446 <= 13m
+distanceBetween 6.8845505811 <= 13m
+distanceBetween 131.792622344 > 13m
+distanceBetween 19.1305405394 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/0CjPisIs-uBXPNq6VoIOHQ_h_155-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203168783 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203168783'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 53.1369430102 > 13m
+distanceBetween 29.7022547249 > 13m
+distanceBetween 97.818605763 > 13m
+distanceBetween 18.7771103245 > 13m
+distanceBetween 48.252052513 > 13m
+distanceBetween 45.2264429135 > 13m
+distanceBetween 110.900333333 > 13m
+distanceBetween 119.962439651 > 13m
+distanceBetween 101.510015544 > 13m
+distanceBetween 90.4294174757 > 13m
+distanceBetween 79.3016550385 > 13m
+distanceBetween 8.17049764382 <= 13m
+distanceBetween 13.4281160873 > 13m
+distanceBetween 66.8843899042 > 13m
+distanceBetween 78.8298713162 > 13m
+distanceBetween 47.4983445907 > 13m
+distanceBetween 170.174120002 > 13m
+distanceBetween 129.24834852 > 13m
+distanceBetween 75.2603118841 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/pz7r8GYF0K_7UexwPgF2mQ_h_389-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203519349 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203519349'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 72.3684948461 > 13m
+distanceBetween 60.8779419785 > 13m
+distanceBetween 79.3828123399 > 13m
+distanceBetween 13.8944714907 > 13m
+distanceBetween 143.925271736 > 13m
+distanceBetween 63.1732569405 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/DjF6p0d07rnMIyxdRo7geg_h_389-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203519349 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203519349'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 37.736542357 > 13m
+distanceBetween 141.02669891 > 13m
+distanceBetween 20.7160115594 > 13m
+distanceBetween 25.8807833852 > 13m
+distanceBetween 12.990132393 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/fZnqZSB-tGJywNOSHU02jA_h_43-224x224_resized.jpeg
+distanceBetween 90.5892466896 > 13m
+distanceBetween 87.2982735654 > 13m
+distanceBetween 143.133269538 > 13m
+distanceBetween 23.5263440829 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/f6LPMiUJ-X79l-Zekud0Yw_h_-34-224x224_resized.jpeg
+API: Error to get nominatim from way_id 368398775 error 'Unable to geocode'.
+distanceBetween 225.570414235 > 13m
+distanceBetween 106.28882536 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/AZpN9wL2hutcF2TtYdsR6w_h_-25-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 295443761 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=295443761'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/dPVLgLggMyzDWenADJxBlw_h_-25-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 295443761 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=295443761'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 126.184465644 > 13m
+distanceBetween 10.664912291 <= 13m
+distanceBetween 111.202875518 > 13m
+distanceBetween 252.260742724 > 13m
+distanceBetween 128.356897241 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/B6EMKUBRtsj-RENdlRT7kQ_h_134-224x224_resized.jpeg
+distanceBetween 140.631290232 > 13m
+API: Error to get nominatim from way_id 414847914 error 'Unable to geocode'.
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/O6jat8ts9wXHHGEOFzUveQ_h_220-224x224_resized.jpeg
+distanceBetween 64.8507684548 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/wmmi_AM1C3oU9Fk_P3NkrQ_h_220-224x224_resized.jpeg
+distanceBetween 138.921150379 > 13m
+distanceBetween 32.014009921 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/oB4pgVUsMyqdKeUTJy14LA_h_3-224x224_resized.jpeg
+distanceBetween 155.287802329 > 13m
+distanceBetween 56.4569623196 > 13m
+distanceBetween 26.3397786061 > 13m
+distanceBetween 139.353238013 > 13m
+distanceBetween 17.0645771833 > 13m
+distanceBetween 17.2042711827 > 13m
+distanceBetween 17.9742794851 > 13m
+distanceBetween 13.6088594591 > 13m
+distanceBetween 124.695845718 > 13m
+distanceBetween 21.2137033704 > 13m
+distanceBetween 131.356803249 > 13m
+distanceBetween 140.13080256 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/0CxoXHaYPHQSxbH_OPRjeQ_h_40-224x224_resized.jpeg
+distanceBetween 137.821162889 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/nnqA3BV0WK8bUJ-Iqykirw_h_413-224x224_resized.jpeg
+distanceBetween 8.43245272923 <= 13m
+distanceBetween 31.3589699626 > 13m
+distanceBetween 132.816253775 > 13m
+distanceBetween 8.05855449228 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Vc2vFBRi5gPWvBnkOnnuRg_h_413-224x224_resized.jpeg
+distanceBetween 123.431647885 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/NmtjkCPm2rg40-pr1ZmsBg_h_40-224x224_resized.jpeg
+distanceBetween 111.971694025 > 13m
+distanceBetween 87.9230828249 > 13m
+distanceBetween 46.4194466732 > 13m
+distanceBetween 62.1059624924 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/XZY-PkfjUmY5YoEVyo8p5Q_h_121-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 368405319 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=368405319'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/XZY-PkfjUmY5YoEVyo8p5Q_h_121-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 368405319 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=368405319'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/XZY-PkfjUmY5YoEVyo8p5Q_h_121-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 368405319 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=368405319'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 114.642509916 > 13m
+distanceBetween 133.618163685 > 13m
+distanceBetween 137.30476809 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/_Jwne55Dof-BlCnkOFZZsQ_h_413-224x224_resized.jpeg
+distanceBetween 38.8592529037 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/AG48ecALZahjpYxU22v34g_h_422-224x224_resized.jpeg
+distanceBetween 3.4314936558 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/AG48ecALZahjpYxU22v34g_h_422-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/AG48ecALZahjpYxU22v34g_h_422-224x224_resized.jpeg
+distanceBetween 102.449140048 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/AG48ecALZahjpYxU22v34g_h_429-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/_orLNwkcwnP1sf-3HsA5lQ_h_429-224x224_resized.jpeg
+distanceBetween 134.868167786 > 13m
+distanceBetween 40.5879513421 > 13m
+distanceBetween 71.9243449874 > 13m
+distanceBetween 130.552450963 > 13m
+distanceBetween 46.766726509 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/u6IUYwlOXF5eESzrOSiULA_h_129-224x224_resized.jpeg
+distanceBetween 60.7581729208 > 13m
+distanceBetween 189.63053924 > 13m
+distanceBetween 132.901584044 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/9RXptmpKKMOjxh0kZTEQ9g_h_429-224x224_resized.jpeg
+distanceBetween 140.593844291 > 13m
+distanceBetween 117.432027321 > 13m
+distanceBetween 138.974452781 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Ycjud8aYnSAtzwlPjuldPg_h_429-224x224_resized.jpeg
+distanceBetween 142.980033645 > 13m
+distanceBetween 136.327893399 > 13m
+distanceBetween 165.510346014 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/cx4umovf2Lf6r_LyTPTh9g_h_-50-224x224_resized.jpeg
+distanceBetween 103.970467375 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/6VBLVtTWBmLm-jG6wC9fwQ_h_-50-224x224_resized.jpeg
+distanceBetween 41.7435576134 > 13m
+distanceBetween 27.777287226 > 13m
+distanceBetween 120.044989444 > 13m
+distanceBetween 73.7455302571 > 13m
+distanceBetween 127.240950125 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/jrvQKItRaiScX2DruQDUuA_h_428-224x224_resized.jpeg
+distanceBetween 97.6775990046 > 13m
+distanceBetween 169.499970071 > 13m
+distanceBetween 130.865833577 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Igye1p12yXp8qd1dFCgfwg_h_208-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203519300 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203519300'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/8wCYHh383ImVdLhVW7ev2w_h_427-224x224_resized.jpeg
+distanceBetween 98.8488974873 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/8wCYHh383ImVdLhVW7ev2w_h_429-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/wkDVYBz2iRsdUlxtz5aVwg_h_429-224x224_resized.jpeg
+distanceBetween 125.614385348 > 13m
+distanceBetween 97.5324896659 > 13m
+distanceBetween 15.3608171982 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/yxP_uu8eNJM8QwnpTr34Fg_h_429-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/3bpKguHUrMhfpLyhVGLz_w_h_335-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 190656556 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=190656556'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 143.150554027 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/PwLk_1YJyjNp9CSVyTVuyQ_h_429-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/shfuRBQBV0YOL20RWb9ecg_h_335-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 190656556 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=190656556'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 59.8379529386 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/tK4j-QYFCAz7qSPlP9kkxA_h_247-224x224_resized.jpeg
+distanceBetween 127.230708189 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/tK4j-QYFCAz7qSPlP9kkxA_h_427-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/ip2VEZLysSG8pnsDFHIK7g_h_427-224x224_resized.jpeg
+distanceBetween 7.72645641064 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/jtXchrLg-a6kSBc7htP1uw_h_208-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203519300 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203519300'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 39.5193987889 > 13m
+distanceBetween 145.352052422 > 13m
+distanceBetween 6.45816879026 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Q4fHPNp6khu8L7JMPvivHQ_h_388-224x224_resized.jpeg
+distanceBetween 7.61744316204 <= 13m
+distanceBetween 127.9330997 > 13m
+API: Exception!!! Error to get nominatim from way_id 203519300 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203519300'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/c8ShmjyYGj21xeFDr2n4bQ_h_335-224x224_resized.jpeg
+distanceBetween 5.09833683829 <= 13m
+API: Exception!!! Error to get nominatim from way_id 190656556 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=190656556'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 5.47864118349 <= 13m
+distanceBetween 5.97431783345 <= 13m
+distanceBetween 5.82976011224 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/qC9mz40WGsVblRXnGGMseA_h_388-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/t3NNGOtdZTLuoukQct7hkA_h_335-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 203519300 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=203519300'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+API: Exception!!! Error to get nominatim from way_id 190656556 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=190656556'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+distanceBetween 8.10092804496 <= 13m
+distanceBetween 144.941230902 > 13m
+distanceBetween 5.90431827976 <= 13m
+distanceBetween 149.596196244 > 13m
+distanceBetween 7.65156997159 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/v_WXEcwolPE8ZSk2DPo8dw_h_-70-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/RPKNR0BklvIaQ3DuW1ve_Q_h_335-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 190656556 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=190656556'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/aSVD4yIICEWV1nBnAcqGRg_h_335-224x224_resized.jpeg
+distanceBetween 7.1799174083 <= 13m
+API: Exception!!! Error to get nominatim from way_id 190656556 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=190656556'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 206, in getStreetGeoCodeInfoFromOSM
+    return_json['city']     = data['address']['city']
+KeyError: 'city'
+
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/hZHgTIk1_9ItTozHZgWvZg_h_-71-224x224_resized.jpeg
+distanceBetween 103.094875424 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/hZHgTIk1_9ItTozHZgWvZg_h_-71-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/g4ewhWuK9QPD-w7H7aJcIA_h_-71-224x224_resized.jpeg
+distanceBetween 52.8908673294 > 13m
+distanceBetween 87.9951509585 > 13m
+distanceBetween 102.784167808 > 13m
+distanceBetween 107.759982578 > 13m
+distanceBetween 73.4484702785 > 13m
+distanceBetween 442.15616633 > 13m
+distanceBetween 8.52959120307 <= 13m
+distanceBetween 7.26275802069 <= 13m
+distanceBetween 1024.10867052 > 13m
+distanceBetween 92.0999433527 > 13m
+distanceBetween 90.3824270912 > 13m
+distanceBetween 90.6947189724 > 13m
+distanceBetween 4.25193004628 <= 13m
+distanceBetween 261.488861695 > 13m
+distanceBetween 10.6072021755 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/0pDe2s_uzw4clVzGdxs3ww_h_94-224x224_resized.jpeg
+distanceBetween 88.1994758512 > 13m
+distanceBetween 40.1039247271 > 13m
+distanceBetween 59.0764775611 > 13m
+distanceBetween 29.1256336192 > 13m
+distanceBetween 28.0567550096 > 13m
+distanceBetween 77.2026609447 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/qQ6c4wjNFNrAospClFHyPg_h_-70-224x224_resized.jpeg
+distanceBetween 224.39236444 > 13m
+distanceBetween 20.4487749595 > 13m
+distanceBetween 80.289337025 > 13m
+distanceBetween 55.558621416 > 13m
+distanceBetween 10.4761140089 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/SM2tP_nn-bb9eWHzQ6jRaw_h_361-224x224_resized.jpeg
+distanceBetween 74.0668902958 > 13m
+distanceBetween 10.3597490884 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/YxtJDYI9GjFa7cltvYmLAQ_h_361-224x224_resized.jpeg
+distanceBetween 105.344055725 > 13m
+distanceBetween 88.0675609695 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/ujkP7R_s9sh5-QBJIyUZ0Q_h_282-224x224_resized.jpeg
+distanceBetween 81.3869622997 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/rGJfkSWo3rEJG5xWwsRMZQ_h_-70-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/nEJQjLkOWNPf-w7GbnFNdg_h_102-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/XDZkE3G1BroDAFNtjgLBzQ_h_102-224x224_resized.jpeg
+distanceBetween 199.604360806 > 13m
+distanceBetween 7.63163898535 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/yb2B_Sjmh5xqCxruHWf25A_h_102-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/yb2B_Sjmh5xqCxruHWf25A_h_282-224x224_resized.jpeg
+distanceBetween 7.5687580828 <= 13m
+distanceBetween 22.7822954445 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/yb2B_Sjmh5xqCxruHWf25A_h_105-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/HH4vxxs1ngfUN3wI1oyIPQ_h_203-224x224_resized.jpeg
+distanceBetween 127.842301787 > 13m
+distanceBetween 140.151791255 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/UhmE30na467ivXir9PhTyA_h_105-224x224_resized.jpeg
+distanceBetween 94.5606952027 > 13m
+distanceBetween 57.0422391906 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/APO_PkegsS8FUzvFO5xz0A_h_-71-224x224_resized.jpeg
+distanceBetween 37.214732544 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/brW7Fjr-s6EVgNbx-hyEuw_h_378-224x224_resized.jpeg
+distanceBetween 20.3988952225 > 13m
+distanceBetween 20.162374278 > 13m
+distanceBetween 53.1032175552 > 13m
+distanceBetween 9.65008779714 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/QuWkYcdAPMaNsL8Wp_s-jw_h_85-224x224_resized.jpeg
+distanceBetween 35.8596764785 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/QuWkYcdAPMaNsL8Wp_s-jw_h_73-224x224_resized.jpeg
+distanceBetween 8.26725375867 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Zb4BsX5lmD6a9ZesZzmH_w_h_73-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Zb4BsX5lmD6a9ZesZzmH_w_h_253-224x224_resized.jpeg
+distanceBetween 36.7634116394 > 13m
+distanceBetween 94.5508810793 > 13m
+distanceBetween 108.712754444 > 13m
+distanceBetween 88.7222067201 > 13m
+distanceBetween 7.71134854886 <= 13m
+distanceBetween 78.4783272805 > 13m
+distanceBetween 97.6088262674 > 13m
+distanceBetween 7.40402527453 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/-BFs9k9bd1_RlhXorDQWUw_h_327-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/TuY5_YbFWubcWayhajov-A_h_-70-224x224_resized.jpeg
+distanceBetween 80.7468039675 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/TuY5_YbFWubcWayhajov-A_h_-70-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/0EZpJ55HOYBSUEeeg7zuvQ_h_-70-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/lpZP4aQ5lxHXqQUBs5djrg_h_327-224x224_resized.jpeg
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/XLe8JgGjICmJB0ZlwWlXKQ_h_327-224x224_resized.jpeg
+distanceBetween 69.0201404687 > 13m
+distanceBetween 12.1907458682 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/P2Oa8BIwOqVcjXHtkCB2Mw_h_-70-224x224_resized.jpeg
+distanceBetween 95.9594879026 > 13m
+distanceBetween 110.775803657 > 13m
+distanceBetween 77.5559582364 > 13m
+distanceBetween 52.4504923769 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/j_tMNKMJJ-zyM_Tt0nFeFA_h_378-224x224_resized.jpeg
+distanceBetween 139.828575151 > 13m
+distanceBetween 57.0510808871 > 13m
+distanceBetween 121.254378342 > 13m
+distanceBetween 56.3239840638 > 13m
+distanceBetween 230.766250471 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/FVrNstlg_NUm3N3u26EmoQ_h_-82-224x224_resized.jpeg
+distanceBetween 100.699546117 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/UC6wAmpkM3PIPkAJ2E_46w_h_-82-224x224_resized.jpeg
+distanceBetween 51.1171014717 > 13m
+distanceBetween 151.014507773 > 13m
+distanceBetween 70.9282837085 > 13m
+distanceBetween 71.7397210558 > 13m
+distanceBetween 148.193913632 > 13m
+distanceBetween 99.4390749101 > 13m
+distanceBetween 33.2406429102 > 13m
+distanceBetween 217.658876284 > 13m
+distanceBetween 100.513204359 > 13m
+distanceBetween 80.6931126074 > 13m
+distanceBetween 239.950046167 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/6Mo4Nn4rxPlWjMSCgCaSwg_h_379-224x224_resized.jpeg
+distanceBetween 36.885797597 > 13m
+distanceBetween 9.28060036536 <= 13m
+distanceBetween 238.560674751 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/Gu4hSpj6j9bLJWRV_aTzGw_h_379-224x224_resized.jpeg
+distanceBetween 8.99443385963 <= 13m
+distanceBetween 114.74716161 > 13m
+distanceBetween 42.5270118927 > 13m
+distanceBetween 110.884764842 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/01cbEQplv6MZj7ZKqud-_Q_h_379-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 333463118 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=333463118'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 9.02455584604 <= 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/01cbEQplv6MZj7ZKqud-_Q_h_369-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 333463118 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=333463118'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 112.669570752 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/vCpdlJvGS5HsQuNiOLz9GA_h_369-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 333463118 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=333463118'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 44.6601905775 > 13m
+distanceBetween 85.9342143182 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/vCpdlJvGS5HsQuNiOLz9GA_h_368-224x224_resized.jpeg
+API: Exception!!! Error to get nominatim from way_id 333463118 url 'http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=333463118'.
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 203, in getStreetGeoCodeInfoFromOSM
+    return_json['address']  = data['address']['road']
+KeyError: 'road'
+
+distanceBetween 62.0755647556 > 13m
+distanceBetween 36.7048728884 > 13m
+distanceBetween 232.283076462 > 13m
+distanceBetween 20.9242889941 > 13m
+distanceBetween 114.341139497 > 13m
+distanceBetween 30.155781845 > 13m
+distanceBetween 70.6903339631 > 13m
+distanceBetween 15.4370357406 > 13m
+distanceBetween 90.6070918322 > 13m
+distanceBetween 137.292594129 > 13m
+distanceBetween 48.5770663983 > 13m
+distanceBetween 101.097881321 > 13m
+distanceBetween 112.02575341 > 13m
+distanceBetween 259.187612562 > 13m
+distanceBetween 61.928225825 > 13m
+distanceBetween 146.831301629 > 13m
+distanceBetween 113.72290267 > 13m
+distanceBetween 41.5440586547 > 13m
+distanceBetween 95.7286717363 > 13m
+distanceBetween 49.4751533381 > 13m
+distanceBetween 283.934599165 > 13m
+distanceBetween 412.909810153 > 13m
+distanceBetween 202.400020287 > 13m
+distanceBetween 44.6549788525 > 13m
+distanceBetween 32.8300426328 > 13m
+distanceBetween 57.1486262054 > 13m
+distanceBetween 104.543082947 > 13m
+distanceBetween 17.9170253132 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/4xnScQQj9DNNoR23XsoJOA_h_119-224x224_resized.jpeg
+distanceBetween 212.845972115 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/rHvDAB-KKvEiJJj8b1kCNA_h_119-224x224_resized.jpeg
+distanceBetween 81.2501334877 > 13m
+distanceBetween 99.2151088224 > 13m
+distanceBetween 14.951148708 > 13m
+distanceBetween 203.027367968 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/1Hsn360bupJdpc-fhrkoxA_h_447-224x224_resized.jpeg
+distanceBetween 279.050741788 > 13m
+distanceBetween 77.1306826136 > 13m
+Error:
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 135, in run
+    self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1],self._street['id_osm'])
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 227, in nodeByNode
+    self._looker.driveFromPointToPoint(dot1,dot2,way_osm_id)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 57, in driveFromPointToPoint
+    dataPointRight = self._api.getPanoByPoint(lat,lng,right_side)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 105, in getPanoByPoint
+    file_photo_metadata = self.getPanoInfoByPoint(lat,lng)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 139, in getPanoInfoByPoint
+    response = urllib2.urlopen(url_info)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1241, in https_open
+    context=self._context)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:661)>
+
+Creating 1 agents
+distanceBetween 162.876806096 > 13m
+Probability   n06596364
+Image Path    /Users/glaucomunsberg/Projects/graphium/data/pictures/scissor/9R5tXg8Aze95hmE3a2FxMA_h_210-224x224_resized.jpeg
+Error:
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 135, in run
+    self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1],self._street['id_osm'])
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 227, in nodeByNode
+    self._looker.driveFromPointToPoint(dot1,dot2,way_osm_id)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 56, in driveFromPointToPoint
+    dataPointLeft  = self._api.getPanoByPoint(lat,lng,left_side)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 105, in getPanoByPoint
+    file_photo_metadata = self.getPanoInfoByPoint(lat,lng)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/assistant/API.py", line 139, in getPanoInfoByPoint
+    response = urllib2.urlopen(url_info)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 154, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1241, in https_open
+    context=self._context)
+  File "/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error EOF occurred in violation of protocol (_ssl.c:661)>
+
+Creating 1 agents
+Error:
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 135, in run
+    self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1],self._street['id_osm'])
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 227, in nodeByNode
+    self._looker.driveFromPointToPoint(dot1,dot2,way_osm_id)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 65, in driveFromPointToPoint
+    self.checkPointToPredict(dataPointRight,way_osm_id)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 71, in checkPointToPredict
+    if self._oracle.predictInPano(dataPoint['image_path']):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Oracle.py", line 73, in predictInPano
+    predictions     = self.model.predict(x)
+  File "/usr/local/lib/python2.7/site-packages/keras/engine/training.py", line 1783, in predict
+    verbose=verbose, steps=steps)
+  File "/usr/local/lib/python2.7/site-packages/keras/engine/training.py", line 1299, in _predict_loop
+    batch_outs = f(ins_batch)
+  File "/usr/local/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 2350, in __call__
+    session = get_session()
+  File "/usr/local/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 188, in get_session
+    session.run(tf.variables_initializer(uninitialized_vars))
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1120, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1317, in _do_run
+    options, run_metadata)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1336, in _do_call
+    raise type(e)(node_def, op, message)
+InvalidArgumentError: Node 'IsVariableInitialized_124/block2_conv1/convolution/IsVariableInitialized_4/mul': Unknown input node 'IsVariableInitialized_124/block2_conv1/convolution/IsVariableInitialized_4/RandomUniform'
+
+Error:
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Swarm.py", line 82, in start
+    agent = Agent(self._identifier,self._logger)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 49, in __init__
+    self._looker        = Looker(swarm_identifier,self._logger)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 38, in __init__
+    self._oracle    = Oracle("20170821191051",self._logger)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Oracle.py", line 54, in __init__
+    self.model.load_weights(self.path_model_weights)
+  File "/usr/local/lib/python2.7/site-packages/keras/engine/topology.py", line 2622, in load_weights
+    load_weights_from_hdf5_group(f, self.layers)
+  File "/usr/local/lib/python2.7/site-packages/keras/engine/topology.py", line 3142, in load_weights_from_hdf5_group
+    K.batch_set_value(weight_value_tuples)
+  File "/usr/local/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 2247, in batch_set_value
+    get_session().run(assign_ops, feed_dict=feed_dict)
+  File "/usr/local/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 181, in get_session
+    [tf.is_variable_initialized(v) for v in candidate_vars])
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1120, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1317, in _do_run
+    options, run_metadata)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1336, in _do_call
+    raise type(e)(node_def, op, message)
+InvalidArgumentError: Node 'IsVariableInitialized_124/block3_conv2/random_uniform/sub': Unknown input node 'IsVariableInitialized_124/block3_conv2/random_uniform/max'
+
+Error:
+Traceback (most recent call last):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 135, in run
+    self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1],self._street['id_osm'])
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/hive/Agent.py", line 227, in nodeByNode
+    self._looker.driveFromPointToPoint(dot1,dot2,way_osm_id)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 60, in driveFromPointToPoint
+    self.checkPointToPredict(dataPointLeft,way_osm_id)
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Looker.py", line 71, in checkPointToPredict
+    if self._oracle.predictInPano(dataPoint['image_path']):
+  File "/Users/glaucomunsberg/Projects/graphium/applications/swarm/anima/Oracle.py", line 73, in predictInPano
+    predictions     = self.model.predict(x)
+  File "/usr/local/lib/python2.7/site-packages/keras/engine/training.py", line 1783, in predict
+    verbose=verbose, steps=steps)
+  File "/usr/local/lib/python2.7/site-packages/keras/engine/training.py", line 1299, in _predict_loop
+    batch_outs = f(ins_batch)
+  File "/usr/local/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 2350, in __call__
+    session = get_session()
+  File "/usr/local/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 181, in get_session
+    [tf.is_variable_initialized(v) for v in candidate_vars])
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 889, in run
+    run_metadata_ptr)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1120, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1317, in _do_run
+    options, run_metadata)
+  File "/usr/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1336, in _do_call
+    raise type(e)(node_def, op, message)
+InvalidArgumentError: Node 'IsVariableInitialized_124/IsVariableInitialized_58': Unknown input node 'IsVariableInitialized_124/block2_conv2/kernel'
+

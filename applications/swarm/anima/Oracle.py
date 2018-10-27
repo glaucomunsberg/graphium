@@ -1,32 +1,39 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import keras, os
+import os
 
 from system.Graphium import Graphium
 from system.Logger import Logger
 from assistant.Scissor import Scissor
-from keras.applications.vgg16 import VGG16,preprocess_input, decode_predictions
+from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
 from keras.preprocessing import image
 from keras.models import model_from_json
 import numpy as np
 
+
 class Oracle:
 
-    _instance   = None
-    _logger     = None
-    _g          = None
-    models      = None
+    _instance = None
+    _logger = None
+    _g = None
+    models = None
+    model_name = None
+    path_model_json = None
+    path_model_weights = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super(API, cls).__new__(cls, *args, **kwargs)
+            cls._instance = super(Oracle, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
-    def __init__(self,model_name="20170821191051",logger=None):
+    def __init__(self, model_name="20170821191051", logger=None):
 
-        self._g                 = Graphium()
-        self.path_model_json    = self._g.path_model()+model_name+".json"
+        self._g = Graphium()
+
+        self.model_name = self._g.oracle['model_name']
+
+        self.path_model_json = self._g.path_model()+model_name+".json"
         self.path_model_weights = self._g.path_model()+model_name+".h5"
 
         if not os.path.isfile(self.path_model_json):

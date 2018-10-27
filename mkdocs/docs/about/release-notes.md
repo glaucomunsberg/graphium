@@ -1,5 +1,12 @@
 # Release Notes
 
+## Version 0.0.5
+
+* `Anima`: `Oracle.py` now whit model params form json file
+* `System`: With `Session.py` to control accesses on google API
+* `Assistent`: Controller `GoogleAPI.py` to many Google Console Keys
+* `Docs`: With Google Material
+
 ## Version 0.0.4
 
 * `Anima`: fixing insertGraffiti call
@@ -23,8 +30,8 @@
 * `Assistant`: Intro `Looker.py` search the pictures on google street view
 * `Hive`: Improved the `Agent.py` and `API.py`
 * `System`: Now the `Graphium.py` has the config to download images from Google Street View
-* `System`: Graphium receive the picture folder to not request two time the same pano image. Google restricts 25.000 requests by day
+* `System`: Graphium receive the picture folder to not request two time the same pano_image. Google restricts 25.000 requests by day
 
 ## Version 0.0.1
 
-* Project start baseded on old graphium project
+* Project start based on old graphium project

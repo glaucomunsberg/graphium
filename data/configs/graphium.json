@@ -1,10 +1,1 @@
-{
-  "log_level": "INFO",
-  "path_root": "/Users/glaucomunsberg/Projects/graphium/",
-  "path_dataset": "data/datasets/",
-  "version": "0.0.4",
-  "path_log": "data/logs/",
-  "path_config": "data/configs/",
-  "path_picture": "data/pictures/",
-  "path_model": "data/models/"
-}
+{"path_picture": "data/pictures/", "log_level": "INFO", "path_root": "/Users/glaucomunsberg/Projetos/graphium/", "path_dataset": "data/datasets/", "path_model": "data/models/", "version": "0.0.4", "path_log": "data/logs/", "path_config": "data/configs/"}
