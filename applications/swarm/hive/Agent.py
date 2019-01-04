@@ -14,49 +14,47 @@ from anima.Looker import Looker
 
 class Agent(Thread):
 
-    _g              = None
+    _g = None
 
-    _mongo          = None
-    _logger         = None
-    _helper         = None
-    _geospatial     = None
-    _looker         = None
+    _mongo = None
+    _logger = None
+    _helper = None
+    _geospatial = None
+    _looker = None
 
-    _work           = None
-    _cycles         = None
+    _work = None
+    _cycles = None
 
     _agent_at_mongo = None
     _swarm_at_mongo = None
-    _street         = None
+    _street = None
 
-    _swarm_identifier   = None
-    _node_osm           = None
-    _node_osm_position  = None
+    _swarm_identifier = None
+    _node_osm = None
+    _node_osm_position = None
 
-
-    def __init__(self,swarm_identifier,logger=None):
+    def __init__(self, swarm_identifier, logger=None):
         Thread.__init__(self)
 
-        if logger == None:
-            self._logger    = Logger(swarm_identifier)
+        if logger is None:
+            self._logger = Logger(swarm_identifier)
         else:
-            self._logger    = logger
+            self._logger = logger
 
-        self._g             = Graphium()
-        self._mongo         = Mongo()
-        self._helper        = Helper()
-        self._geospatial    = GeoSpatial(self._logger)
-        self._looker        = Looker(swarm_identifier,self._logger)
+        self._g = Graphium()
+        self._mongo = Mongo()
+        self._helper = Helper()
+        self._geospatial = GeoSpatial(self._logger)
+        self._looker = Looker(swarm_identifier,self._logger)
 
-        self._swarm_identifier  = swarm_identifier
-        self._swarm_at_mongo    = self._mongo.getSwarmByIdentifier(swarm_identifier)
-        self._continue_the_job  = True
-        self._end_well          = True
+        self._swarm_identifier = swarm_identifier
+        self._swarm_at_mongo = self._mongo.getSwarmByIdentifier(swarm_identifier)
+        self._continue_the_job = True
+        self._end_well = True
 
         self.startAgent()
 
         self._logger.info('%s: Hello! I\'m ready! ;)' % (self.getName()))
-
 
     def run(self):
 
@@ -67,14 +65,14 @@ class Agent(Thread):
                 # if not set the last street
                 #   this agent need choose one street to start
                 #   else need to get from chooseTheNextStreet
-                if self._agent_at_mongo['last_street_id_osm'] == None:
+                if self._agent_at_mongo['last_street_id_osm'] is None:
                     self._street = self.chooseTheFirstStreet()
                 else:
-                    #self._street = self.chooseTheNextStreet()
+                    # self._street = self.chooseTheNextStreet()
                     self._street = self.fastChooseTheNextStret()
 
-                self._agent_at_mongo['last_street']         = self._street['name_osm']
-                self._agent_at_mongo['last_street_id_osm']  = self._street['id_osm']
+                self._agent_at_mongo['last_street'] = self._street['name_osm']
+                self._agent_at_mongo['last_street_id_osm'] = self._street['id_osm']
                 self._street['busy'] = True
 
                 self.appendStreetVisited(self._street['name_osm'])
@@ -211,22 +209,22 @@ class Agent(Thread):
     # nodeByNode
     #   calcule the distance between two dots in meters
     #
-    def nodeByNode(self,this_node,next_node,way_osm_id):
+    def nodeByNode(self, this_node, next_node, way_osm_id):
 
-        self.appendPathBread(this_node['id'],this_node['lat'],this_node['lng'],False)
+        self.appendPathBread(this_node['id'], this_node['lat'], this_node['lng'], False)
 
         lat1 = float(this_node['lat'])
         lng1 = float(this_node['lng'])
         lat2 = float(next_node['lat'])
         lng2 = float(next_node['lng'])
 
-        dot1 = (lat1,lng1)
-        dot2 = (lat2,lng2)
+        dot1 = (lat1, lng1)
+        dot2 = (lat2, lng2)
 
         result = self._geospatial.getDistance(dot1, dot2)
-        self._looker.driveFromPointToPoint(dot1,dot2,way_osm_id)
+        self._looker.driveFromPointToPoint(dot1, dot2, way_osm_id)
 
-        self._logger.info('%s: The distance from %s to %s is %s! :P'%(self.getName(),this_node['id'],next_node['id'],result))
+        self._logger.info('%s: The distance from %s to %s is %s! :P'%(self.getName(), this_node['id'], next_node['id'], result))
 
         return result
 
@@ -234,16 +232,16 @@ class Agent(Thread):
     # firstNode
     #   execute only on first node
     #
-    def firstNode(self,first_node):
-        self.appendPathBread(first_node['id'],first_node['lat'],first_node['lng'],False)
-        self._logger.info('%s: It is the first node with id %s :T' % (self.getName(),first_node['id']))
+    def firstNode(self, first_node):
+        self.appendPathBread(first_node['id'], first_node['lat'], first_node['lng'], False)
+        self._logger.info('%s: It is the first node with id %s :T' % (self.getName(), first_node['id']))
 
     #
     # lastNode
     #   execute only on last node
     #
-    def lastNode(self,last_node):
-        self.appendPathBread(last_node['id'],last_node['lat'],last_node['lng'],True)
+    def lastNode(self, last_node):
+        self.appendPathBread(last_node['id'], last_node['lat'], last_node['lng'], True)
         self._logger.info('%s: It is the last node of this street with id %s :)' % (self.getName(),last_node['id']))
         self._street['busy'] = False
 
@@ -251,7 +249,7 @@ class Agent(Thread):
     # oneNode
     #   call when we have only one node at street
     #
-    def oneNode(self,the_node):
+    def oneNode(self, the_node):
         self.appendPathBread(the_node['id'],the_node['lat'],the_node['lng'],False)
         self.appendPathBread(the_node['id'],the_node['lat'],the_node['lng'],True)
         self._street['busy'] = False
@@ -406,7 +404,7 @@ class Agent(Thread):
     #   choose the street with the less weight
     #   to navegate
     #
-    def choosingNewStreetToNavegate(self,streets_returneds):
+    def choosingNewStreetToNavegate(self, streets_returneds):
         the_street_chosen = None
         the_last_weight = Decimal('Infinity')
 
@@ -454,7 +452,7 @@ class Agent(Thread):
     #   update the lat and lng of agent
     #   set at pathbread of agent
     #
-    def appendPathBread(self,node_id,lat,lng,jump=False):
+    def appendPathBread(self, node_id, lat, lng, jump=False):
         self._agent_at_mongo['last_lat'] = lat
         self._agent_at_mongo['last_lng'] = lng
         self._agent_at_mongo['pathbread'].append({'node_id':node_id,'lat':lat,'lng':lng,'jump':jump})
@@ -466,7 +464,7 @@ class Agent(Thread):
     #   insert the name of the street if agent
     #   are not visited yet
     #
-    def appendStreetVisited(self,street_name):
+    def appendStreetVisited(self, street_name):
 
         if street_name not in self._agent_at_mongo['visited_streets']:
             self._agent_at_mongo['visited_streets'].append(street_name)

@@ -5,12 +5,13 @@ Rails.application.routes.draw do
         get 'map'
       end
     end
-  end
-  namespace :graphium do
     resources :cities
-  end
-  namespace :graphium do
-
+    resources :classification do
+      collection do
+        get 'getInformation'
+        get 'updatePano'
+      end
+    end
   end
   devise_for :users, controllers: {
     sessions: 'users/sessions'

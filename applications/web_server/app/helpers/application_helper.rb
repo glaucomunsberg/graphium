@@ -15,7 +15,7 @@ module ApplicationHelper
     
     def breadcrumbs elements = [{:name => 'Home',:path => '/'},{:name => 'Dashboard',:path => '/dashboard'}], id=nil, editing=false
         
-        returned = "<nav id='breadcrumb'  class='unselectable' style='background-color:white;margin-left: 60px !important;'>
+        returned = "<nav id='breadcrumb'  class='unselectable' style='background-color:white; padding-left: 60px'>
                         <div class='nav-wrapper'>
                             <div class='col s12'>"
                                 elements.each do |element|

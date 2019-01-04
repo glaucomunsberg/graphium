@@ -1,0 +1,2 @@
+module Graphium::ClassificationHelper
+end

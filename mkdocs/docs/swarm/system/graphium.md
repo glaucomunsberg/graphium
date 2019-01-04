@@ -18,7 +18,7 @@ Keys inside attribute config:
         "version":"0.0.1"
     }
 
-**mongo** : the metadata of mongoDB used has default. The file `data/configs/mongodb.json` is load to system. `type:Dic`
+**mongodb** : the metadata of mongoDB used has default. The file `data/configs/mongodb.json` is load to system. `type:Dic`
 
 Keys inside attribute Mongod:
 
@@ -64,9 +64,9 @@ Keys inside attribute Gmap:
     "limit_maps_by_day": 25000
   }
 
-  **scissor** : the metadata of scissor used has default. The file `data/configs/scissor.json` is load to system. `type:Dic`
+**scissor** : the metadata of scissor used has default. The file `data/configs/scissor.json` is load to system. `type:Dic`
 
-  Keys inside attribute Scissor:
+Keys inside attribute Scissor:
 
     {
         "target_max_width":224,
@@ -74,6 +74,22 @@ Keys inside attribute Gmap:
         "target_min_width":224,
         "target_min_height":224,
         "target_rate":0.8
+    }
+    
+**oracle** : the metadata of oracle used has default. The file `data/configs/oracle.json` is load to system. `type:Dic`
+
+Keys inside attribute Oracle:
+
+    {
+        "model_name": "20170821191051"
+    }
+
+**analytics** : the metadata of analytics used has default. The file `data/configs/analytic.json` is load to system. `type:Dic`
+
+Keys inside attribute Analytics:
+
+    {
+        "time_between_analises": 120
     }
 
 

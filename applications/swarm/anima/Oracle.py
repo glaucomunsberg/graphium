@@ -27,14 +27,17 @@ class Oracle:
             cls._instance = super(Oracle, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
-    def __init__(self, model_name="20170821191051", logger=None):
+    def __init__(self, model_name=None, logger=None):
 
         self._g = Graphium()
 
-        self.model_name = self._g.oracle['model_name']
+        if model_name is None:
+            self.model_name = self._g.oracle['model_name']
+        else:
+            self.model_name = model_name
 
-        self.path_model_json = self._g.path_model()+model_name+".json"
-        self.path_model_weights = self._g.path_model()+model_name+".h5"
+        self.path_model_json = self._g.path_model()+self.model_name+".json"
+        self.path_model_weights = self._g.path_model()+self.model_name+".h5"
 
         if not os.path.isfile(self.path_model_json):
             self._logger.info('Oracle: The model is not valid file '+self.path_model_json)
@@ -43,7 +46,7 @@ class Oracle:
             self._logger.info('Oracle: The weights is not valid file '+self.path_model_weights)
             raise ValueError('The path_model_weights is not a valid weights to by used')
 
-        if logger != None:
+        if logger is not None:
             self._logger = logger
         else:
             self._logger = Logger('Oracle')
@@ -53,9 +56,9 @@ class Oracle:
             loaded_model_json = json_file.read()
             json_file.close()
             self.model = model_from_json(loaded_model_json)
-            self._logger.info('Mananger: Loading model at '+self.path_model_json)
+            self._logger.info('Oracle: Loading model at '+self.path_model_json)
         except:
-            self._logger.error('Mananger: Error at loading model from file '+str(self.path_model_json))
+            self._logger.error('Oracle: Error at loading model from file '+str(self.path_model_json))
             self.model = VGG16(weights='imagenet', include_top=True)
 
         self.model.load_weights(self.path_model_weights)
@@ -67,7 +70,7 @@ class Oracle:
     #   load a model and weights keras
     #   predict if is or no a image wanted
     #   return true or false
-    def predictInPano(self,image_path):
+    def predictInPano(self, image_path):
 
         scissor = Scissor(image_path)
         image_path = scissor.cut_to_fit(self._g.path_picture()+"scissor/")
@@ -77,11 +80,9 @@ class Oracle:
         x = preprocess_input(x)
 
         self._logger.info('Oracle: Appending image {0} to predict'.format(image_path))
-        predictions     = self.model.predict(x)
+        predictions = self.model.predict(x)
         nameProbability = decode_predictions(predictions, top=1)[0]
-        #print 'Probabilities', nameProbability
-        #print 'Probability  ', nameProbability[0][0]
-        #print 'Image Path   ', image_path
+
         if nameProbability[0][1] == "comic book" or nameProbability[0][0] == "n06596364":
             print 'Probability  ', nameProbability[0][0]
             print 'Image Path   ', image_path

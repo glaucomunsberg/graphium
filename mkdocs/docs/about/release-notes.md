@@ -1,6 +1,25 @@
 # Release Notes
 
-## Version 0.0.5
+
+## Version 0.0.7
+
+* `Anima`: `Looker.py` appending Pano on database
+* `System`: `Assessor.py` a new tools to seed and change information on datbase
+* `System`: `Graphium.py` appending analytics.json information
+* `System`: `Mongo.py` suport to pano collection
+* `Assistant`: `Analytics` new classe to report use of memory
+* `Assistant`: `API.py` improved get Google Pano
+* `Assistant`: `GoogleAPI` improved to authorizing_key from Google Console request
+* `Assistant`: `GoogleSigning` signing the request on `GoogleAPI`
+
+## Version 0.0.6
+
+* `Anima`: `Oracle.py` fixing google request
+* `Anima`: `Looker.py` improved get hostname
+* `Anima`: Identifying memory leaks with pympler
+* `Webserver`: `Database` sqlite3 to MySQL
+
+## Version 0.0.5    
 
 * `Anima`: `Oracle.py` now whit model params form json file
 * `System`: With `Session.py` to control accesses on google API

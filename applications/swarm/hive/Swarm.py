@@ -8,57 +8,60 @@ from system.Graphium import Graphium
 from system.Mongo import Mongo
 from system.Helper import Helper
 from system.Logger import Logger
+from assistant.Analytics import Analytics
 from Agent import Agent
+
 
 class Swarm:
 
-    _agents         = []
-    _identifier     = None
-    _config         = None
-    _swarm_config   = None
-    _mongo          = None
-    _helper         = None
-    _logger         = None
-    _name           = None
-    _end_well       = None
+    _agents = []
+    _identifier = None
+    _config = None
+    _swarm_config = None
+    _mongo = None
+    _helper = None
+    _logger = None
+    _name = None
+    _end_well = None
     _swarm_at_mongo = None
-    _host           = None
-
+    _host = None
+    _analytics = None
 
     def __init__(self, args):
 
-        self._g        = Graphium()
-        self._mongo    = Mongo()
-        self._helper   = Helper()
-        self._logger   = Logger('Swarm')
-        self._args     = args
+        self._g = Graphium()
+        self._mongo = Mongo()
+        self._helper = Helper()
+        self._logger = Logger('Swarm')
+        self._args = args
+        self._analytics = Analytics()
 
-        self._host     = socket.gethostbyname(socket.gethostname())
+        self._host = socket.gethostbyname("")
 
         # start basic information about swarm session
         self._logger.debug('Swarm: We are configure my settings...')
 
-        if args.swarm_identifier == None:
-            self._identifier        = self._helper.getSerialNow()
+        if args.swarm_identifier is None:
+            self._identifier = self._helper.getSerialNow()
         else:
-            self._identifier        = args.swarm_identifier
+            self._identifier = args.swarm_identifier
 
-        if args.swarm_name == None:
+        if args.swarm_name is None:
             self._name = self._helper.getTimeNow()
         else:
             self._name = args.swarm_name
 
-        if args.swarm_city == None:
+        if args.swarm_city is None:
             self._logger.info("Swarm: the city can't be empty")
             raise ValueError("Swarm: the city can't be empty")
 
-        if self._mongo.getSwarmByIdentifier(self._identifier) == None:
+        if self._mongo.getSwarmByIdentifier(self._identifier) is None:
             self._mongo.insertSwarm(self._identifier, args.swarm_num_agent, args.user_email, self._name, self._helper.getTimeNow(), self._host, self._g.swarm['swarm_turns'], self._g.swarm['swarm_cycles'], args.swarm_city)
 
-        self.syncFromDB()
+        self.sync_from_DB()
 
-    def syncFromDB(self):
-        self._swarm_at_mongo    = self._mongo.getSwarmByIdentifier(self._identifier)
+    def sync_from_DB(self):
+        self._swarm_at_mongo = self._mongo.getSwarmByIdentifier(self._identifier)
 
     # Start the agents
     def start(self):
@@ -72,7 +75,7 @@ class Swarm:
                 num_active_and_end_well = len(self._mongo.getAgentsActiveBySwarm(self._identifier))
                 num_active = num_active_and_end_well
                 num_active_and_end_well += len(self._mongo.getAgentsEndWellBySwarm(self._identifier))
-                self.syncFromDB()
+                self.sync_from_DB()
                 if num_active_and_end_well < self._swarm_at_mongo['num_agent']:
 
                     create_agents_number = self._swarm_at_mongo['num_agent'] - num_active_and_end_well
@@ -86,11 +89,12 @@ class Swarm:
                 # Sleep x seconds to check again
                 #
                 sleep(int(self._swarm_at_mongo['seconds_to_check_agents']))
-                self.syncFromDB()
+                self.sync_from_DB()
                 if len(self._mongo.getAgentsActiveBySwarm(self._identifier)) == 0 and len( self._mongo.getStreetQuery({'street_count':0,'city_id': self._swarm_at_mongo['city_id']})) == 0:
                     self._logger.info('Swarm: All streets were coveraged. I\'m done =D')
                     self._swarm_at_mongo['active']      = False
 
+                self._analytics.memory_analises()
 
         except Exception as error:
             self._logger.error('Swarm: Swarm die! x(')
@@ -100,7 +104,6 @@ class Swarm:
             self._swarm_at_mongo['end_well'] = False
         finally:
             self.finish()
-
 
     def finish(self):
         for agent in self._agents:
@@ -113,7 +116,7 @@ class Swarm:
             count += street['street_count']*street['street_count']
             street['street_count'] = 0
             street['busy'] = False
-            self._mongo.updateStreetById(street.get('_id'),street)
+            self._mongo.updateStreetById(street.get('_id'), street)
 
         if len(streets) != 0:
             self._logger.info('%s: I\'m calculating the QMI!' % ("Swarm"))

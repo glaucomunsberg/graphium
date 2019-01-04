@@ -14,6 +14,7 @@ class Graphium:
     gmaps = None
     scissor = None
     oracle = None
+    analytics = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
@@ -27,13 +28,13 @@ class Graphium:
         path = path[:-2]
         absolute_path = ""
         for pat in path:
-            absolute_path+=pat+"/"
+            absolute_path += pat+"/"
 
         try:
             with open('../../data/configs/graphium.json', 'r') as f:
                 self.config = json.load(f)
         except Exception, e:
-            print "ERROR to load graphium.json"
+            print "ERROR to upload graphium.json"
             print e
             print traceback.format_exc()
             return
@@ -44,7 +45,7 @@ class Graphium:
                 with open('../../data/configs/graphium.json', 'w') as f:
                     json.dump(self.config, f)
             except Exception, e:
-                print "ERROR to update config absolute path"
+                print "ERROR to upload graphium config"
                 print e
                 print traceback.format_exc()
 
@@ -52,7 +53,7 @@ class Graphium:
             with open(self.config['path_root']+self.config['path_config']+'mongodb.json', 'r') as f:
                 self.mongodb = json.load(f)
         except Exception, e:
-            print "ERROR to update mongodb absolute path"
+            print "ERROR to upload absolute config"
             print e
             print traceback.format_exc()
 
@@ -60,7 +61,7 @@ class Graphium:
             with open(self.config['path_root']+self.config['path_config']+'osm.json', 'r') as f:
                 self.osm = json.load(f)
         except Exception, e:
-            print "ERROR to update osm absolute path"
+            print "ERROR to upload osm config"
             print e
             print traceback.format_exc()
 
@@ -68,7 +69,7 @@ class Graphium:
             with open(self.config['path_root']+self.config['path_config']+'swarm.json', 'r') as f:
                 self.swarm = json.load(f)
         except Exception, e:
-            print "ERROR to update swarm absolute path"
+            print "ERROR to upload swarm config"
             print e
             print traceback.format_exc()
 
@@ -76,7 +77,7 @@ class Graphium:
             with open(self.config['path_root']+self.config['path_config']+'gmaps.json', 'r') as f:
                 self.gmaps = json.load(f)
         except Exception, e:
-            print "ERROR to update gmaps absolute path"
+            print "ERROR to upload gmaps config"
             print e
             print traceback.format_exc()
 
@@ -84,7 +85,7 @@ class Graphium:
             with open(self.config['path_root']+self.config['path_config']+'scissor.json', 'r') as f:
                 self.scissor = json.load(f)
         except Exception, e:
-            print "ERROR to update scissor absolute path"
+            print "ERROR to upload scissor config"
             print e
             print traceback.format_exc()
 
@@ -92,7 +93,15 @@ class Graphium:
             with open(self.config['path_root']+self.config['path_config']+'oracle.json', 'r') as f:
                 self.oracle = json.load(f)
         except Exception, e:
-            print "ERROR to update oracle absolute path"
+            print "ERROR to upload oracle config"
+            print e
+            print traceback.format_exc()
+
+        try:
+            with open(self.config['path_root']+self.config['path_config']+'analytics.json', 'r') as f:
+                self.analytics = json.load(f)
+        except Exception, e:
+            print "ERROR to upload analytics config"
             print e
             print traceback.format_exc()
 

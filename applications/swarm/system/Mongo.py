@@ -3,11 +3,13 @@
 
 import pymongo, datetime, bson, time
 import system
-from random import randint
 from unidecode import unidecode
-from pymongo import MongoClient
 from bson.objectid import ObjectId
+
+from random import randint
+from pymongo import MongoClient
 from system.Graphium import Graphium
+
 
 class Mongo:
 
@@ -37,6 +39,14 @@ class Mongo:
 
 
     ############ Agent ############
+
+    def get_agents(self):
+        self.__collection = self.__db.agent
+        return self.__collection.find({})
+
+    def agent_erase_by_query(self, query):
+        self.__collection = self.__db.agent
+        return self.__collection.delete_many(query)
 
     # getAgentByIdentifier
     #   permit to update informatations at mongodb
@@ -97,10 +107,9 @@ class Mongo:
     # getAgentsBySwarmIndentifier
     #   return all agente by swarm identifier
     #
-    def getAgentsBySwarmIdentifier(self,swarm_identifier):
-        returned = []
-        self.__collection   = self.__db.agent
-        return list(self.__collection.find({'swarm_identifier':swarm_identifier}).short("_id"))
+    def getAgentsBySwarmIdentifier(self, swarm_identifier):
+        self.__collection = self.__db.agent
+        return list(self.__collection.find({'swarm_identifier': swarm_identifier}).short("_id"))
 
     # getAgentQuery
     #   return the users basead on query passed
@@ -181,6 +190,9 @@ class Mongo:
         self.__collection = self.__db.street
         return list(self.__collection.find(query))
 
+    def getStreets(self):
+        self.__collection   = self.__db.street
+        return self.__collection.find_one({})
 
 
     ############ WishList ############
@@ -207,19 +219,23 @@ class Mongo:
 
 
 
-    ############ Session and Logger ############
+    ############ Swarm ############
 
     # insertSwarm
-    #   create a session of swarm and send the basic information
-    #   return session ID
+    #   create a Swarm of swarm and send the basic information
+    #   return Swarm ID
     #
     def insertSwarm(self, identifier, num_agent,user_email="admin@graphium.com", name='default', start_at="", host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, active=True):
         self.__collection = self.__db.swarm
         dataToSend = {'identifier':identifier, 'name':name, 'num_agent':num_agent, 'user_email':user_email, 'host':host, 'active':active, 'start_at':start_at, 'end_at':None, 'end_well':True, 'qmi':0.0, 'seconds_to_check_agents': seconds_to_check_agents, 'city_id':city_id, 'cycles_number':cycles_number, 'num_map_api_request':0 }
         return self.__collection.insert_one(dataToSend).inserted_id
 
+    def get_swarms(self):
+        self.__collection = self.__db.swarm
+        return self.__collection.find({})
+
     # getSwarmByIdentifier
-    #   get the swarm session by identifier
+    #   get the swarm Swarm by identifier
     #
     def getSwarmByIdentifier(self,identifier):
         self.__collection   = self.__db.swarm
@@ -265,37 +281,40 @@ class Mongo:
         self.__collection = self.__db.swarm
         self.__collection.update({'identifier':identifier}, {'$set': {'num_map_api_request': value}})
 
+    def swarm_erase_by_query(self, query):
+        self.__collection = self.__db.swarm
+        return self.__collection.delete_many(query)
 
     ############ Wish List ############
 
     # updateWishById
     #   update a document from wish list by id
     #
-    def updateWishById(self,mongo_id,data):
+    def updateWishById(self, mongo_id, data):
         self.__collection = self.__db.wish_list
-        self.__collection.update({'_id':mongo_id},{"$set":data},upsert=False)
+        self.__collection.update({'_id': mongo_id}, {"$set": data}, upsert=False)
 
     # getWishListByIdentifier
     #   return the list of wishs by swarm
     #   short from priority
     #
-    def getWishListByIdentifier(self,swarm_session):
+    def getWishListByIdentifier(self, swarm_session):
         self.__collection = self.__db.wish_list
-        return list(self.__collection.find({'swarm_identifier':swarm_session}).short("priority"))
+        return list(self.__collection.find({'swarm_identifier': swarm_session}).short("priority"))
 
     # getWishListByIdentifier
     #   return the list of wishs by swarm
     #
-    def getWishListNoProccessedByIdentifier(self,swarm_session):
+    def getWishListNoProccessedByIdentifier(self, swarm_session):
         self.__collection = self.__db.wish_list
-        return list(self.__collection.find({'swarm_identifier':swarm_session,'processed':False}))
+        return list(self.__collection.find({'swarm_identifier': swarm_session, 'processed': False}))
 
     # updateStreetById
     #   permit to update informatations at mongodb
     #
-    def updateWishListById(self,identifier,data):
+    def updateWishListById(self, identifier, data):
         self.__collection = self.__db.wish_list
-        self.__collection.update({'_id':identifier},{"$set":data},upsert=False)
+        self.__collection.update({'_id': identifier}, {"$set": data}, upsert=False)
 
 
     ############ Graffiti ############
@@ -304,7 +323,43 @@ class Mongo:
     #   insert the graffiti at MongoDB
     #   return the id
     #
-    def insertGraffiti(self,lat,lng,pano_id,heading,pitch,country,state,city,address,probability,swarm_identifier):
+    def insertGraffiti(self, lat, lng, pano_id, heading, pitch, country, state, city, address, probability, swarm_identifier):
         dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'probability':str(probability), 'swarm_identifier':swarm_identifier}
         self.__collection = self.__db.graffiti
         return self.__collection.insert_one(dataToSend).inserted_id
+
+    def get_graffiti_by_query(self, query):
+        self.__collection = self.__db.graffiti
+        return self.__collection.find(query)
+
+    def graffiti_erase_by_query(self,query):
+        self.__collection = self.__db.graffiti
+        return self.__collection.delete_many(query)
+
+    def get_graffitis(self):
+        self.__collection = self.__db.graffiti
+        return self.__collection.find({})
+
+    def insert_pano(self, swarm_identifier, pano_id, heading, splited, imagem_name, classification):
+        dataToSend = {'swarm_identifier': swarm_identifier, 'pano_id': pano_id, 'heading': heading, 'splited': splited, 'imagem_name': imagem_name, 'classification':classification}
+        self.__collection = self.__db.pano
+        return self.__collection.insert_one(dataToSend).inserted_id
+
+    def getCities(self):
+        self.__collection = self.__db.city
+        return self.__collection.find({})
+
+
+    ############ PANO ############
+    #
+    def get_panos(self):
+        self.__collection = self.__db.pano
+        return self.__collection.find({})
+
+    def get_pano_by_query(self, query):
+        self.__collection = self.__db.pano
+        return self.__collection.find(query)
+
+    def update_pano(self, identifier, data):
+        self.__collection = self.__db.pano
+        self.__collection.update({'_id': identifier}, {"$set": data}, upsert=False)

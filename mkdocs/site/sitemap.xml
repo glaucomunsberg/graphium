@@ -2,102 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://www.glaucomunsberg.com/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/about/installation/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/about/execution/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/data/configuration/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/data/google_api/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/anima/looker/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/anima/oracle/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/hive/agent/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/hive/swarm/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/system/graphium/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/swarm/system/assessor/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/system/helper/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/system/logger/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/system/mongo/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/system/session/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://www.glaucomunsberg.com/swarm/assistant/geospatial/</loc>
-     <lastmod>2018-10-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://www.glaucomunsberg.com/swarm/assistant/googleapi/</loc>
-     <lastmod>2018-10-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://www.glaucomunsberg.com/swarm/assistant/reader/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <loc>http://www.glaucomunsberg.com/swarm/assistant/analytics/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/swarm/assistant/api/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/swarm/assistant/geospatial/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/swarm/assistant/googleapi/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/swarm/assistant/googlesigning/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/swarm/assistant/reader/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.glaucomunsberg.com/swarm/assistant/scissor/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/webserver/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/about/license/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://www.glaucomunsberg.com/about/release-notes/</loc>
-     <lastmod>2018-10-27</lastmod>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

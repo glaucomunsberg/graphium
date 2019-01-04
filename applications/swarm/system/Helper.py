@@ -24,7 +24,7 @@ class Helper:
         start_date = datetime.datetime.strptime(start_string, '%Y%m%d%H%M%S')
         end_date = datetime.datetime.strptime(end_string, '%Y%m%d%H%M%S')
         time_delta = end_date - start_date
-        return time_delta.seconds
+        return time_delta.seconds + (time_delta.days*60*60*24)
 
     def filePathToList(self,path_file):
         lines = []

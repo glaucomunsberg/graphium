@@ -45,7 +45,7 @@ $ sudo mongod
 
 ## Libraries 
 
-$ pip install pymongo unidecode pillow h5py tensorflow keras mkdocs mkdocs-material
+$ pip install pymongo unidecode pillow h5py tensorflow keras mkdocs mkdocs-material pympler
 
 $ pip install osgeo osmread osmapi geopy
 

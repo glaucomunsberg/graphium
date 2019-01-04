@@ -1,0 +1,298 @@
+<%=breadcrumbs [{:name => 'Home',:path => '/'},{:name => 'Classification', :path => '/graphium/classification'}]%>
+<div id="modal_delete" class="modal">
+  <div class="modal-content">
+    <h4>Deletar o Graphite</h4>
+    <div class="row">
+      <div class="col s7">
+        <img modal_delete_preview src="">
+      </div>
+      <div class="col s5" modal_delete_text >
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a onclick="update(40)" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+    <a class="modal-close waves-effect waves-green btn-flat">Não</a>
+  </div>
+</div>
+<div id="modal_create" class="modal">
+  <div class="modal-content">
+    <h4>Deletar o Graphite</h4>
+    <div class="row">
+      <div class="col s7">
+        <img modal_create_preview src="">
+      </div>
+      <div class="col s5" modal_create_text >
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" onclick="update(37)" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Não</a>
+  </div>
+</div>
+<div class="row" style="margin-top: 20px">
+  <div class="col m5 s12">
+    <div class="row center" style="margin-top: 8px;">
+      <img pano class="materialboxed z-depth-3" src="https://dummyimage.com/400x400/ffffff/2d2338&text=Graphium" style="width: 100%;">
+      <a play class="btn-floating btn-large waves-effect waves-light right tooltipped" data-position="top" data-tooltip="Pressione 'I' ou 'S' para iniciar" onclick="play()" style="margin-top: -30px;margin-right: 15px;"><i play class="material-icons">play_arrow</i></a>
+    </div>
+  </div>
+  <div class="col m7 s12" style="padding-left: 20px">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header active"><i class="material-icons">subdirectory_arrow_right</i>Controles</div>
+        <div class="collapsible-body">
+          <div class="row">
+            <div class="col s5">
+              <a class="waves-effect waves-teal btn-flat"><i class="material-icons left">arrow_back</i>Anterior</a>
+            </div>
+            <div counter class="col s2 center" style="padding-top: 7px;color: gray;">
+              0 de ?
+            </div>
+            <div class="col s5">
+              <a class="waves-effect waves-teal btn-flat"><i class="material-icons right">arrow_forward</i>Próximo</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row">
+              <div class="col s4"></div>
+              <div class="col s4 center"><a true_positive class="waves-effect waves-light btn">True Positive</a></div>
+              <div class="col s4"></div>
+            </div>
+            <div class="row">
+              <div class="col s4"><a  false_negative class="waves-effect waves-light btn">False Negative</a></div>
+              <div class="col s4"></div>
+              <div class="col s4"><a true_negative class="waves-effect waves-light btn">True Negative</a></div>
+            </div>
+            <div class="row">
+              <div class="col s4"></div>
+              <div class="col s4 center"><a false_positive class="waves-effect waves-light btn">False Positive</a></div>
+              <div class="col s4"></div>
+            </div>
+          </div>
+          <div class="row center tooltipped" data-position="top" data-tooltip="Pano ID atual e anterior" style="margin-bottom: 0px;">
+
+            <div class="col s12" current_pano_id style="color:#757575; cursor:pointer">Pano IP</div>
+            <div class="col s12" last_pano_id style="color:#757575;cursor:pointer">Last Pano IP</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">tune</i>Configurações</div>
+        <div class="collapsible-body">
+          <div class="row">
+            <div class="s12">
+              <b>Image with class</b>
+            </div>
+            <div class="s2">
+              <input type="checkbox" class="filled-in" id="false" checked="checked" />
+              <label for="false">False</label>
+            </div>
+            <div class="s2">
+              <input type="checkbox" class="filled-in" id="true" checked="checked" />
+              <label for="true">True</label>
+            </div>
+            <div class="s2">
+              <input type="checkbox" class="filled-in" id="true_positive"/>
+              <label for="true_positive">True Positive</label>
+            </div>
+            <div class="s2">
+              <input type="checkbox" class="filled-in" id="false_positive" />
+              <label for="false_positive">False Positive</label>
+            </div>
+            <div class="s2">
+              <input type="checkbox" class="filled-in" id="true_negative" />
+              <label for="true_negative">True Negative</label>
+            </div>
+            <div class="s2">
+              <input type="checkbox" class="filled-in" id="false_negative"  />
+              <label for="false_negative">False Negative</label>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  var pano_position = 0;
+  var pano_total = 0;
+  var playing = false;
+  var pano_id = "";
+  var pano_src = "";
+  var pano_heading = "";
+
+  function play(){
+      if(!playing){
+          $('i[play]').text('stop');
+          $('.collapsible').collapsible('open', 0);
+          $('.collapsible').collapsible('close', 1);
+          inicialize();
+      }else{
+          $('i[play]').text('play_arrow');
+          $('.collapsible').collapsible('open', 0);
+          $('.collapsible').collapsible('close', 1);
+          $('div[counter]').text('0/0');
+      }
+      playing = !playing;
+  }
+
+  function inicialize(){
+      $.ajax({
+          type: 'get',
+          url: '/graphium/classification/getInformation',
+          data: {
+              'pano_position':pano_position,
+              'false': document.querySelector('#false').checked,
+              'true': document.querySelector('#true').checked,
+              'false_positive': document.querySelector('#false_positive').checked,
+              'false_negative': document.querySelector('#false_negative').checked,
+              'true_positive': document.querySelector('#true_positive').checked,
+              'true_negative': document.querySelector('#true_negative').checked
+          },
+          beforeSend: function() {
+              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Loading...')
+          },
+          success: function(data) {
+
+              console.log('data',data);
+              if(data.pano == null){
+                  Materialize.toast('Não há mais o que classificar com esta(s) categoria(s)', 3000);
+              }else{
+                  pano_id = data.pano.pano_id;
+                  pano_heading = data.pano.heading;
+                  pano_src = "https://maps.googleapis.com/maps/api/streetview?size=600x300&pano="+data.pano.pano_id+"&heading="+data.pano.heading+"&pitch="+data.pano.splited+"&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
+
+                  $('img[pano]').attr('src',pano_src);
+                  $('div[last_pano_id]').html($('div[current_pano_id]').text());
+                  $('div[current_pano_id]').html(data.pano.pano_id);
+                  $('div[current_pano_id]').attr('onclick', "window.open('"+pano_src+"')");
+                  $('a[false_negative]').removeClass('btn');
+                  $('a[false_positive]').removeClass('btn');
+                  $('a[true_negative]').removeClass('btn');
+                  $('a[true_positive]').removeClass('btn');
+                  $('a[false_negative]').removeClass('btn-flat');
+                  $('a[false_positive]').removeClass('btn-flat');
+                  $('a[true_negative]').removeClass('btn-flat');
+                  $('a[true_positive]').removeClass('btn-flat');
+                  $('div[counter]').text(pano_position+' de '+data.total);
+
+                  switch (data.pano.classification) {
+                      case "F":
+                          $('a[false_negative]').addClass('btn');
+                          $('a[true_negative]').addClass('btn');
+                          break;
+                      case "T":
+                          $('a[true_positive]').addClass('btn');
+                          $('a[false_positive]').addClass('btn');
+                          break;
+                      case "FP":
+                          $('a[false_positive]').addClass('btn');
+                          break;
+                      case "FN":
+                          $('a[false_negative]').addClass('btn');
+                          break;
+                      case "TP":
+                          $('a[true_positive]').addClass('btn');
+                          break;
+                      case "TN":
+                          $('a[true_negative]').addClass('btn');
+                          break;
+                      default:
+                          alert("I can't understand: "+data.pano.classification)
+                  }
+              }
+          },
+          error: function(xhr) { // if error occured
+              alert("Error occured.please try again");
+              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Ooops...')
+          },
+          complete: function() {
+
+          }
+      });
+  }
+
+  function update(key_value){
+
+      let pano_classification = "";
+
+      switch (key_value) {
+          case 37:
+              pano_classification = "FN";
+              break;
+          case 38:
+              pano_classification = "TP";
+              break;
+          case 39:
+              pano_classification = "TN";
+              break;
+          case 40:
+              pano_classification = "FP";
+              break;
+      }
+
+      $.ajax({
+          type: 'get',
+          url: '/graphium/classification/updatePano',
+          data: {
+              'pano_id':pano_id,
+              'heading': pano_heading,
+              'pano_classification': pano_classification
+          },
+          beforeSend: function() {
+              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Updating...')
+          },
+          success: function(data) {
+              pano_position++;
+              inicialize();
+              console.log(data)
+          },
+          error: function(xhr) { // if error occured
+              alert("Error occured.please try again");
+              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Ooops...')
+          },
+          complete: function() {
+
+          }
+      });
+  }
+
+  $(document).ready(function () {
+
+      $('.collapsible').collapsible();
+      $('.modal').modal();
+
+      $(document).on('keydown', function (e) {
+          console.log('Code key',e.keyCode);
+          //console.log(typeof e.keyCode);
+          switch (e.keyCode) {
+              case 39:
+              case 38:
+                  update(e.keyCode);
+                  break;
+              case 37:
+                  $('div[modal_create_text]').text("Esta ação está CRIANDO o graffiti");
+                  $('div[modal_create_preview]').attr("scr",pano_src);
+                  $('#modal_create').modal('open');
+                  break;
+              case 40:
+                  $('div[modal_delete_text]').text("Esta ação ESCONDERÁ o graffiti");
+                  $('div[modal_delete_preview]').attr("scr",pano_src);
+                  $('#modal_delete').modal('open');
+                  break;
+              case 73:
+              case 83:
+                  play();
+                  break;
+              default:
+                  console.log("undefined to ",e.keyCode)
+          }
+      });
+  });
+
+  $('div[container]').removeClass('container')
+</script>

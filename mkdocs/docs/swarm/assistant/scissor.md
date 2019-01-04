@@ -10,7 +10,7 @@
 
 ## Attributes
 
-**original_image_url** : Return the original url setted  in params.`type:Dataset`
+**original_image_url** : Return the original url set in params.`type:Dataset`
 
 **original_width**: Original with of image. `type:int`
 

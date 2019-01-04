@@ -106,3 +106,4 @@ data/pictures/scissor/*.jpeg
 
 # Ruby on Rails cache
 /applications/web_server/tmp/cache/
+/applications/web_server/tmp/

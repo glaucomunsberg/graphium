@@ -1,7 +1,9 @@
 {
   "width": 640,
   "height": 450,
-  "google_console_key": ["AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM", "AIzaSyCL1wocWXc2wVaRrxUwF-nElGLoeOfr6i0", "AIzaSyA4rXkpySxfdQZaZduxhSyonpr0u7unOo0", "AIzaSyBTCTsSTO9bBhlTOC5puIraajcOefy9ccw", "AIzaSyDFiA4Rz-6VnYoJSbUdYAx7jFdt92-4K6o"],
-  "limit_request_by_key": [25000, 25000, 25000, 25000, 25000],
-  "limit_time_by_key": [86400,86400,86400,86400,86400]
+  "google_console_account": ["glaucomunsberg"],
+  "google_console_key": ["AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"],
+  "google_console_secret": ["47HhEDTGIexLg39OOqMHL8r5P1w="],
+  "limit_request_by_key": [25000],
+  "limit_time_by_key": [86400]
 }

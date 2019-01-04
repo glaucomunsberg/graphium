@@ -34,7 +34,7 @@ class Looker:
 
         self.geos = GeoSpatial(self._logger)
         self._api = API(self._swarm_identifier, self._logger)
-        self._oracle = Oracle(self._logger)
+        self._oracle = Oracle(None, self._logger)
 
     def driveFromPointToPoint(self, dot1, dot2, way_osm_id):
         self._logger.info("Looker: Check dot {0} and {1}".format(dot1,dot2))
@@ -43,29 +43,40 @@ class Looker:
         #   calculate the degrees to look de left and right side
         #   for each point in points:
         #       get paranonamic image
-        points  = self.geos.getIntermediatePointsFromTwoDots(dot1,dot2)
-        street_orientation = self.geos.calculateStreetOrientation(dot1,dot2)
-        left_side   = street_orientation-90
-        right_side  = street_orientation+90
+        points = self.geos.getIntermediatePointsFromTwoDots(dot1, dot2)
+        street_orientation = self.geos.calculateStreetOrientation(dot1, dot2)
+        left_side = street_orientation-90
+        right_side = street_orientation+90
+
+        if left_side >= 360.0:
+            left_side = left_side - 360.0
+
+        if right_side >= 360.0:
+            right_side = right_side - 360.0
+
         for point in points:
             self._logger.info("Looker: Check point {0}".format(point))
             lat = point[0]
             lng = point[1]
 
-            dataPointLeft  = self._api.getPanoByPoint(lat,lng,left_side)
-            dataPointRight = self._api.getPanoByPoint(lat,lng,right_side)
+            data_point_left = self._api.getPanoByPoint(lat, lng, left_side)
+            data_point_right = self._api.getPanoByPoint(lat, lng, right_side)
 
-            if dataPointLeft['status'] == "OK":
-                self.checkPointToPredict(dataPointLeft,way_osm_id)
+            if data_point_left['status'] == "OK":
+                self.checkPointToPredict(data_point_left,way_osm_id)
             else:
-                self._logger.info("Looker: CheckPoint can't execute to point {0},{1} error '{2}'.".format(dataPointLeft['lat'],dataPointLeft['lng'],dataPointLeft['status']))
+                self._logger.info("Looker: CheckPoint can't execute to point {0},{1} error '{2}'.".format(data_point_left['lat'], data_point_left['lng'], data_point_left['status']))
 
-            if dataPointRight['status'] == "OK":
-                self.checkPointToPredict(dataPointRight,way_osm_id)
+            if data_point_right['status'] == "OK":
+                self.checkPointToPredict(data_point_right,way_osm_id)
             else:
-                self._logger.info("Looker: CheckPoint can't execute to point {0},{1} error '{2}'.".format(dataPointRight['lat'],dataPointRight['lng'],dataPointRight['status']))
+                self._logger.info("Looker: CheckPoint can't execute to point {0},{1} error '{2}'.".format(data_point_right['lat'], data_point_right['lng'], data_point_right['status']))
 
-    def checkPointToPredict(self,dataPoint,way_osm_id):
+    def checkPointToPredict(self, dataPoint, way_osm_id):
+
+
+
+
 
         prediction = self._oracle.predictInPano(dataPoint['image_path'])
         if prediction["prediction"]:
@@ -73,7 +84,8 @@ class Looker:
             #
             # INFORMATION OF COUNTRY,CITY AND STATE is EMPTY
             #
-            self._mongo.insertGraffiti(dataPoint['lat'],dataPoint['lng'],dataPoint['pano_id'],dataPoint['heading'],dataPoint['pitch'],"","","","",prediction["probability"],self._swarm_identifier)
+            self._mongo.insert_pano("20181103173441", dataPoint['pano_id'], dataPoint['heading'], "0", dataPoint['file_name'], "T")
+            self._mongo.insertGraffiti(dataPoint['lat'], dataPoint['lng'], dataPoint['pano_id'], dataPoint['heading'], dataPoint['pitch'], "", "", "", "", prediction["probability"], self._swarm_identifier)
             #
             # GOOGLE INFORMATION ABOUT COUNTRY, CITY AND STATE
             #
@@ -90,4 +102,5 @@ class Looker:
             # get the street information suchs city, country and address
             # put it in dataset
         else:
+            self._mongo.insert_pano("20181103173441", dataPoint['pano_id'], dataPoint['heading'], "0", dataPoint['file_name'], "F")
             self._logger.info("Looker: It's not a graphiti at {0}".format(dataPoint))

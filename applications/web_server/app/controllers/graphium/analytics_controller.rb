@@ -3,12 +3,15 @@ class Graphium::AnalyticsController < ApplicationController
     before_filter :authenticate_user!
     layout "inside"
     def index
-        
+      @analytics = {}
+      @analytics['swarm'] = Graphium::Swarm.where(identifier: params['swarmId']).first
+      @analytics['city'] = Graphium::City.find(@analytics['swarm'].city_id)
     end
     
     def getSwarmActive
         @analytics = {}
         @analytics['swarm'] = nil
+        @analytics['city'] = nil
         @analytics['agents'] = []
         @analytics['swarm'] = Graphium::Swarm.where(:active => true, :user_email => current_user.email).first
         if @analytics['swarm'] != nil

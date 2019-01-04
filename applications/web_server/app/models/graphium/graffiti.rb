@@ -9,6 +9,7 @@ class Graphium::Graffiti
   field :heading, type: String
   field :address, type: String
   field :pano_id, type: String
+  field :situation, type: String
 
   store_in collection: "graffiti", database: "graphium"
 end

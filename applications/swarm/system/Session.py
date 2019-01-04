@@ -34,6 +34,17 @@ class Session:
 
             self._mongo.create_session(session_data)
             self._logger.info("Session: Creating a Session on database")
+
+        elif len(self._mongo.get_session()['g_key_data_start']) != len(self._g.gmaps['google_console_key']):
+            g_key_data_start = [None] * len(self._g.gmaps['google_console_key'])
+            g_key_last_usage = [None] * len(self._g.gmaps['google_console_key'])
+            g_key_usage_count = [0] * len(self._g.gmaps['google_console_key'])
+
+            session_data = {'g_key_data_start': g_key_data_start,
+                            'g_key_usage_count': g_key_usage_count,
+                            'g_key_last_usage': g_key_last_usage}
+            self._mongo.update_session(session_data)
+            self._logger.info("Session: Rebuilding session store")
         else:
             self._logger.info("Session: Restored session from database")
 
