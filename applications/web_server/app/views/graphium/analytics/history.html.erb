@@ -1,5 +1,5 @@
 <%=breadcrumbs [{:name => 'Home',:path => '/'},{:name => 'Analytics History', :path => '/graphium/analytics/history'}]%>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfw7x1Y5XXJXcGwQAFGG_069ZKEgpGEBE&callback=initTheMap" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=Graphium::Configuration.first.google_maps_key%>&callback=initTheMap" defer></script>
 <div class='row'>
     <div id='column_left' class="col s7">
         <div class="input-field col s12" style="margin-top: 10px;">

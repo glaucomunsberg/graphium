@@ -2,136 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc412824-49c0-40c5-b73a-408fc69af10f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/applications/swarm/FixingHearingPath.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/swarm/RestoreDataInformation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/swarm/assistant/Analytics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/swarm/assistant/GoogleSigning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/swarm/system/Assessor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/.generators" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/.rakeTasks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/dataSources/7fa7709e-d7c9-4544-bc2c-ff691127a896.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/dataSources/8e42e7fb-3753-4e6e-8737-116ba9b959fb.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/web_server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/app/assets/javascripts/graphium/classification.coffee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/app/assets/stylesheets/graphium/classification.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/classification_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/app/helpers/graphium/classification_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/app/models/graphium/pano.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/applications/web_server/app/views/graphium/classification/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/configs/analytics.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkdocs/docs/data/configuration.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkdocs/docs/data/google_api.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/analytics.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/googlesigning.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/system/assessor.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/anima/Looker.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/anima/Looker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/anima/Oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/anima/Oracle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/assistant/API.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/assistant/API.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/hive/Agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/hive/Agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/hive/Swarm.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/hive/Swarm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Graphium.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Graphium.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Mongo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/system/Session.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/system/Session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/swarm/test/GoogleTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/applications/swarm/GoogleTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/analytics_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/analytics_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/app/models/graphium/graffiti.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/models/graphium/graffiti.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/app/views/dashboard/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/views/dashboard/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/app/views/graphium/analytics/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/views/graphium/analytics/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/app/views/layouts/inside.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/views/layouts/inside.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0J/0JJLmIu99IQm0hyTry-fzjxTStUABw-PQWfsvrlupzo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0J/0JJLmIu99IQm0hyTry-fzjxTStUABw-PQWfsvrlupzo.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0a/0aGeAFdkkl52TRWYB9pigWWyTn7RFSIl4viFgYJQq3I.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/0a/0aGeAFdkkl52TRWYB9pigWWyTn7RFSIl4viFgYJQq3I.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/2Z/2ZGRiE9coB6TvzD66Ns88RqrGAo5s1GoO1r8oIWElzI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/2Z/2ZGRiE9coB6TvzD66Ns88RqrGAo5s1GoO1r8oIWElzI.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7A/7AQoToBcuO4ynRpzeec1Hk5f_f4OAjMFEv8GQQUlNXg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7A/7AQoToBcuO4ynRpzeec1Hk5f_f4OAjMFEv8GQQUlNXg.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7b/7baje7zPfX20G1VEqvB9O70NwXYO7wZfl5JiR6Rcp6U.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/7b/7baje7zPfX20G1VEqvB9O70NwXYO7wZfl5JiR6Rcp6U.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8W9pIxNWCSTQayhht5KAf29v1BORPEFSJOi3PVdNQjI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8W9pIxNWCSTQayhht5KAf29v1BORPEFSJOi3PVdNQjI.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8WUpp_94qXvCK0ut_pm7Ec7dQxtMNb4t7VxYQzEkjc4.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/8W/8WUpp_94qXvCK0ut_pm7Ec7dQxtMNb4t7VxYQzEkjc4.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9K/9KBUXyxW_eSdUKTFbtVJCzYEaHn-PWbAVr6BoHUaUGs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9K/9KBUXyxW_eSdUKTFbtVJCzYEaHn-PWbAVr6BoHUaUGs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9l/9lFsKAbaMhccheGkXikzz4EGD1cQp320DL2AzMYxv-Q.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/9l/9lFsKAbaMhccheGkXikzz4EGD1cQp320DL2AzMYxv-Q.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/AN/ANVey4PweZT2ruwUvcY52lmlhB5hTHDS8MX3jOxBzss.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/AN/ANVey4PweZT2ruwUvcY52lmlhB5hTHDS8MX3jOxBzss.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Bh/BHWo9NA7RYHktYU6QKD-7QdPoiroGqFk4ugUFlkWViM.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Bh/BHWo9NA7RYHktYU6QKD-7QdPoiroGqFk4ugUFlkWViM.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/C9/C90gI-TR-MK9Tk7mxOgnUAaUt6fzEyPHOo41WvUzk3I.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/C9/C90gI-TR-MK9Tk7mxOgnUAaUt6fzEyPHOo41WvUzk3I.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ch/CheC8zNHfvxpOH2wDo52IBPl0nOKc2vGEJ3zG8ZMi0Q.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ch/CheC8zNHfvxpOH2wDo52IBPl0nOKc2vGEJ3zG8ZMi0Q.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/CO0jzxuK4OCPmf4ZZiMPih00O9nSfseXyptCdSbxaQo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/CO0jzxuK4OCPmf4ZZiMPih00O9nSfseXyptCdSbxaQo.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/Co-qaRao4BL8o8xFGk7RXlEXyH78Jor09foHIueCveI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Co/Co-qaRao4BL8o8xFGk7RXlEXyH78Jor09foHIueCveI.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Cr/Cr02RUS8P3wc1tBM0v--wxXRq545d3z9vdMwLgL1IH0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Cr/Cr02RUS8P3wc1tBM0v--wxXRq545d3z9vdMwLgL1IH0.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/DO/DOKDxMHkugwjYNiHI9UYpFsLd3cm4leivgHA_l3vtXk.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/DO/DOKDxMHkugwjYNiHI9UYpFsLd3cm4leivgHA_l3vtXk.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Et/Et7b_sQwP05Buo2gE8bECcS28y4hwD-NZwg83fyALwo.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Et/Et7b_sQwP05Buo2gE8bECcS28y4hwD-NZwg83fyALwo.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/FS/FS7SjLf3d2HCJG4041nrpJWi_I5EwYVi7bduNL_jCCM.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/FS/FS7SjLf3d2HCJG4041nrpJWi_I5EwYVi7bduNL_jCCM.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Fp/FpxPAkVRUsaKfsv2uJt7Mi9ZCU1GY1ZmfQWO9a0_Oow.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Fp/FpxPAkVRUsaKfsv2uJt7Mi9ZCU1GY1ZmfQWO9a0_Oow.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/G_/G_tTxWklzKs96ihD6PakGxciJYdIJpTszzZJ91jf8CE.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/G_/G_tTxWklzKs96ihD6PakGxciJYdIJpTszzZJ91jf8CE.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HB/HBW-1w8GQ-GNAXbobrY8YzG8eM915ryQ3UbBSZH4WaI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HB/HBW-1w8GQ-GNAXbobrY8YzG8eM915ryQ3UbBSZH4WaI.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HW/HWjx9eO49VAbX7ucZkPax8xRa9hqx1iqD4IJ4uj7ZlU.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/HW/HWjx9eO49VAbX7ucZkPax8xRa9hqx1iqD4IJ4uj7ZlU.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Io/Io6PRqLPYO6qH-L91Lq6ckVufjREWWvVZxFG-waFmHw.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Io/Io6PRqLPYO6qH-L91Lq6ckVufjREWWvVZxFG-waFmHw.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Iu/IupF0YVUqJJHMMozuqiWx0DPOKeOhgWVp5xiyYFvxS8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Iu/IupF0YVUqJJHMMozuqiWx0DPOKeOhgWVp5xiyYFvxS8.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/K3/K3dO-QBoM8tlChbQhInOsgcp-u9Lp3z8AJTFJVk5S3E.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/K3/K3dO-QBoM8tlChbQhInOsgcp-u9Lp3z8AJTFJVk5S3E.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/KA/KAgPA7PwyfUgxsobiQ0pSFUHiraIWVwgQuqbFJbxj0k.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/KA/KAgPA7PwyfUgxsobiQ0pSFUHiraIWVwgQuqbFJbxj0k.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Kw/Kw9CulIvFVB8H-vI_o91EgNRTOO0kf4A3FWIZ5MzcnQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Kw/Kw9CulIvFVB8H-vI_o91EgNRTOO0kf4A3FWIZ5MzcnQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/M1/M10tzrUZqHTQCPOg3fY2i6a58tCEXhzIWg3m142J8EU.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/M1/M10tzrUZqHTQCPOg3fY2i6a58tCEXhzIWg3m142J8EU.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Nx/NXP0yir5uk3B_YQNFZQZ5QpFZnlkqv3CFoaDmmmj1gE.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Nx/NXP0yir5uk3B_YQNFZQZ5QpFZnlkqv3CFoaDmmmj1gE.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/OF/OfDcCEI12wQ6OiLs7bN0F-aFpSHZBY18ruhFTw2xVF4.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/OF/OfDcCEI12wQ6OiLs7bN0F-aFpSHZBY18ruhFTw2xVF4.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Oe/OeK5fas73AcAma3xLu-BW1qFgBL_kMyeYx9-8FzV_ns.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Oe/OeK5fas73AcAma3xLu-BW1qFgBL_kMyeYx9-8FzV_ns.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ov/Ovf5udC2I4P4-VmgNIun5QcwJA5Ms5oXymrsYkjYfmg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ov/Ovf5udC2I4P4-VmgNIun5QcwJA5Ms5oXymrsYkjYfmg.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/P0/P0lFxcEquo8p_JB1G1kL4h9hy--jOkVjvyWjFxqOEqk.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/P0/P0lFxcEquo8p_JB1G1kL4h9hy--jOkVjvyWjFxqOEqk.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Pp/PpRW1icio31ehNjkdJ0junHFL8VqavUbNmvf6SQGwwc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Pp/PpRW1icio31ehNjkdJ0junHFL8VqavUbNmvf6SQGwwc.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/QD/QD158taFtl-LMQH5DUwBa7jQg--pWFfFulVqouQ1Hrs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/QD/QD158taFtl-LMQH5DUwBa7jQg--pWFfFulVqouQ1Hrs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Qc/Qci_JYQYXfVCkg6I0TS5LeRov7_lwZy1cB1NkWp0X9s.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Qc/Qci_JYQYXfVCkg6I0TS5LeRov7_lwZy1cB1NkWp0X9s.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Re/Remxy4fpO4lAWvzwx0cZWLad66koczqfacrIi6sNFkc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Re/Remxy4fpO4lAWvzwx0cZWLad66koczqfacrIi6sNFkc.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ss/SsGB0ENEM2xHXiAjimVyPNKL5AOq8LMr5fpV_QpmqPY.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ss/SsGB0ENEM2xHXiAjimVyPNKL5AOq8LMr5fpV_QpmqPY.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ty/Tyls1WXMdDq7Et02mIulmokfp38XNXUEZyjyL2c-4_U.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ty/Tyls1WXMdDq7Et02mIulmokfp38XNXUEZyjyL2c-4_U.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ut/Ut8Ufsmos_5hQlcix8Xk1TiwvWe6kjU0vG1y_oVWXqg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Ut/Ut8Ufsmos_5hQlcix8Xk1TiwvWe6kjU0vG1y_oVWXqg.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/VX/VXpVfGm2-Y9toEM0VQKD15NrUwHSM_HdTqiLKy3ea50.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/VX/VXpVfGm2-Y9toEM0VQKD15NrUwHSM_HdTqiLKy3ea50.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/X4/X46swcRfwqMkm0V26nfQ4jwuUSetfS0b-uoQhFDKau8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/X4/X46swcRfwqMkm0V26nfQ4jwuUSetfS0b-uoQhFDKau8.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Xj/XjyuWmGyCdE1x1NF7c8CbtZqlIePMfp-Tfb3pabVMEU.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/Xj/XjyuWmGyCdE1x1NF7c8CbtZqlIePMfp-Tfb3pabVMEU.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/aO/aOaXhHzjxR5KLdz1yOrIE5LkDU4AyBn23B6DTnh3XFE.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/aO/aOaXhHzjxR5KLdz1yOrIE5LkDU4AyBn23B6DTnh3XFE.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ax/axriQmJPzBHvHHdueKA6fHHimVEXU6XgAzIP_0JeiwI.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ax/axriQmJPzBHvHHdueKA6fHHimVEXU6XgAzIP_0JeiwI.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/e6/e6uMf2ZzEbX78Eh7OuabmiHRPNPU2THCvhcLvJIk02w.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/e6/e6uMf2ZzEbX78Eh7OuabmiHRPNPU2THCvhcLvJIk02w.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ht/hthn7IamMoeWPE8Ar1B7ij3AAWnfLvVR0RmczzgM37w.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/ht/hthn7IamMoeWPE8Ar1B7ij3AAWnfLvVR0RmczzgM37w.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/iG/iGD4xtGZcIIlLKa1grozzI1C09Ybmg9OrO5awoLvCms.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/iG/iGD4xtGZcIIlLKa1grozzI1C09Ybmg9OrO5awoLvCms.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/jt/jtqtpnLC8QlZu98agBivnTJjO-QYFvNg27IuD2W6h04.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/jt/jtqtpnLC8QlZu98agBivnTJjO-QYFvNg27IuD2W6h04.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kF/kFxMKrAiHJV0rXZTaDZNgV3MgBBLd31lucxC4M6E8jY.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kF/kFxMKrAiHJV0rXZTaDZNgV3MgBBLd31lucxC4M6E8jY.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kb/kbHRnboBX4O32ltMIBADg6jUcIO40hHq_qW6azNurvg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kb/kbHRnboBX4O32ltMIBADg6jUcIO40hHq_qW6azNurvg.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kh/kh0cTrbkJqpCoBNy_mrgXyIIzeAZCRBfeMJXDLDmpyY.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/kh/kh0cTrbkJqpCoBNy_mrgXyIIzeAZCRBfeMJXDLDmpyY.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/m8/m8o9-YElPSMnGsLjUYgRvTSTPVUgviAOCUWeljgqBQA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/m8/m8o9-YElPSMnGsLjUYgRvTSTPVUgviAOCUWeljgqBQA.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/n5/n5jC9rI6KOpZU08MzfM0rUENGL7ltDhH6wBqU3Z_rmc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/n5/n5jC9rI6KOpZU08MzfM0rUENGL7ltDhH6wBqU3Z_rmc.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/o9/o9C7zUfyoBD43_Wd7BXuj0FJdX4Shk7ZXX8A60Bfb4I.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/o9/o9C7zUfyoBD43_Wd7BXuj0FJdX4Shk7ZXX8A60Bfb4I.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qJ/qJn_NIAI6DaPHSPuy9uB5-8wGbzUyKZIeZMXwfIEqbs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qJ/qJn_NIAI6DaPHSPuy9uB5-8wGbzUyKZIeZMXwfIEqbs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qT/qTFvb3bjC3RuONdlPoigfbpz-ZkjqyJvbvy4CX1QQ5U.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qT/qTFvb3bjC3RuONdlPoigfbpz-ZkjqyJvbvy4CX1QQ5U.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qe/qeYKkDVUGVXeqNFhioLIP8fqEPok0aty5zuEqdLXhr0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/qe/qeYKkDVUGVXeqNFhioLIP8fqEPok0aty5zuEqdLXhr0.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/s_/s_yK8b_bOIacjT10qM0Q6lZdDdRveAZw8nOya2Exrv0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/s_/s_yK8b_bOIacjT10qM0Q6lZdDdRveAZw8nOya2Exrv0.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/u0/u0dTuolU3RLfyNuTSPO0_G52qPv6QCktlmQ3p5yJ-Cs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/u0/u0dTuolU3RLfyNuTSPO0_G52qPv6QCktlmQ3p5yJ-Cs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/uv/uvMKyA2L7hWrNg5wtdlHFxJzJUT3ievFaNfPBDR_xVg.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/uv/uvMKyA2L7hWrNg5wtdlHFxJzJUT3ievFaNfPBDR_xVg.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vM/vMqX_1VvXyaGtgc7dx2C8bBu_JrB1MGIONoHGZWsMw0.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vM/vMqX_1VvXyaGtgc7dx2C8bBu_JrB1MGIONoHGZWsMw0.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vV/vV_GtsVsWHEnzYSIhX_7Ofc5589fPcoUspJFYy_I0lQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vV/vV_GtsVsWHEnzYSIhX_7Ofc5589fPcoUspJFYy_I0lQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vf/vfm6GzMJ97e7483Xj6Dc9Dl4CFdNTROYyW-MAXvkMnk.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/vf/vfm6GzMJ97e7483Xj6Dc9Dl4CFdNTROYyW-MAXvkMnk.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/wn/wnywy8CQuf_jXye4bsTmhDJBk3Gdh9E2W42fx9cG-Kw.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/wn/wnywy8CQuf_jXye4bsTmhDJBk3Gdh9E2W42fx9cG-Kw.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/z0/z0eVzXd2K6iNmdzC56pRT44WXDtH0RRyY-WAXmanU70.cache" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/tmp/cache/assets/sprockets/v3.0/z0/z0eVzXd2K6iNmdzC56pRT44WXDtH0RRyY-WAXmanU70.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/configs/gmaps.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/configs/gmaps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/graphium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs/docs/about/execution.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/about/execution.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs/docs/about/installation.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/about/installation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/classification_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/classification_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/configurations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/controllers/graphium/configurations_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/app/models/graphium/configuration.rb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/models/graphium/configuration.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/app/views/graphium/analytics/history.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/views/graphium/analytics/history.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/app/views/graphium/classification/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/views/graphium/classification/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/web_server/app/views/graphium/configurations/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/applications/web_server/app/views/graphium/configurations/_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/helper.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/scissor.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/assistant/scissor.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs/docs/swarm/system/graphium.md" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/docs/swarm/system/graphium.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs/mkdocs.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,10 +23,10 @@
     <session id="-1468262383">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="4" />
           <entry key="project.open.time.15" value="3" />
@@ -155,7 +34,7 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -164,7 +43,7 @@
           <entry key="Graphium CONF" value="56" />
           <entry key="Python Console" value="33" />
           <entry key="json" value="276" />
-          <entry key="md" value="9905" />
+          <entry key="md" value="10044" />
           <entry key="py" value="11821" />
           <entry key="yml" value="478" />
         </counts>
@@ -172,7 +51,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="276" />
-          <entry key="Markdown" value="9905" />
+          <entry key="Markdown" value="10044" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Python" value="11910" />
           <entry key="YAML" value="478" />
@@ -186,9 +65,9 @@
           <entry key="googlesigning" value="1" />
           <entry key="html" value="1" />
           <entry key="json" value="45" />
-          <entry key="md" value="56" />
+          <entry key="md" value="57" />
           <entry key="out" value="1" />
-          <entry key="py" value="179" />
+          <entry key="py" value="183" />
           <entry key="rb" value="5" />
           <entry key="yml" value="8" />
         </counts>
@@ -200,9 +79,9 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JSON" value="45" />
-          <entry key="Markdown" value="56" />
+          <entry key="Markdown" value="57" />
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="179" />
+          <entry key="Python" value="183" />
           <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
@@ -210,37 +89,29 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/applications/swarm/hive/Agent.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-748">
-                  <caret line="466" column="34" selection-start-line="466" selection-start-column="34" selection-end-line="466" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/release-notes.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="FIRST">
-                  <first_editor relative-caret-position="75">
-                    <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/release-notes.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/API.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="125" column="47" lean-forward="true" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -340,8 +211,8 @@
         <option value="$PROJECT_DIR$/applications/swarm/FixingHearingPath.py" />
         <option value="$PROJECT_DIR$/applications/swarm/assistant/API.py" />
         <option value="$PROJECT_DIR$/applications/swarm/anima/Looker.py" />
-        <option value="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" />
         <option value="$PROJECT_DIR$/applications/swarm/hive/Agent.py" />
+        <option value="$PROJECT_DIR$/mkdocs/docs/about/release-notes.md" />
       </list>
     </option>
   </component>
@@ -377,23 +248,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
               <item name="graphium" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graphium" type="462c0819:PsiDirectoryNode" />
-              <item name="applications" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="graphium" type="462c0819:PsiDirectoryNode" />
-              <item name="applications" type="462c0819:PsiDirectoryNode" />
-              <item name="swarm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graphium" type="b2602c69:ProjectViewProjectNode" />
@@ -417,7 +278,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -506,7 +366,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.226979" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23021002" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -828,9 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="e#47#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -895,16 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/GoogleSigning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#43#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/swarm/anima/Oracle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
@@ -912,27 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/swarm/RestoreDataInformation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-          <folding>
-            <element signature="e#47#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/API.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="132" column="117" selection-start-line="132" selection-start-column="108" selection-end-line="132" selection-end-column="117" />
         </state>
       </provider>
     </entry>
@@ -940,19 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="342" column="13" lean-forward="true" selection-start-line="342" selection-start-column="13" selection-end-line="342" selection-end-column="13" />
-          <folding>
-            <marker date="1543269419791" expanded="true" signature="12340:12638" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/release-notes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="75">
-            <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -965,8 +782,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/applications/swarm/hive/Agent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
+        <state relative-caret-position="3001">
           <caret line="466" column="34" selection-start-line="466" selection-start-column="34" selection-end-line="466" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/GoogleAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1457">
+          <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/GoogleSigning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="45" column="54" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="54" />
+          <folding>
+            <element signature="e#43#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/swarm/assistant/API.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="125" column="47" lean-forward="true" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mkdocs/docs/about/release-notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

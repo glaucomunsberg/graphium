@@ -113,6 +113,6 @@ class Graphium::ConfigurationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def graphium_configuration_params
-      params.require(:graphium_configuration).permit(:swarm_agent_number, :swarm_seconds_to_check_agents, :swarm_agent_names_API, :swarm_agent_names, :mongo_db, :mongo_host, :mongo_port, :swarm_agent_colors, :inf_positive, :inf_negative, :osmapi_user, :osmapi_password)
+      params.require(:graphium_configuration).permit(:swarm_agent_number, :swarm_seconds_to_check_agents, :swarm_agent_names_API, :swarm_agent_names, :mongo_db, :mongo_host, :mongo_port, :swarm_agent_colors, :inf_positive, :inf_negative, :osmapi_user, :osmapi_password, :google_maps_key)
     end
 end

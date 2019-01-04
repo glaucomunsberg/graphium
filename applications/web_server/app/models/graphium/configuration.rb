@@ -13,6 +13,7 @@ class Graphium::Configuration
   field :inf_negative, type: Integer
   field :osmapi_user, type: String
   field :osmapi_password, type: String
+  field :google_maps_key, type: String
     
   store_in collection: "configuration", database: "graphium"
 end

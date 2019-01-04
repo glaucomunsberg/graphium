@@ -29,14 +29,14 @@
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" onclick="update(37)" class="modal-close waves-effect waves-green btn-flat">Sim</a>
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Não</a>
+    <a onclick="update(37)" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+    <a class="modal-close waves-effect waves-green btn-flat">Não</a>
   </div>
 </div>
 <div class="row" style="margin-top: 20px">
   <div class="col m5 s12">
     <div class="row center" style="margin-top: 8px;">
-      <img pano class="materialboxed z-depth-3" src="https://dummyimage.com/400x400/ffffff/2d2338&text=Graphium" style="width: 100%;">
+      <img pano class="materialboxed z-depth-3" src="https://dummyimage.com/511x255/ffffff/2d2338&text=Graphium" style="width: 100%;">
       <a play class="btn-floating btn-large waves-effect waves-light right tooltipped" data-position="top" data-tooltip="Pressione 'I' ou 'S' para iniciar" onclick="play()" style="margin-top: -30px;margin-right: 15px;"><i play class="material-icons">play_arrow</i></a>
     </div>
   </div>
@@ -73,10 +73,10 @@
               <div class="col s4"></div>
             </div>
           </div>
-          <div class="row center tooltipped" data-position="top" data-tooltip="Pano ID atual e anterior" style="margin-bottom: 0px;">
+          <div class="row center" style="margin-bottom: 0px;">
 
-            <div class="col s12" current_pano_id style="color:#757575; cursor:pointer">Pano IP</div>
-            <div class="col s12" last_pano_id style="color:#757575;cursor:pointer">Last Pano IP</div>
+            <div current_pano_id class="col s12 tooltipped" data-position="top" data-tooltip="Pano ID atual" style="color:#757575; cursor:pointer">Pano IP</div>
+            <div last_pano_id class="col s12 tooltipped" data-position="top" data-tooltip="Pano ID anterior" style="color:#757575;cursor:pointer">Last Pano IP</div>
           </div>
         </div>
       </li>
@@ -124,6 +124,7 @@
   var pano_id = "";
   var pano_src = "";
   var pano_heading = "";
+  var restarted = false;
 
   function play(){
       if(!playing){
@@ -154,13 +155,21 @@
               'true_negative': document.querySelector('#true_negative').checked
           },
           beforeSend: function() {
-              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Loading...')
+              $('img[pano]').attr('src','https://dummyimage.com/511x255/ffffff/2d2338&text=Loading...')
           },
           success: function(data) {
 
-              console.log('data',data);
+              console.log('data retorned',data);
               if(data.pano == null){
-                  Materialize.toast('Não há mais o que classificar com esta(s) categoria(s)', 3000);
+                  if(!restarted){
+                      pano_position = 0;
+                      pano_total = 0;
+                      restarted = !restarted;
+                      inicialize();
+                  }else{
+                      Materialize.toast('Não há mais o que classificar com esta(s) categoria(s)', 3000);
+                  }
+
               }else{
                   pano_id = data.pano.pano_id;
                   pano_heading = data.pano.heading;
@@ -168,6 +177,7 @@
 
                   $('img[pano]').attr('src',pano_src);
                   $('div[last_pano_id]').html($('div[current_pano_id]').text());
+                  $('div[last_pano_id]').attr('onclick', $('div[current_pano_id]').attr('onclick'));
                   $('div[current_pano_id]').html(data.pano.pano_id);
                   $('div[current_pano_id]').attr('onclick', "window.open('"+pano_src+"')");
                   $('a[false_negative]').removeClass('btn');
@@ -208,7 +218,7 @@
           },
           error: function(xhr) { // if error occured
               alert("Error occured.please try again");
-              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Ooops...')
+              $('img[pano]').attr('src','https://dummyimage.com/511x255/ffffff/2d2338&text=Ooops...')
           },
           complete: function() {
 
@@ -244,16 +254,16 @@
               'pano_classification': pano_classification
           },
           beforeSend: function() {
-              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Updating...')
+              //$('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Updating...')
           },
           success: function(data) {
               pano_position++;
               inicialize();
-              console.log(data)
+              //console.log(pano_position, data)
           },
           error: function(xhr) { // if error occured
               alert("Error occured.please try again");
-              $('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Ooops...')
+              $('img[pano]').attr('src','https://dummyimage.com/511x255/ffffff/2d2338&text=Ooops...')
           },
           complete: function() {
 
@@ -267,7 +277,7 @@
       $('.modal').modal();
 
       $(document).on('keydown', function (e) {
-          console.log('Code key',e.keyCode);
+          //console.log('Code key',e.keyCode);
           //console.log(typeof e.keyCode);
           switch (e.keyCode) {
               case 39:

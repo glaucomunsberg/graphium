@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 0.0.8
+
+* `Webserver`: `Configuration` Google API Key
+* `Webserver`: `Classification` improving manualy classification
 
 ## Version 0.0.7
 
