@@ -13,37 +13,39 @@ class Graphium::ClassificationController < ApplicationController
 
     @informations = {}
 
-    @classifications = []
+    @classifications = ""
     if params[:true] == "true"
-      @classifications << "T"
-    end
-    if params[:false] == "true"
-      @classifications << "F"
-    end
-
-    if params[:true_negative] == "true"
-      @classifications << "TN"
-    end
-
-    if params[:true_positive] == "true"
-      @classifications << "TP"
-    end
-
-    if params[:false_negative] == "true"
-      @classifications << "FN"
-    end
-
-    if params[:false_positive] == "true"
-      @classifications << "FP"
+      @classifications = "T"
+    elsif params[:false] == "true"
+      @classifications = "F"
+    elsif params[:true_negative] == "true"
+      @classifications = "TN"
+    elsif params[:true_positive] == "true"
+      @classifications = "TP"
+    elsif params[:false_negative] == "true"
+      @classifications = "FN"
+    elsif params[:false_positive] == "true"
+      @classifications = "FP"
     end
 
     #logger.info "Classification wanted"
     #logger.info @classifications
 
-    panos = Graphium::Pano.where(:classification.in => @classifications ).length
+    panos = Graphium::Pano.where(:classification => @classifications ).limit(400)
     @informations['pano'] = panos[params[:pano_position].to_i]
     @informations['total'] = panos.length
     @informations['classifications'] = @classifications
+    if params[:pano_position].to_i == 0
+      @informations['classifieds'] = {}
+      @informations['classifieds']['TP'] = Graphium::Pano.where(:classification => 'TP' ).length
+      @informations['classifieds']['FP'] = Graphium::Pano.where(:classification => 'FP' ).length
+      @informations['classifieds']['TN'] = Graphium::Pano.where(:classification => 'TN' ).length
+      @informations['classifieds']['FN'] = Graphium::Pano.where(:classification => 'FN' ).length
+      @informations['classifieds']['T'] = Graphium::Pano.where(:classification => 'T' ).length
+      @informations['classifieds']['F'] = Graphium::Pano.where(:classification => 'F' ).length
+    end
+
+
     respond_to do |format|
       format.json { render :json => @informations }
     end

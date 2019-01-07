@@ -1,13 +1,15 @@
+<link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.0.0-beta.1.1.1/dist/css/mstepper.min.css">
+<script src="https://unpkg.com/materialize-stepper@3.0.0-beta.1.1.1/dist/js/mstepper.min.js"></script>
 <%=breadcrumbs [{:name => 'Home',:path => '/'},{:name => 'Classification', :path => '/graphium/classification'}]%>
 <div id="modal_delete" class="modal">
   <div class="modal-content">
-    <h4>Deletar o Graphite</h4>
-    <div class="row">
-      <div class="col s7">
-        <img modal_delete_preview src="">
+    <h4>Deletar o Grafite</h4>
+    <div class="row valign-wrapper">
+      <div class="col s5">
+        <img modal_delete_preview src="" style="width: 100%;">
       </div>
-      <div class="col s5" modal_delete_text >
-
+      <div class="col s5 offset-s2" modal_delete_text >
+          Você está DELETANDO este graffiti. Você tem certeza desta acão?
       </div>
     </div>
   </div>
@@ -18,13 +20,13 @@
 </div>
 <div id="modal_create" class="modal">
   <div class="modal-content">
-    <h4>Deletar o Graphite</h4>
-    <div class="row">
-      <div class="col s7">
-        <img modal_create_preview src="">
+    <h4>Criar o Grafite</h4>
+    <div class="row valign-wrapper">
+      <div class="col s5">
+        <img modal_create_preview src="" style="width: 100%;">
       </div>
-      <div class="col s5" modal_create_text >
-
+      <div class="col s5 offset-s2" modal_create_text >
+        Você está CRIANDO um novo graffiti. Você tem certeza desta acão?
       </div>
     </div>
   </div>
@@ -33,30 +35,86 @@
     <a class="modal-close waves-effect waves-green btn-flat">Não</a>
   </div>
 </div>
-<div class="row" style="margin-top: 20px">
-  <div class="col m5 s12">
-    <div class="row center" style="margin-top: 8px;">
-      <img pano class="materialboxed z-depth-3" src="https://dummyimage.com/511x255/ffffff/2d2338&text=Graphium" style="width: 100%;">
-      <a play class="btn-floating btn-large waves-effect waves-light right tooltipped" data-position="top" data-tooltip="Pressione 'I' ou 'S' para iniciar" onclick="play()" style="margin-top: -30px;margin-right: 15px;"><i play class="material-icons">play_arrow</i></a>
-    </div>
-  </div>
-  <div class="col m7 s12" style="padding-left: 20px">
-    <ul class="collapsible" data-collapsible="accordion">
-      <li>
-        <div class="collapsible-header active"><i class="material-icons">subdirectory_arrow_right</i>Controles</div>
-        <div class="collapsible-body">
-          <div class="row">
-            <div class="col s5">
-              <a class="waves-effect waves-teal btn-flat"><i class="material-icons left">arrow_back</i>Anterior</a>
+
+
+<ul class="stepper horizontal" style="margin-top: 0px;">
+  <li class="step active">
+    <div class="step-title waves-effect" data-step-label="Filtros de panos" >Configurar filtros</div>
+    <div class="step-content">
+      <!-- CONFIGURATIONS -->
+      <div class="row valign-wrapper">
+        <div class="col s3">
+          Antes de iniciar a classificar, escolha as
+          imagens de acordo com a sua classificão prévia
+          ou filtre pelo swarm na qual a pano foi classificada.
+        </div>
+        <div content="col s8 offset-s1">
+          <div class="col s12">
+            <div class="col s12">
+              <b>Imagens from Swarm</b>
             </div>
-            <div counter class="col s2 center" style="padding-top: 7px;color: gray;">
-              0 de ?
-            </div>
-            <div class="col s5">
-              <a class="waves-effect waves-teal btn-flat"><i class="material-icons right">arrow_forward</i>Próximo</a>
+            <div class="input-field col s12">
+              <select name="swarm_id"  class="browser-default" id="swarm_id">
+                <option value="" disabled selected>Choose your swarm</option>
+                <% Graphium::Swarm.all.each do |swarm| %>
+                  <option id="<%=swarm.identifier %>"><%=swarm.identifier %></option>
+                <%end %>
+              </select>
             </div>
           </div>
+          <div class="col s12">
+            <div class="row">
+              <div class="col s12" style="margin:20px 0px 10px 0px">
+                <b>Images classified as</b>
+              </div>
+              <div class="col s4">
+                <input name="group1" type="radio" checked id="false" />
+                <label for="false">False</label>
+              </div>
+              <div class="col s4">
+                <input name="group1" type="radio" id="true" />
+                <label for="true">True</label>
+              </div>
+              <div class="col s4">
+                <input name="group1" type="radio" id="true_positive" />
+                <label for="true_positive">True Positive</label>
+              </div>
+              <div class="col s4">
+                <input name="group1" type="radio" id="false_positive" />
+                <label for="false_positive">False Positive</label>
+              </div>
+              <div class="col s4">
+                <input name="group1" type="radio" id="true_negative" />
+                <label for="true_negative">True Negative</label>
+              </div>
+              <div class="col s4">
+                <input name="group1" type="radio" id="false_negative" />
+                <label for="false_negative">False Negative</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-actions">
+        <!-- Here goes your actions buttons -->
+        <button class="waves-effect waves-dark btn next-step" onclick="play()"><i class="material-icons right">arrow_forward</i>Próxima Etapa</button>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <div class="step-title waves-effect" data-step-label="Analise as panos filtradas">Classificar panos</div>
+    <div class="step-content">
+      <!-- CLASSIFICATION -->
+      <div class="row">
+        <div class="col m7 s12">
+          <div class="row center" style="margin-top: 8px;">
+            <img pano class="materialboxed z-depth-3" src="https://dummyimage.com/725x362/ffffff/2d2338&text=Graphium" style="width: 100%;">
+            <a play class="btn-floating btn-large waves-effect waves-light right tooltipped" data-position="top" data-tooltip="Pressione 'I' ou 'S' para iniciar" onclick="play()" style="margin-top: -30px;margin-right: 15px;"><i play class="material-icons">play_arrow</i></a>
+          </div>
           <div class="row">
+            <div class="row">
+              <b>Classified pano as</b>
+            </div>
             <div class="row">
               <div class="col s4"></div>
               <div class="col s4 center"><a true_positive class="waves-effect waves-light btn">True Positive</a></div>
@@ -73,50 +131,110 @@
               <div class="col s4"></div>
             </div>
           </div>
-          <div class="row center" style="margin-bottom: 0px;">
+        </div>
+        <div class="col m4 s12 offset-m1">
+          <div class="row center" style="margin-top: 8px;">
+            <img last_pano class="materialboxed z-depth-3" src="https://dummyimage.com/511x255/ffffff/2d2338&text=Graphium" style="width: 100%;">
+            <a undo class="btn-floating btn-large waves-effect waves-light right tooltipped" data-position="top" data-tooltip="Voltar a classificao anterior" onclick="back_to()" style="margin-top: -30px;margin-right: 15px;"><i undo class="material-icons">undo</i></a>
+          </div>
+          <div class="row center">
+            <div counter class="s12" style="color: gray;">
+              0 de ?
+            </div>
+          </div>
 
-            <div current_pano_id class="col s12 tooltipped" data-position="top" data-tooltip="Pano ID atual" style="color:#757575; cursor:pointer">Pano IP</div>
-            <div last_pano_id class="col s12 tooltipped" data-position="top" data-tooltip="Pano ID anterior" style="color:#757575;cursor:pointer">Last Pano IP</div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">tune</i>Configurações</div>
-        <div class="collapsible-body">
-          <div class="row">
-            <div class="s12">
-              <b>Image with class</b>
+          <div class="row" style="">
+            <div class="col s6">
+              <b>Current pano id</b>
             </div>
-            <div class="s2">
-              <input type="checkbox" class="filled-in" id="false" checked="checked" />
-              <label for="false">False</label>
-            </div>
-            <div class="s2">
-              <input type="checkbox" class="filled-in" id="true" checked="checked" />
-              <label for="true">True</label>
-            </div>
-            <div class="s2">
-              <input type="checkbox" class="filled-in" id="true_positive"/>
-              <label for="true_positive">True Positive</label>
-            </div>
-            <div class="s2">
-              <input type="checkbox" class="filled-in" id="false_positive" />
-              <label for="false_positive">False Positive</label>
-            </div>
-            <div class="s2">
-              <input type="checkbox" class="filled-in" id="true_negative" />
-              <label for="true_negative">True Negative</label>
-            </div>
-            <div class="s2">
-              <input type="checkbox" class="filled-in" id="false_negative"  />
-              <label for="false_negative">False Negative</label>
+            <div class="col s6">
+              <b>Last pano id</b>
             </div>
           </div>
+          <div class="row" style="margin-bottom: 0px;">
+            <div current_pano_id class="col s6 tooltipped truncate" data-position="top" data-tooltip="Pano ID atual" style="color:#757575; cursor:pointer">Pano IP</div>
+            <div last_pano_id class="col s6 tooltipped truncate" data-position="top" data-tooltip="Pano ID anterior" style="color:#757575;cursor:pointer">Last Pano IP</div>
+          </div>
+
         </div>
-      </li>
-    </ul>
-  </div>
-</div>
+      </div>
+      <div class="step-actions">
+        <!-- Here goes your actions buttons -->
+        <button class="waves-effect waves-dark btn next-step"><i class="material-icons right">arrow_forward</i>Ver resultados</button>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <div class="step-title waves-effect">Resultados</div>
+    <div class="step-content">
+      <!-- RESULTS -->
+      <div class="row center" style="margin: .5rem 0 1rem 0;">
+        <table class="tg">
+          <thead>
+          <tr>
+            <th>Classification</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th class="tg-s268">
+              True
+            </th>
+            <th class="tg-s268">
+              <div classifed_true class="col s3 tooltipped" data-position="top" data-tooltip="True" style="color:#757575; cursor:pointer">0</div>
+            </th>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              False
+            </td>
+            <td class="tg-s268">
+              <div classified_false class="col s6 tooltipped" data-position="top" data-tooltip="False" style="color:#757575;cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              True Positive
+            </td>
+            <td class="tg-s268">
+              <div classified_true_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total True Positive" style="color:#757575; cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              True Negative
+            </td>
+            <td class="tg-s268">
+              <div classified_true_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total True Negative" style="color:#757575;cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              False Negative
+            </td>
+            <td class="tg-s268">
+              <div classified_false_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total False Negative" style="color:#757575;cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              False Positive
+            </td>
+            <td class="tg-s268">
+              <div classified_false_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="step-actions">
+        <!-- Here goes your actions buttons -->
+        <button class="waves-effect waves-dark btn next-step">Finalizar</button>
+      </div>
+    </div>
+  </li>
+</ul>
 <script>
   var pano_position = 0;
   var pano_total = 0;
@@ -125,6 +243,10 @@
   var pano_src = "";
   var pano_heading = "";
   var restarted = false;
+  var pano_old_classification = null;
+  var pano_old_src = "";
+  var pano_old_id = "";
+  var pano_old_heading = "";
 
   function play(){
       if(!playing){
@@ -152,14 +274,16 @@
               'false_positive': document.querySelector('#false_positive').checked,
               'false_negative': document.querySelector('#false_negative').checked,
               'true_positive': document.querySelector('#true_positive').checked,
-              'true_negative': document.querySelector('#true_negative').checked
+              'true_negative': document.querySelector('#true_negative').checked,
+              'swarm_id': document.querySelector('#swarm_id').value
           },
           beforeSend: function() {
+              pano_old_src = $('img[pano]').attr('src');
               $('img[pano]').attr('src','https://dummyimage.com/511x255/ffffff/2d2338&text=Loading...')
           },
           success: function(data) {
 
-              console.log('data retorned',data);
+              //console.log('data retorned',data);
               if(data.pano == null){
                   if(!restarted){
                       pano_position = 0;
@@ -172,12 +296,15 @@
 
               }else{
                   pano_id = data.pano.pano_id;
+                  pano_old_heading = pano_heading;
                   pano_heading = data.pano.heading;
-                  pano_src = "https://maps.googleapis.com/maps/api/streetview?size=600x300&pano="+data.pano.pano_id+"&heading="+data.pano.heading+"&pitch="+data.pano.splited+"&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"
-
+                  pano_src = "https://maps.googleapis.com/maps/api/streetview?size=600x300&pano="+data.pano.pano_id+"&heading="+data.pano.heading+"&pitch="+data.pano.splited+"&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM";
+                  $('img[last_pano]').attr('src',pano_old_src);
                   $('img[pano]').attr('src',pano_src);
+                  pano_old_id = $('div[current_pano_id]').text();
                   $('div[last_pano_id]').html($('div[current_pano_id]').text());
                   $('div[last_pano_id]').attr('onclick', $('div[current_pano_id]').attr('onclick'));
+
                   $('div[current_pano_id]').html(data.pano.pano_id);
                   $('div[current_pano_id]').attr('onclick', "window.open('"+pano_src+"')");
                   $('a[false_negative]').removeClass('btn');
@@ -189,7 +316,7 @@
                   $('a[true_negative]').removeClass('btn-flat');
                   $('a[true_positive]').removeClass('btn-flat');
                   $('div[counter]').text(pano_position+' de '+data.total);
-
+                  pano_old_classification = data.pano.classification
                   switch (data.pano.classification) {
                       case "F":
                           $('a[false_negative]').addClass('btn');
@@ -214,7 +341,61 @@
                       default:
                           alert("I can't understand: "+data.pano.classification)
                   }
+
+                  if(data.classifieds != null){
+                      $('div[classified_true_positive]').text(data.classifieds.TP);
+                      $('div[classified_true_negative]').text(data.classifieds.TN);
+                      $('div[classified_false_negative]').text(data.classifieds.FN);
+                      $('div[classified_false_positive]').text(data.classifieds.FP);
+                      $('div[classified_true]').text(data.classifieds.T);
+                      $('div[classified_false]').text(data.classifieds.F);
+                  }
               }
+          },
+          error: function(xhr) { // if error occured
+              alert("Error occured.please try again");
+              $('img[pano]').attr('src','https://dummyimage.com/511x255/ffffff/2d2338&text=Ooops...')
+          },
+          complete: function() {
+
+          }
+      });
+  }
+
+  function back_to(){
+
+      var pano_old_classification = "";
+
+      if(document.querySelector('#false').checked){
+          pano_old_classification = "F"
+      }else if(document.querySelector('#true').checked){
+          pano_old_classification = "T"
+      }else if(document.querySelector('#false_positive').checked){
+          pano_old_classification = "FP"
+      }else if(document.querySelector('#false_negative').checked){
+          pano_old_classification = "FN"
+      }else if(document.querySelector('#true_positive').checked){
+          pano_old_classification = "TP"
+      }else if(document.querySelector('#true_negative').checked){
+          pano_old_classification = "TN"
+      }else{
+          alert('Cant idenfity classification to holdback')
+      }
+
+      $.ajax({
+          type: 'get',
+          url: '/graphium/classification/updatePano',
+          data: {
+              'pano_id': pano_old_id,
+              'heading': pano_old_heading,
+              'pano_classification': pano_old_classification
+          },
+          beforeSend: function() {
+              //$('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Updating...')
+          },
+          success: function(data) {
+              Materialize.toast('A imagem voltou a classificão anteriro', 4000)
+              //console.log(pano_position, data)
           },
           error: function(xhr) { // if error occured
               alert("Error occured.please try again");
@@ -259,6 +440,38 @@
           success: function(data) {
               pano_position++;
               inicialize();
+
+              switch (pano_classification) {
+                  case "FN":
+                      $('div[classified_false_negative]').text(parseInt($('div[classified_false_negative]').text())+1);
+                      break;
+                  case "TP":
+                      $('div[classified_true_positive]').text(parseInt($('div[classified_true_positive]').text())+1);
+                      break;
+                  case "TN":
+                      $('div[classified_true_negative]').text(parseInt($('div[classified_true_negative]').text())+1);
+                      break;
+                  case "FP":
+                      $('div[classified_false_positive]').text(parseInt($('div[classified_false_positive]').text())+1);
+                      break;
+                  default:
+                      console.log('I cant identify honey');
+              }
+
+              if(pano_old_classification == "F"){
+                  $('div[classified_false]').text(parseInt($('div[classified_false]').text())-1);
+              }else if(pano_old_classification == "T"){
+                  $('div[classified_true]').text(parseInt($('div[classified_true]').text())-1);
+              }else{
+                  console.log('Cant identifi old classification')
+              }
+
+              if(data.classifieds != null){
+                  $('div[classified_true_positive]').text(data.classifieds.TP);
+                  $('div[classified_true_negative]').text(data.classifieds.TN);
+                  $('div[classified_false_negative]').text(data.classifieds.FN);
+                  $('div[classified_false_positive]').text(data.classifieds.FP);
+              }
               //console.log(pano_position, data)
           },
           error: function(xhr) { // if error occured
@@ -276,6 +489,14 @@
       $('.collapsible').collapsible();
       $('.modal').modal();
 
+      $('.stepper').css('minHeight',$(window).height()-65+"px");
+
+      var stepper = document.querySelector('.stepper');
+      var stepperInstace = new MStepper(stepper, {
+          // options
+          firstActive: 0 // this is the default
+      });
+
       $(document).on('keydown', function (e) {
           //console.log('Code key',e.keyCode);
           //console.log(typeof e.keyCode);
@@ -285,13 +506,11 @@
                   update(e.keyCode);
                   break;
               case 37:
-                  $('div[modal_create_text]').text("Esta ação está CRIANDO o graffiti");
-                  $('div[modal_create_preview]').attr("scr",pano_src);
+                  $('img[modal_create_preview]').attr("src",pano_src);
                   $('#modal_create').modal('open');
                   break;
               case 40:
-                  $('div[modal_delete_text]').text("Esta ação ESCONDERÁ o graffiti");
-                  $('div[modal_delete_preview]').attr("scr",pano_src);
+                  $('img[modal_delete_preview]').attr("src",pano_src);
                   $('#modal_delete').modal('open');
                   break;
               case 73:
@@ -306,3 +525,8 @@
 
   $('div[container]').removeClass('container')
 </script>
+<style>
+  body nav{
+    box-shadow: none;
+  }
+</style>
