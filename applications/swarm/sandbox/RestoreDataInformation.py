@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-from assistant.GoogleAPI import GoogleAPI
-from system.Mongo import Mongo
-from system.Graphium import Graphium
+from applications.swarm.assistant.GoogleAPI import GoogleAPI
+from applications.swarm.system.Mongo import Mongo
+from applications.swarm.system.Graphium import Graphium
 
 def main():
 

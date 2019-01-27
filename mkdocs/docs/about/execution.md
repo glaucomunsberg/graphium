@@ -11,9 +11,9 @@ Bellow you can see how upload the city `Pelotas` database:
 ### Swarm
 After upload the database – with reader mode – you can execute the a swarm with N agents to find images with a model.
 
-Example: To **run at streets** with `5` agents at `Pelotas` city.
+Example: To **run on streets** with `5` agents at `Pelotas` city with model `20190120203800.h5`.
 
-    python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7
+    python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7 --model_name 20190120203800
     
 !!!note
     The `--swarm_city` identifier is unique created at upload moment, you need verify throw command `--rake city:list` the identifier inside your database.
@@ -27,21 +27,26 @@ See list below:
     python Main.py --mode assessor --rake swarm:list
     python Main.py --mode assessor --rake swarm:active
     python Main.py --mode assessor --rake swarm:shutdown
-    python Main.py --mode assessor --rake swarm:erase
+    python Main.py --mode assessor --rake swarm:erase  --id <SWARM_ID>
     
-    python Main.py --mode assessor --rake agent:erase
+    python Main.py --mode assessor --rake swarms:erase
+    
+    python Main.py --mode assessor --rake agents:erase
     
     python Main.py --mode assessor --rake city:list
+    
+    python Main.py --mode assessor --rake model:list
     
     python Main.py --mode assessor --rake street:list
     python Main.py --mode assessor --rake street:count
     
     python Main.py --mode assessor --rake graffiti:list
-    python Main.py --mode assessor --rake graffiti:erase
+    
+    python Main.py --mode assessor --rake graffitis:erase
     
     puthon Main.py --mode assessor --rake session:list
     
-    python Main.py --mode assessor --rake log:erase
+    python Main.py --mode assessor --rake logs:erase
 
 
 !!!warning

@@ -45,18 +45,22 @@ class Assessor:
             self.swarm_active()
         elif self._args.rake == "swarm:shutdown":
             self.swarm_shutdown()
-        elif self._args.rake == "swarm:erase":
+        elif self._args.rake == "swarms:erase":
             self.swarm_erase()
-        elif self._args.rake == "agent:erase":
+        elif self._args.rake == "swarm:erase":
+            self.swarm_erase_by_id(self._args)
+        elif self._args.rake == "agents:erase":
             self.agent_erase()
-        elif self._args.rake == "graffiti:list":
+        elif self._args.rake == "graffitis:list":
             self.graffiti_list()
         elif self._args.rake == "graffiti:erase":
             self.graffiti_erase()
         elif self._args.rake == "session:list":
             self.session_list()
-        elif self._args.rake == "log:erase":
+        elif self._args.rake == "logs:erase":
             self.log_erase()
+        elif self._args.rake == "model:list":
+            self.model_list()
         elif None:
             print 'You need a function on rake'
         else:
@@ -154,6 +158,31 @@ class Assessor:
         except ValueError:
             print "Not a number"
 
+    def swarm_erase_by_id(self, args):
+
+        if self._mongo.getSwarmByIdentifier(args.id) is None:
+
+            print args.id+" is not a swarm identifier."
+
+        else:
+
+            try:
+                mode_2 = raw_input("It's will ERASE a swarm, agents, graffitis and panos saved on Graphium. You are "
+                                   "sure? Y/N\n")
+                if mode_2.lower() == "y" or mode_2.lower() == "yes":
+
+                    self._mongo.pano_erase_by_query({"swarm_identifier": args.id})
+                    self._mongo.graffiti_erase_by_query({"swarm_identifier": args.id})
+                    self._mongo.agent_erase_by_query({"swarm_identifier": args.id})
+                    self._mongo.swarm_erase_by_query({"identifier": args.id})
+
+                else:
+                    print "Ok, we no change anything."
+            except ValueError:
+                print "Not a number"
+
+
+
     def agent_erase(self):
         count = self._mongo.get_agents().count()
         self._mongo.agent_erase_by_query({})
@@ -239,4 +268,7 @@ class Assessor:
         count = self._mongo.get_graffiti_by_query({}).count()
         self._mongo.graffiti_erase_by_query({})
         print str(count)+" erased graffiti"
+
+    def model_list(self):
+        print 'not implemented yet.'
 

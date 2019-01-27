@@ -1,0 +1,674 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=Graphium::Configuration.first.google_maps_key%>&callback=initTheMap" defer></script>
+<div id='map' class="map row" style="margin-bottom: 0px" >
+</div>
+<div class="row shadow-controller" controllers style="overflow-y: auto;display:initial;position:absolute;top:64px;left: 0px;background-color: white;width: 400px;height: 600px;margin-bottom: 0px">
+  <div class="col s12">
+    <b>Swarm</b>
+  </div>
+  <p class="col s12">
+    <select name="swarm_id"  class="browser-default" id="swarm_id">
+      <option value="" disabled selected>Choose your swarm</option>
+      <% Graphium::Swarm.all.each do |swarm| %>
+        <option id="<%=swarm.identifier %>">Swarm <%=swarm.identifier %></option>
+      <%end %>
+    </select>
+  </p>
+  <div class="col s12">
+    <b>City Name</b>
+    <p city_name>Sem informações</p>
+  </div>
+  <div class="col s6">
+    <b>Model Name</b>
+    <p model_name>Sem informações</p>
+  </div>
+  <div class="col s6">
+    <b>Nº of agents</b>
+    <p agents_number>Sem informações</p>
+  </div>
+  <div class="col s12">
+    <b class="tooltiped" data-tooltip="Classificado por">Classified by</b>
+    <div>
+      <p class="col s6 tooltipped" data-tooltip='Apenas pelo Modelo'>
+        <input name="classified_by" type="radio" id="classified_by_model" checked />
+        <label for="classified_by_model">Model</label>
+      </p>
+      <p class="tooltipped col s6" data-tooltip='Apenas revisão humana'>
+        <input  name="classified_by" type="radio" id="classified_by_human" />
+        <label for="classified_by_human">Human Review</label>
+      </p>
+    </div>
+  </div>
+  <div class="col s12">
+    <b>Filter classified as a </b>
+  </div>
+  <p class="col s6 tooltipped" data-tooltip="Spray Teal">
+    <input type="checkbox" disabled id="classification_true" checked="checked" />
+    <label for="classification_true">True</label>
+  </p>
+  <p class="col s6 tooltipped" data-tooltip="Spray ">
+    <input type="checkbox" disabled id="classification_false"/>
+    <label for="classification_false">False</label>
+  </p>
+  <p class="col s6 tooltipped" data-tooltip="Spray Red">
+    <input type="checkbox" disabled id="classification_true_positive" />
+    <label for="classification_true_positive">True Positive</label>
+  </p>
+  <p class="col s6 tooltipped" data-tooltip="Spray Purple">
+    <input type="checkbox" disabled id="classification_false_positive" />
+    <label for="classification_false_positive">False positive</label>
+  </p>
+  <p class="col s6 tooltipped" data-tooltip="Without Spray">
+    <input type="checkbox" disabled id="classification_true_negative"/>
+    <label for="classification_true_negative">True Negative</label>
+  </p>
+  <p class="col s6 tooltipped" data-tooltip="Spray Yellow">
+    <input type="checkbox" disabled id="classification_false_negative" />
+    <label for="classification_false_negative">False Negative</label>
+  </p>
+  <div class="col s12">
+    <b>Show agents</b>
+    <div>
+      <p class="col s6">
+        <input name="show_agents" type="radio" id="show_agents_no" checked />
+        <label for="show_agents_no">No</label>
+      </p>
+      <p class="col s6">
+        <input name="show_agents" type="radio" id="show_agents_yes" />
+        <label for="show_agents_yes">Yes</label>
+      </p>
+    </div>
+  </div>
+  <div class="col s12">
+    <b>Show covered area</b>
+    <div>
+      <p class="col s3">
+        <input name="show_route" type="radio" id="show_route_no" checked />
+        <label for="show_route_no">No</label>
+      </p>
+      <p class="col s3">
+        <input name="show_route" type="radio" id="show_route_yes" />
+        <label for="show_route_yes">Yes</label>
+      </p>
+      <p class="col s6">
+        <input name="show_route" type="radio" id="show_route_yes_with_moviment" />
+        <label for="show_route_yes_with_moviment">Yes (with mov.)</label>
+      </p>
+    </div>
+  </div>
+  <div class="col s12">
+    <a onclick="update()" class="waves-effect waves-light btn right">Filtar</a>
+  </div>
+  <div class="col s12">
+    <p>
+      <input type="checkbox" class="filled-in" id="stats_for_nerds" />
+      <label for="stats_for_nerds">Stats for nerds</label>
+    </p>
+  </div>
+  <div stats_for_nerds class="col s12 center" style="display:none">
+    <table class="highlight" style="text-align: center">
+      <thead>
+      <tr>
+        <td colspan="2">Total</td>
+        <td>True</td>
+        <td>False</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td colspan="2" result_total>0</td>
+        <td result_true>0</td>
+        <td result_false>0</td>
+      </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <td >True Positive</td>
+          <td >True Negative</td>
+          <td >False Negative</td>
+          <td >False Positive</td>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td result_true_positive>0</td>
+            <td result_true_negative>0</td>
+            <td result_false_negative>0</td>
+            <td result_false_positive>0</td>
+          </tr>
+      </tbody>
+      <thead>
+        <tr>
+          <td>Sensibilidade</td>
+          <td>Especificidade</td>
+          <td>Valor Preditivo Positivo</td>
+          <td>Valor Preditivo Negativo</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td result_sensibility>0</td>
+          <td result_especificity>0</td>
+          <td result_preditive_positive>0</td>
+          <td result_preditive_negative>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row shadow-controller-graffiti" graffiti_controllers style="overflow-y: auto;display:none;position:absolute;top:64px;left: 400px;background-color: white;width: 400px;height: 600px;margin-bottom: 0px">
+  <div class="col s12">
+    <div class="right">
+      <i  style="cursor: pointer;" class="material-icons" onclick="$('div[graffiti_controllers]').css('display','none')">
+        close
+      </i>
+    </div>
+  </div>
+  <div class="col s12">
+    <b>Image</b>
+  </div>
+  <div class="col s12" style="margin-bottom: 15px;">
+    <img class="materialboxed" src="" graffiti style="width: 100%">
+  </div>
+  <div class="col s12 tooltipped" data-tooltip="Classified date">
+    <b>Classified as</b>
+  </div>
+  <div graffiti_classificafied_as class="col s12 tooltipped" data-tooltip="Classified as">
+
+  </div>
+  <div class="col s12 tooltipped" data-tooltip="Classified date">
+    <b>Classification date</b>
+  </div>
+  <div graffiti_date class="col s12 tooltipped" data-tooltip="Classified date">
+
+  </div>
+  <div class="col s12 tooltipped" data-tooltip="Pano date">
+    <b>Pano data</b>
+  </div>
+  <div pano_date class="col s12 tooltipped" data-tooltip="Pano date">
+
+  </div>
+  <div class="col s12" style="margin-top: 15px;">
+    <b>Your rating</b>
+  </div>
+  <div class="col s12 center">
+    <div class="row">
+      <div class="col s4 tooltipped" data-tooltip="No!" onclick="submit_rating('no')" style="cursor:pointer;"><img style="width: 70%" src="/assets/analytics/classification_bad.png"></div>
+      <div class="col s4 tooltipped" data-tooltip="Maybe" onclick="submit_rating('maybe')" style="cursor:pointer;"><img style="width: 70%" src="/assets/analytics/classification_maybe.png"></div>
+      <div class="col s4 tooltipped" data-tooltip="Yes!" onclick="submit_rating('yes')" style="cursor:pointer;"><img style="width: 70%" src="/assets/analytics/classification_good.png"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    var controller_show = false;
+    var stats_for_nerds_show = false;
+    var map;
+    var swarm_identifier = 0;
+    var infoWindow = "";
+    var markers_graffiti = [];
+    var markers_agents = [];
+    var agents = [];
+    var lines = [];
+    var visited_streets = [];
+    var lineSymbol = {
+        path: 'M 0,1 0,1',
+        strokeOpacity: 0.4,
+        scale: 4
+    };
+    var current_graffiti_id = "";
+
+
+    function clean_map(){
+        for(var a=0; a < markers_agents.length;a++){
+            markers_agents[a].setMap(null);
+
+        }
+        for(var a=0; a < markers_graffiti.length;a++){
+            markers_graffiti[a].setMap(null);
+
+        }
+        for(var a=0; a <lines.length;a++){
+            lines[a].setMap(null);
+        }
+        markers_agents = [];
+        lines = [];
+        markers_graffiti = [];
+        google.maps.event.trigger(map, 'resize');
+        $('#street_names').html('<span>None</span>');
+        console.log('clean')
+    }
+
+    function controller_clicked(){
+        if(controller_show){
+            $('div[controllers]').css('display','none');
+        }else{
+            $('div[controllers]').css('display','');
+        }
+        controller_show = !controller_show;
+    }
+
+    $(window).resize(function () {
+        $('#map').width($(window).width()+"px");
+        $('#map').height($(window).height()-64+"px");
+        $('div[controllers]').height($(window).height()-64+"px");
+        $('div[graffiti_controllers]').height($(window).height()-64+"px");
+    });
+
+    $(document).ready(function(){
+        $('#map').width($(window).width()+"px");
+        $('#map').height($(window).height()-64+"px");
+        $('div[controllers]').height($(window).height()-64+"px");
+        $('div[graffiti_controllers]').height($(window).height()-64+"px");
+    });
+
+    function initTheMap() {
+        // Start map
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -31.769016, lng: -52.3347313},
+            zoom: 13
+        });
+        // show infowindow location
+        infoWindow = new google.maps.InfoWindow({map: map});
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    //lat: position.coords.latitude,
+                    //lng: position.coords.longitude
+                    lat: -31.769016,
+                    lng: -52.3347313
+                };
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Sua localização');
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+        console.log('iniciou o mapa');
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: O serviço de localização falhou.' :
+            'Error: Seu navegador não tem suporte de geolocalização.');
+    }
+
+    function addLine(color,lat_1,lng_1,lat_2,lng_2,jump){
+        var latLngCoordenates = [
+            {lat: lat_1, lng: lng_1},
+            {lat: lat_2, lng: lng_2},
+        ];
+
+        line_finish = ""
+        if(jump === false){
+            line_finish = new google.maps.Polyline({
+                path: latLngCoordenates,
+                geodesic: true,
+                strokeColor: color,
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+            lines.push(line_finish)
+            line_finish.setMap(map);
+        }else{
+            line_finish = new google.maps.Polyline({
+                path: latLngCoordenates,
+                geodesic: true,
+                strokeColor: "#757575",
+                strokeOpacity: 0.4,
+                strokeWeight: 2,
+                icons: [{
+                    icon: lineSymbol,
+                    offset: '0',
+                    repeat: '20px'
+                }],
+            });
+            lines.push(line_finish);
+            line_finish.setMap(map);
+        }
+
+    }
+    function addNameToHtml(position,name,color,lat,lng){
+
+        agent_num = position.toString();
+        agent_num = agent_num.substring(0,1);
+        url_icon = "/assets/analytics/agent_"+agent_num+".png";
+
+        the_html= "<li class='collection-item avatar' onclick=\"location.href='/graphium/agent'\"><img src='"+url_icon+"' alt='' style='width: auto !important;' class='circle'><span class='title'>"+name+"</span><p>"+lat+"<br>"+lng+"</p><a href='#!' class='secondary-content'></a></li>"
+        return the_html;
+    }
+
+    function update(){
+        if($('#swarm_id').val() == null){
+            Materialize.toast('Selecione um swarm', 1000,'rounded');
+            return
+        }
+        console.log('update!');
+        clean_map();
+        $.ajax({
+            url: "/public/site/getSwarmInfo",
+            dataType: "json",
+            data: {
+                "swarm_identifier": $('#swarm_id').val().split(' ')[1],
+                "classified_by_model": document.querySelector('#classified_by_model').checked,
+                "classified_true": document.querySelector('#classification_true').checked,
+                "classified_false": document.querySelector('#classification_false').checked,
+                "classified_true_positive": document.querySelector('#classification_true_positive').checked,
+                "classified_true_negative": document.querySelector('#classification_true_negative').checked,
+                "classified_false_positive": document.querySelector('#classification_false_positive').checked,
+                "classified_false_negative": document.querySelector('#classification_false_negative').checked,
+            },
+            success: function($data) {
+                console.log('update!',$data);
+                if($data.swarm == null){
+                    $('#agent_sleeping').show();
+                    $('#agent_showing').hide();
+                    $('#agent_disconnected').hide();
+                    $('#street_names').html('<span>None</span>');
+                    $('#informations').html('<span>None swarm are playing. Try start a swarm</span>');
+                }else{
+                    // Swarm information
+                    $('p[city_name]').html($data.city.name);
+                    $('p[model_name]').html($data.swarm.model_weights_name);
+                    $('p[agents_number]').html($data.agents.length);
+
+                    // Agent Informations
+                    for(var a=0;a < $data.agents.length;a++){
+
+                        if(!$data.agents[a].active){
+                            name = $data.agents[a].name + " (inative)"
+                        }else{
+                            name = $data.agents[a].name
+                        }
+
+                        addAgentMarker(a,$data.agents[a].name,$data.agents[a].last_lat, $data.agents[a].last_lng);
+
+                        for(var b=0; b < $data.agents[a].pathbread.length;b++){
+
+                            if(b!=0 && b < $data.agents[a].pathbread.length-2){
+                                addLine($data.agents[a].color, $data.agents[a].pathbread[b].lat, $data.agents[a].pathbread[b].lng,
+                                    $data.agents[a].pathbread[b+1].lat, $data.agents[a].pathbread[b+1].lng,$data.agents[a].pathbread[b].jump)
+                            }
+
+                        }
+
+                        for(var b=0; b < $data.agents[a].visited_streets.length;b++){
+                            if($data.agents[a].visited_streets[b]!=""){
+                                visited_streets.push($data.agents[a].visited_streets[b])
+                            }
+
+                        }
+
+                    }
+
+                    map.setCenter(new google.maps.LatLng($data.city.lat, $data.city.lng));
+
+                    for(var a=0; a < $data.graffiti.length; a++){
+                        addGraffitiMarker(a,$data.graffiti[a]._id.$oid, $data.graffiti[a].situation, $data.graffiti[a].lat, $data.graffiti[a].lng)
+                    }
+
+                    $('td[result_total]').html($data.graffiti.length);
+                    $('td[result_true]').html($data.results.trues);
+                    $('td[result_false]').html($data.results.falses);
+                    $('td[result_true_positive]').html($data.results.true_positive);
+                    $('td[result_false_positive]').html($data.results.false_positive);
+                    $('td[result_true_negative]').html($data.results.true_negative);
+                    $('td[result_false_negative]').html($data.results.false_negative);
+                    $('td[result_sensibility]').html($data.results.sensibility);
+                    $('td[result_especificity]').html($data.results.especificility);
+                    $('td[result_preditive_negative]').html($data.results.preditive_negative);
+                    $('td[result_preditive_positive]').html($data.results.preditive_positive);
+
+                }
+                Materialize.toast('Synced', 1000,'rounded')
+
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log('error',thrownError);
+                $('#agent_sleeping').hide();
+                $('#agent_showing').hide();
+                $('#agent_disconnected').show();
+                $('#street_names').html('<span>None</span>');
+                $('#informations').html('<span>Some erro on server. Try again </span>');
+
+            }
+        });
+    }
+    function addLine(color,lat_1,lng_1,lat_2,lng_2,jump){
+        var latLngCoordenates = [
+            {lat: lat_1, lng: lng_1},
+            {lat: lat_2, lng: lng_2},
+        ];
+
+        line_finish = "";
+        if(jump === false){
+            line_finish = new google.maps.Polyline({
+                path: latLngCoordenates,
+                geodesic: true,
+                strokeColor: color,
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+            if(document.querySelector('#show_route_yes').checked){
+                lines.push(line_finish);
+                line_finish.setMap(map);
+            }
+        }else{
+            line_finish = new google.maps.Polyline({
+                path: latLngCoordenates,
+                geodesic: true,
+                strokeColor: "#757575",
+                strokeOpacity: 0.4,
+                strokeWeight: 2,
+                icons: [{
+                    icon: lineSymbol,
+                    offset: '0',
+                    repeat: '20px'
+                }],
+            });
+            if(document.querySelector('#show_route_yes_with_moviment').checked){
+                lines.push(line_finish);
+                line_finish.setMap(map);
+            }
+        }
+
+    }
+
+    function addAgentMarker(position,name,lat,lng){
+
+        agent_num = position.toString();
+        agent_num = agent_num.substring(0,1);
+        url_icon = "/assets/analytics/agent_"+agent_num+".png";
+
+        latLng = new google.maps.LatLng(lat, lng);
+
+        marker = new google.maps.Marker({
+            icon: url_icon,
+            position: latLng,
+            title:name,
+            visible: true
+        });
+        if(document.querySelector("#show_agents_yes").checked){
+            marker.setMap(map);
+            console.log('adding agent!',lat,lng);
+            markers_agents.push(marker)
+        }
+    }
+
+    function addGraffitiMarker(position,id,name,lat,lng){
+
+        if(document.querySelector('#classified_by_model').checked){
+            url_icon = "/assets/analytics/graffiti_true.png";
+        }else{
+            url_icon = "/assets/analytics/graffiti_"+name+".png";
+            if( name== "false_positive" && !document.querySelector('#classification_false_positive').checked){
+                return
+            }
+
+            if( name== "true_positive" && !document.querySelector('#classification_true_positive').checked){
+                return
+            }
+
+            if( name== "false_negative" && !document.querySelector('#classification_false_negative').checked){
+                return
+            }
+        }
+
+
+
+
+
+
+        latLng = new google.maps.LatLng(lat, lng);
+
+        marker = new google.maps.Marker({
+            icon: url_icon,
+            position: latLng,
+            title:name,
+            visible: true
+        });
+        marker.setMap(map);
+        marker.addListener('click', function() {
+            console.log('Grafiti->',id);
+            openGraffiti(id)
+        });
+        console.log('adding agraffiti!',lat,lng);
+        markers_graffiti.push(marker)
+    }
+
+    function openGraffiti(id){
+        $.ajax({
+            url: '/public/site/getGraffitiInfo',
+            data: {id: id},
+            beforeSend: function(){
+                //$('div[controllers]').css('display','none');
+                //controller_show = false;
+            },
+            success: function (data) {
+                if(data.graffiti==null){
+                    Materialize.toast('Graffiti not found', 1000,'rounded')
+                }else{
+                    console.log(data);
+                    current_graffiti_id = data.graffiti._id.$oid;
+                    map.setCenter(new google.maps.LatLng(data.graffiti.lat, data.graffiti.lng));
+                    $('img[graffiti]').attr('src',"https://maps.googleapis.com/maps/api/streetview?size=600x300&location="+data.graffiti.lat+","+data.graffiti.lng+"&heading="+data.graffiti.heading+"&pitch=0&key=<%=Graphium::Configuration.first.google_maps_key%>");
+                    $('div[pano_date]').html(data.pano.pano_date);
+                    $('div[graffiti_date]').html(data.graffiti_date);
+                    $('div[graffiti_controllers]').css('display','');
+                    $('div[graffiti_classificafied_as]').html(data.graffiti.situation.replace('_',' '))
+                }
+            },
+            error: function () {
+                Materialize.toast('Um error ocorreu. Tente novamente.', 1000,'rounded');
+            }
+        })
+    }
+
+    function submit_rating(rate){
+      $.ajax({
+          url: '/public/site/setRateToGraffiti',
+          data: {
+              graffiti_id: current_graffiti_id,
+              rate: rate
+          },
+          beforeSend: function(){
+
+          },
+          success: function(data){
+              Materialize.toast(data.message,1500,'rounded');
+          },
+          error: function(){
+              Materialize.toast('Um error ocorreu ao enviar sua classificacao. Tente novamente.', 1000,'rounded');
+          }
+      })
+    }
+
+    $('#classified_by_model').on('change',function () {
+        if(document.querySelector('#classified_by_model').checked){
+            document.querySelector('#classification_true').checked = true;
+            document.querySelector('#classification_true').disabled = true;
+            document.querySelector('#classification_false').checked = false;
+            document.querySelector('#classification_false').disabled = true;
+            document.querySelector('#classification_false_negative').checked = false;
+            document.querySelector('#classification_false_negative').disabled = true;
+            document.querySelector('#classification_false_positive').checked = false;
+            document.querySelector('#classification_false_positive').disabled = true;
+            document.querySelector('#classification_true_positive').checked = false;
+            document.querySelector('#classification_true_positive').disabled = true;
+            //document.querySelector('#classification_true_negative').checked = false;
+            //document.querySelector('#classification_true_negative').disabled = true;
+        }else{
+            document.querySelector('#classification_true').disabled = false;
+            document.querySelector('#classification_true').checked = false;
+            document.querySelector('#classification_false').disabled = false;
+            document.querySelector('#classification_false').checked = false;
+            document.querySelector('#classification_false_negative').disabled = false;
+            document.querySelector('#classification_false_negative').checked = true;
+            document.querySelector('#classification_false_positive').disabled = false;
+            document.querySelector('#classification_false_positive').checked = true;
+            document.querySelector('#classification_true_positive').disabled = false;
+            document.querySelector('#classification_false_positive').checked = true;
+            //document.querySelector('#classification_true_negative').disabled = true;
+            //document.querySelector('#classification_true_negative').checked = true;
+        }
+    });
+
+    $('#classified_by_human').on('change',function () {
+        if(document.querySelector('#classified_by_model').checked){
+            document.querySelector('#classification_true').checked = true;
+            document.querySelector('#classification_true').disabled = true;
+            document.querySelector('#classification_false').checked = false;
+            document.querySelector('#classification_false').disabled = true;
+            document.querySelector('#classification_false_negative').checked = false;
+            document.querySelector('#classification_false_negative').disabled = true;
+            document.querySelector('#classification_false_positive').checked = false;
+            document.querySelector('#classification_false_positive').disabled = true;
+            document.querySelector('#classification_true_positive').checked = false;
+            document.querySelector('#classification_true_positive').disabled = true;
+            //document.querySelector('#classification_true_negative').checked = false;
+            //document.querySelector('#classification_true_negative').disabled = true;
+        }else{
+            document.querySelector('#classification_true').disabled = false;
+            document.querySelector('#classification_true').checked = false;
+            document.querySelector('#classification_false').disabled = false;
+            document.querySelector('#classification_false').checked = false;
+            document.querySelector('#classification_false_negative').disabled = false;
+            document.querySelector('#classification_false_negative').checked = true;
+            document.querySelector('#classification_false_positive').disabled = false;
+            document.querySelector('#classification_false_positive').checked = true;
+            document.querySelector('#classification_true_positive').disabled = false;
+            document.querySelector('#classification_true_positive').checked = true;
+            //document.querySelector('#classification_true_negative').disabled = false;
+            //.querySelector('#classification_true_negative').checked = true;
+        }
+    });
+
+    $('#stats_for_nerds').on('change',function () {
+        if(stats_for_nerds_show){
+            $('div[stats_for_nerds]').css('display','none');
+        }else{
+            $('div[stats_for_nerds]').css('display','');
+        }
+        stats_for_nerds_show = !stats_for_nerds_show;
+    });
+
+</script>
+<style>
+  #map {
+    min-height: 100%;
+    width: 100%;
+  }
+  .shadow-controller{
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 0px 0px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3);
+  }
+  .shadow-controller-graffiti{
+     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.14), 0 0px 0px 0 rgba(0,0,0,0.12), 0 4px 4px -1px rgba(0,0,0,0.3);
+  }
+</style>

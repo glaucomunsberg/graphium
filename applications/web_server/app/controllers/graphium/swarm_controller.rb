@@ -16,8 +16,6 @@ class Graphium::SwarmController < ApplicationController
     end
     
     def startSwarm
-        
-        
 
         name = params[:swarm_name]
         name = name.gsub(" ","_")

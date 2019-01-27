@@ -31,10 +31,10 @@ class Oracle:
 
         self._g = Graphium()
 
-        if model_name is None:
-            self.model_name = self._g.oracle['model_name']
-        else:
-            self.model_name = model_name
+        #if model_name is None:
+        #    self.model_name = self._g.oracle['model_name']
+        #else:
+        self.model_name = model_name
 
         self.path_model_json = self._g.path_model()+self.model_name+".json"
         self.path_model_weights = self._g.path_model()+self.model_name+".h5"
@@ -42,6 +42,7 @@ class Oracle:
         if not os.path.isfile(self.path_model_json):
             self._logger.info('Oracle: The model is not valid file '+self.path_model_json)
             raise ValueError('The path_model_weights is not a model.json to by used')
+
         if not os.path.isfile(self.path_model_weights):
             self._logger.info('Oracle: The weights is not valid file '+self.path_model_weights)
             raise ValueError('The path_model_weights is not a valid weights to by used')
@@ -83,9 +84,11 @@ class Oracle:
         predictions = self.model.predict(x)
         nameProbability = decode_predictions(predictions, top=1)[0]
 
+        print 'Oracle detected', nameProbability[0][1], nameProbability[0][0]
+
         if nameProbability[0][1] == "comic book" or nameProbability[0][0] == "n06596364":
             print 'Probability  ', nameProbability[0][0]
             print 'Image Path   ', image_path
-            return {"prediction":True,"probability":nameProbability}
+            return {"prediction":True, "probability": nameProbability}
         else:
-            return {"prediction":False,"probability":nameProbability}
+            return {"prediction":False, "probability":nameProbability}

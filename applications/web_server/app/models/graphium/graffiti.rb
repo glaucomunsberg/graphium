@@ -10,6 +10,8 @@ class Graphium::Graffiti
   field :address, type: String
   field :pano_id, type: String
   field :situation, type: String
+  field :swarm_identifier, type: String
+  field :rating, type:Hash
 
   store_in collection: "graffiti", database: "graphium"
 end

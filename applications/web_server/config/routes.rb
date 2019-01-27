@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       collection do
         get 'getInformation'
         get 'updatePano'
+        get 'compare'
       end
     end
   end
@@ -27,6 +28,10 @@ Rails.application.routes.draw do
           collection do
             get 'version'
             get 'about'
+            get 'graffiti'
+            get 'getSwarmInfo'
+            get 'getGraffitiInfo'
+            get 'setRateToGraffiti'
           end
       end
   end

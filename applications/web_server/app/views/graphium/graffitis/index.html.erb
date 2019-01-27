@@ -13,9 +13,9 @@
 
   <tbody>
     <% @graphium_graffitis.each do |graphium_graffiti| %>
-      <tr>
+      <tr <%=graphium_graffiti.situation%>>
         <td><img src='https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= graphium_graffiti.lat %>,<%= graphium_graffiti.lng %>&heading=<%= graphium_graffiti.heading %>&pitch=<%= graphium_graffiti.pitch %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM' width="auto" height="70px"></td>
-        <td><%= graphium_graffiti.pano_id %></td>
+        <td class="truncate"><%= graphium_graffiti.pano_id %></td>
         <td><%= graphium_graffiti.lat %>/<%= graphium_graffiti.lng %></td>
         <td><i class="material-icons" style='cursor:pointer' onclick="window.open( 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= graphium_graffiti.lat %>,<%= graphium_graffiti.lng %>&heading=<%= graphium_graffiti.heading %>&pitch=<%= graphium_graffiti.pitch %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM', '_blank')">open_in_new</i></td>
       </tr>

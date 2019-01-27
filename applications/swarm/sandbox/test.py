@@ -1,7 +1,7 @@
-from system.Mongo import Mongo
+from applications.swarm.system.Mongo import Mongo
 
-from assistant.Geospatial import GeoSpatial
-from assistant.API import API
+from applications.swarm.assistant.Geospatial import GeoSpatial
+from applications.swarm.assistant.API import API
 
 def main():
 

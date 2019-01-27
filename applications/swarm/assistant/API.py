@@ -218,6 +218,47 @@ class API:
             return_json['status'] = "ERROR"
         return return_json
 
+    def get_pano_info(self, pano_id):
+
+        key = self._google_api.get_key(0)
+        #key_secret = self._google_api.get_key_secret(0)
+        #self.force_use_key_position(0)
+
+        url_info = "https://maps.googleapis.com/maps/api/streetview/metadata?pano=" + str(pano_id) + "&key=" + key
+
+        #url_map_sign = self._google_signing.sign_url(url_info, key_secret)
+
+        return_json = {
+            "pano_id": "",
+            "lng": "",
+            "lat": "",
+            "pano_date": "",
+            "status": "error"
+        }
+
+        try:
+            response = urllib2.urlopen(url_info)
+            data = json.loads(response.read())
+
+            if data['status'] == "OK":
+                return_json['pano_date'] = data['date']
+                return_json['pano_id'] = data['pano_id']
+                return_json['lat'] = str(data['location']['lat'])
+                return_json['lng'] = str(data['location']['lng'])
+                return_json['status'] = "OK"
+            else:
+                return_json['status'] = "ERROR"
+                self._logger.info(
+                    "API: Error to get Geocode from pano {0} error '{1}'.".format(pano_id, data['status']))
+
+        except Exception as error:
+            self._logger.info(
+                "API: Error at Internet to get Geocode from point {0} url '{1}'.".format(pano_id, url_info))
+            print 'ERROR to ->'+url_info
+            print 'TRACE ->'+error
+            return_json['status'] = "ERROR"
+        return return_json
+
     def getStreetGeoCodeInfoFromOSM(self, way_id):
 
         url_info = "http://nominatim.openstreetmap.org/reverse?format=json&osm_type=W&osm_id=" + str(way_id)

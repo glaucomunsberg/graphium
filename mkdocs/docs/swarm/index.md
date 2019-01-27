@@ -6,7 +6,7 @@ The swarm allow you search in google street map. Try execute the `Main.py` class
 
 Start using a city such `Pelotas`.
 
-    python Main.py --mode warm --swarm_city 59dd4d7b6a86370cb85d6be7
+    python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7 --model_name 20190120203800
 
 
 #### Arguments

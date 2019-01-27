@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Graffiti</th>
+      <%@swarms.each do | swarm| %>
+        <th><%=swarm %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%@panos.each do | graffiti| %>
+      <%identifier = graffiti[0] %>
+      <%pano = graffiti[1]['pano'] %>
+      <%swarms_array = graffiti[1]['swarms'] %>
+
+      <tr>
+        <td><a class="truncate" href="https://maps.googleapis.com/maps/api/streetview?size=600x300&location=<%= pano[:lat] %>,<%= pano[:lng] %>&heading=<%= pano[:heading] %>&pitch=<%= pano[:pitch] %>&key=AIzaSyB6_XPVntnTJHG9jN9OrO11ou8GEV77qOM"><i class="material-icons tooltipped" data-tooltip="Pano id <%= pano[:pano_id] %>">image_search</i></a></td>
+      <% @swarms.each do |swarm| %>
+          <%if swarms_array.include? swarm %>
+            <td>✅</td>
+          <%else %>
+            <td>⛔️</td>
+          <%end %>
+      <%end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

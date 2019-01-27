@@ -19,6 +19,7 @@ class Looker:
     _api = None
     _oracle = None
     geos = None
+    _swarm = None
 
     def __init__(self, swarm_identifier, logger=None):
 
@@ -26,15 +27,17 @@ class Looker:
         self._helper = Helper()
         self._mongo = Mongo()
         self._swarm_identifier = swarm_identifier
+        self._swarm = self._mongo.getSwarmByIdentifier(self._swarm_identifier)
 
         if logger is None:
             self._logger = Logger()
         else:
             self._logger = logger
 
+
         self.geos = GeoSpatial(self._logger)
         self._api = API(self._swarm_identifier, self._logger)
-        self._oracle = Oracle(None, self._logger)
+        self._oracle = Oracle(self._swarm['model_weights_name'], self._logger)
 
     def driveFromPointToPoint(self, dot1, dot2, way_osm_id):
         self._logger.info("Looker: Check dot {0} and {1}".format(dot1,dot2))
@@ -63,7 +66,7 @@ class Looker:
             data_point_right = self._api.getPanoByPoint(lat, lng, right_side)
 
             if data_point_left['status'] == "OK":
-                self.checkPointToPredict(data_point_left,way_osm_id)
+                self.checkPointToPredict(data_point_left, way_osm_id)
             else:
                 self._logger.info("Looker: CheckPoint can't execute to point {0},{1} error '{2}'.".format(data_point_left['lat'], data_point_left['lng'], data_point_left['status']))
 
@@ -74,18 +77,15 @@ class Looker:
 
     def checkPointToPredict(self, dataPoint, way_osm_id):
 
-
-
-
-
         prediction = self._oracle.predictInPano(dataPoint['image_path'])
+
         if prediction["prediction"]:
 
             #
             # INFORMATION OF COUNTRY,CITY AND STATE is EMPTY
             #
-            self._mongo.insert_pano("20181103173441", dataPoint['pano_id'], dataPoint['heading'], "0", dataPoint['file_name'], "T")
-            self._mongo.insertGraffiti(dataPoint['lat'], dataPoint['lng'], dataPoint['pano_id'], dataPoint['heading'], dataPoint['pitch'], "", "", "", "", prediction["probability"], self._swarm_identifier)
+            self._mongo.insert_pano(self._swarm_identifier, dataPoint['pano_id'], dataPoint['heading'], "0", dataPoint['file_name'], "T", dataPoint['lat'], dataPoint['lng'])
+            self._mongo.insertGraffiti(dataPoint['lat'], dataPoint['lng'], dataPoint['pano_id'], dataPoint['heading'], dataPoint['pitch'], "", "", "", "", prediction["probability"], self._swarm_identifier, 'true')
             #
             # GOOGLE INFORMATION ABOUT COUNTRY, CITY AND STATE
             #
@@ -102,5 +102,5 @@ class Looker:
             # get the street information suchs city, country and address
             # put it in dataset
         else:
-            self._mongo.insert_pano("20181103173441", dataPoint['pano_id'], dataPoint['heading'], "0", dataPoint['file_name'], "F")
+            self._mongo.insert_pano(self._swarm_identifier, dataPoint['pano_id'], dataPoint['heading'], "0", dataPoint['file_name'], "F", dataPoint['lat'], dataPoint['lng'])
             self._logger.info("Looker: It's not a graphiti at {0}".format(dataPoint))

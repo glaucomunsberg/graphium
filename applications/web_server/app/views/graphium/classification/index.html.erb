@@ -56,6 +56,7 @@
             <div class="input-field col s12">
               <select name="swarm_id"  class="browser-default" id="swarm_id">
                 <option value="" disabled selected>Choose your swarm</option>
+                <option id="">Todos</option>
                 <% Graphium::Swarm.all.each do |swarm| %>
                   <option id="<%=swarm.identifier %>"><%=swarm.identifier %></option>
                 <%end %>
@@ -132,7 +133,10 @@
             </div>
           </div>
         </div>
-        <div class="col m4 s12 offset-m1">
+        <div class="col s1 valign-wrapper center">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+        <div class="col m4 s12 offset-s1">
           <div class="row center" style="margin-top: 8px;">
             <img last_pano class="materialboxed z-depth-3" src="https://dummyimage.com/511x255/ffffff/2d2338&text=Graphium" style="width: 100%;">
             <a undo class="btn-floating btn-large waves-effect waves-light right tooltipped" data-position="top" data-tooltip="Voltar a classificao anterior" onclick="back_to()" style="margin-top: -30px;margin-right: 15px;"><i undo class="material-icons">undo</i></a>
@@ -154,6 +158,14 @@
           <div class="row" style="margin-bottom: 0px;">
             <div current_pano_id class="col s6 tooltipped truncate" data-position="top" data-tooltip="Pano ID atual" style="color:#757575; cursor:pointer">Pano IP</div>
             <div last_pano_id class="col s6 tooltipped truncate" data-position="top" data-tooltip="Pano ID anterior" style="color:#757575;cursor:pointer">Last Pano IP</div>
+          </div>
+          <div class="row" style="">
+            <div class="col s6">
+              <b>Similar classifications</b>
+            </div>
+          </div>
+          <div class="row">
+            <div similar_classifications class="col s12 tooltipped truncate" data-position="top" data-tooltip="Similar classification of Pano ID" style="color:#757575; cursor:pointer">Pano IP</div>
           </div>
 
         </div>
@@ -182,7 +194,7 @@
               True
             </th>
             <th class="tg-s268">
-              <div classifed_true class="col s3 tooltipped" data-position="top" data-tooltip="True" style="color:#757575; cursor:pointer">0</div>
+              <div results_true class="col s3 tooltipped" data-position="top" data-tooltip="True" style="color:#757575; cursor:pointer">0</div>
             </th>
           </tr>
           <tr>
@@ -190,7 +202,7 @@
               False
             </td>
             <td class="tg-s268">
-              <div classified_false class="col s6 tooltipped" data-position="top" data-tooltip="False" style="color:#757575;cursor:pointer">0</div>
+              <div results_false class="col s6 tooltipped" data-position="top" data-tooltip="False" style="color:#757575;cursor:pointer">0</div>
             </td>
           </tr>
           <tr>
@@ -198,7 +210,7 @@
               True Positive
             </td>
             <td class="tg-s268">
-              <div classified_true_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total True Positive" style="color:#757575; cursor:pointer">0</div>
+              <div results_true_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total True Positive" style="color:#757575; cursor:pointer">0</div>
             </td>
           </tr>
           <tr>
@@ -206,7 +218,7 @@
               True Negative
             </td>
             <td class="tg-s268">
-              <div classified_true_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total True Negative" style="color:#757575;cursor:pointer">0</div>
+              <div results_true_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total True Negative" style="color:#757575;cursor:pointer">0</div>
             </td>
           </tr>
           <tr>
@@ -214,7 +226,7 @@
               False Negative
             </td>
             <td class="tg-s268">
-              <div classified_false_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total False Negative" style="color:#757575;cursor:pointer">0</div>
+              <div results_false_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total False Negative" style="color:#757575;cursor:pointer">0</div>
             </td>
           </tr>
           <tr>
@@ -222,7 +234,39 @@
               False Positive
             </td>
             <td class="tg-s268">
-              <div classified_false_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
+              <div results_false_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              Sensibilidade
+            </td>
+            <td class="tg-s268">
+              <div results_sensibility class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              Especificidade
+            </td>
+            <td class="tg-s268">
+              <div results_especificility class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              Valor Preditivo Positivo
+            </td>
+            <td class="tg-s268">
+              <div results_preditive_positive class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-s268">
+              Valor Preditivo Negativo
+            </td>
+            <td class="tg-s268">
+              <div results_preditive_negative class="col s3 tooltipped" data-position="top" data-tooltip="Total False Positive" style="color:#757575; cursor:pointer">0</div>
             </td>
           </tr>
           </tbody>
@@ -239,6 +283,7 @@
   var pano_position = 0;
   var pano_total = 0;
   var playing = false;
+  var pano_id_mongo = "";
   var pano_id = "";
   var pano_src = "";
   var pano_heading = "";
@@ -275,7 +320,7 @@
               'false_negative': document.querySelector('#false_negative').checked,
               'true_positive': document.querySelector('#true_positive').checked,
               'true_negative': document.querySelector('#true_negative').checked,
-              'swarm_id': document.querySelector('#swarm_id').value
+              'swarm_identifier': document.querySelector('#swarm_id').value
           },
           beforeSend: function() {
               pano_old_src = $('img[pano]').attr('src');
@@ -284,6 +329,20 @@
           success: function(data) {
 
               //console.log('data retorned',data);
+              if(data.results != null){
+
+                  $('div[results_true]').text(data.results.true);
+                  $('div[results_false]').text(data.results.false);
+                  $('div[results_true_positive]').text(data.results.true_positive);
+                  $('div[results_false_positive]').text(data.results.false_positive);
+                  $('div[results_true_negative]').text(data.results.true_negative);
+                  $('div[results_false_negative]').text(data.results.false_negative);
+                  $('div[results_sensibility]').text(data.results.sensibility);
+                  $('div[results_especificility]').text(data.results.especificility);
+                  $('div[results_preditive_negative]').text(data.results.preditive_negative);
+                  $('div[results_preditive_positive]').text(data.results.preditive_positive);
+              }
+
               if(data.pano == null){
                   if(!restarted){
                       pano_position = 0;
@@ -295,6 +354,7 @@
                   }
 
               }else{
+                  pano_id_mongo = data.pano._id.$oid;
                   pano_id = data.pano.pano_id;
                   pano_old_heading = pano_heading;
                   pano_heading = data.pano.heading;
@@ -350,6 +410,16 @@
                       $('div[classified_true]').text(data.classifieds.T);
                       $('div[classified_false]').text(data.classifieds.F);
                   }
+
+                  classifications = {"T":0,"F":0,"FN":0,"FP":0,"TP":0,"TN":0};
+
+                  similar_on_database = "";
+
+                  $('div[similar_classifications]').html("");
+                  for(var a=0; a < data.similar_classifications.length; a++){
+                      classifications[data.similar_classifications[a]]+=1
+                  }
+                  $('div[similar_classifications]').html("<p class='col s6'>"+classifications["T"]+" Positives</p><p class='col s6'>"+classifications["F"]+" Falses</p><p class='col s6'>"+classifications["TP"]+" True Positives</p><p class='col s6'>"+classifications["TN"]+" True Negatives</p><p class='col s6'>"+classifications["FN"]+" False Negatives</p><p class='col s6'>"+classifications["FP"]+" False Positives</p>");
               }
           },
           error: function(xhr) { // if error occured
@@ -386,9 +456,11 @@
           type: 'get',
           url: '/graphium/classification/updatePano',
           data: {
+              'pano_id_mongo': pano_id_mongo,
               'pano_id': pano_old_id,
               'heading': pano_old_heading,
-              'pano_classification': pano_old_classification
+              'pano_classification': pano_old_classification,
+              'swarm_identifier': document.querySelector('#swarm_id').value
           },
           beforeSend: function() {
               //$('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Updating...')
@@ -431,8 +503,10 @@
           url: '/graphium/classification/updatePano',
           data: {
               'pano_id':pano_id,
+              'pano_id_mongo': pano_id_mongo,
               'heading': pano_heading,
-              'pano_classification': pano_classification
+              'pano_classification': pano_classification,
+              'swarm_identifier': document.querySelector('#swarm_id').value
           },
           beforeSend: function() {
               //$('img[pano]').attr('src','https://dummyimage.com/400x400/ffffff/2d2338&text=Updating...')
@@ -528,5 +602,8 @@
 <style>
   body nav{
     box-shadow: none;
+  }
+  div[similar_classifications] p{
+    margin: 0px !important;
   }
 </style>

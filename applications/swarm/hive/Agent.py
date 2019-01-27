@@ -130,7 +130,7 @@ class Agent(Thread):
                         if self._node_osm_position != 0 and self._node_osm_position <= len(self._street['nodes'])-2:
 
                             # call the method that execute something node by node
-                            self.nodeByNode(self._node_osm,self._street['nodes'][self._node_osm_position+1],self._street['id_osm'])
+                            self.nodeByNode(self._node_osm, self._street['nodes'][self._node_osm_position+1], self._street['id_osm'])
 
                         else:
                             if self._node_osm_position == 0:

@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import pymongo, datetime, bson, time
-import system
-from unidecode import unidecode
-from bson.objectid import ObjectId
+import datetime
 
 from random import randint
 from pymongo import MongoClient
@@ -13,33 +10,28 @@ from system.Graphium import Graphium
 
 class Mongo:
 
-    _g          = None
-    __client	= None
-    __db 		= None
-    __collection= None
-
-    _instance   = None
-
+    _g = None
+    __client = None
+    __db = None
+    __collection = None
+    _instance = None
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(Mongo, cls).__new__(cls, *args, **kwargs)
         return cls._instance
 
-    def __init__(self,db='graphium',address='localhost',port=27017):
+    def __init__(self, db='graphium', address='localhost', port=27017):
 
-        self.__client		= MongoClient(address, port)
-        self.__db			= self.__client[db]
-        self.__collection   = self.__db.agent
-        self._g             = Graphium()
-
+        self.__client = MongoClient(address, port)
+        self.__db = self.__client[db]
+        self.__collection = self.__db.agent
+        self._g = Graphium()
 
     def disconnect(self):
         self.__client.close()
 
-
     ############ Agent ############
-
     def get_agents(self):
         self.__collection = self.__db.agent
         return self.__collection.find({})
@@ -61,7 +53,6 @@ class Mongo:
     def getAgentByName(self,agent_name):
         self.__collection   = sef.__db.agent
         return self.__collection.find_one({'agent_name':agent_name})
-
 
     # updateAgentByName
     #   permit to update informatations at mongodb
@@ -225,9 +216,9 @@ class Mongo:
     #   create a Swarm of swarm and send the basic information
     #   return Swarm ID
     #
-    def insertSwarm(self, identifier, num_agent,user_email="admin@graphium.com", name='default', start_at="", host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, active=True):
+    def insertSwarm(self, identifier, num_agent, user_email="admin@graphium.com", name='default', start_at="", host='0.0.0.0',  seconds_to_check_agents=3, cycles_number=-1, city_id=None, model_name=None, active=True):
         self.__collection = self.__db.swarm
-        dataToSend = {'identifier':identifier, 'name':name, 'num_agent':num_agent, 'user_email':user_email, 'host':host, 'active':active, 'start_at':start_at, 'end_at':None, 'end_well':True, 'qmi':0.0, 'seconds_to_check_agents': seconds_to_check_agents, 'city_id':city_id, 'cycles_number':cycles_number, 'num_map_api_request':0 }
+        dataToSend = {'identifier': identifier, 'name': name, 'num_agent': num_agent, 'user_email': user_email, 'host': host, 'active': active, 'start_at':start_at, 'end_at': None, 'end_well': True, 'qmi': 0.0, 'seconds_to_check_agents': seconds_to_check_agents, 'city_id': city_id, 'cycles_number': cycles_number, 'num_map_api_request':0, "model_weights_name": model_name}
         return self.__collection.insert_one(dataToSend).inserted_id
 
     def get_swarms(self):
@@ -323,8 +314,8 @@ class Mongo:
     #   insert the graffiti at MongoDB
     #   return the id
     #
-    def insertGraffiti(self, lat, lng, pano_id, heading, pitch, country, state, city, address, probability, swarm_identifier):
-        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'probability':str(probability), 'swarm_identifier':swarm_identifier}
+    def insertGraffiti(self, lat, lng, pano_id, heading, pitch, country, state, city, address, probability, swarm_identifier,situation=''):
+        dataToSend = {'lat':lat, 'lng':lng, 'pano_id':pano_id, 'heading':heading, 'pitch':pitch, 'country': country, 'state':state, 'city':city, 'address':address, 'probability':str(probability), 'swarm_identifier':swarm_identifier, 'situation': situation}
         self.__collection = self.__db.graffiti
         return self.__collection.insert_one(dataToSend).inserted_id
 
@@ -340,8 +331,8 @@ class Mongo:
         self.__collection = self.__db.graffiti
         return self.__collection.find({})
 
-    def insert_pano(self, swarm_identifier, pano_id, heading, splited, imagem_name, classification):
-        dataToSend = {'swarm_identifier': swarm_identifier, 'pano_id': pano_id, 'heading': heading, 'splited': splited, 'imagem_name': imagem_name, 'classification':classification}
+    def insert_pano(self, swarm_identifier, pano_id, heading, splited, imagem_name, classification, lat="", lng=""):
+        dataToSend = {'swarm_identifier': swarm_identifier, 'pano_id': pano_id, 'heading': heading, 'splited': splited, 'imagem_name': imagem_name, 'classification':classification, "lat":lat, "lng":lng}
         self.__collection = self.__db.pano
         return self.__collection.insert_one(dataToSend).inserted_id
 
@@ -363,3 +354,7 @@ class Mongo:
     def update_pano(self, identifier, data):
         self.__collection = self.__db.pano
         self.__collection.update({'_id': identifier}, {"$set": data}, upsert=False)
+
+    def pano_erase_by_query(self,query):
+        self.__collection = self.__db.pano
+        return self.__collection.delete_many(query)

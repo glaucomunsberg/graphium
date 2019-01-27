@@ -55,8 +55,12 @@ class Swarm:
             self._logger.info("Swarm: the city can't be empty")
             raise ValueError("Swarm: the city can't be empty")
 
+        if args.model_name is None:
+            self._logger.info("Swarm: the model can't be empty")
+            raise ValueError("Swarm: the model can't be empty")
+
         if self._mongo.getSwarmByIdentifier(self._identifier) is None:
-            self._mongo.insertSwarm(self._identifier, args.swarm_num_agent, args.user_email, self._name, self._helper.getTimeNow(), self._host, self._g.swarm['swarm_turns'], self._g.swarm['swarm_cycles'], args.swarm_city)
+            self._mongo.insertSwarm(self._identifier, args.swarm_num_agent, args.user_email, self._name, self._helper.getTimeNow(), self._host, self._g.swarm['swarm_turns'], self._g.swarm['swarm_cycles'], args.swarm_city, args.model_name)
 
         self.sync_from_DB()
 

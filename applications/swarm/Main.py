@@ -13,7 +13,9 @@ def main():
     parser.add_argument('--user_email', type=str, default="admin@graphium.com", help='Email to identify the user')
     parser.add_argument('--swarm_num_agent', type=int, default=3, help='Number of agents to work')
     parser.add_argument('--swarm_city', type=str, default=None, help='City to crawler')
+    parser.add_argument('--model_name', type=str, default=None, help='Model use on prediction')
     parser.add_argument('--rake', type=str, default=None, help='Functions to view')
+    parser.add_argument('--id', type=str, default=None, help='Identified')
 
     args = parser.parse_args()
 
@@ -27,6 +29,10 @@ def main():
     elif args.mode == "assessor":
         from system.Assessor import Assessor
         mode = Assessor(args)
+
+    elif args.mode == "marionette":
+        from hive.Marionette import Marionette
+        mode = Marionette(args)
     else:
         None
         # mode = Compiler(args)

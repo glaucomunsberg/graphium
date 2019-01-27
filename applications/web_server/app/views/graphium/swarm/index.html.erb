@@ -18,9 +18,10 @@
 <table class="highlight">
     <thead>
       <tr>
-          <th>Name</th>
           <th>Identifier</th>
-          <th>Nº of agents</th>
+          <th>Cidade</th>
+          <th>Panos</th>
+          <th>Classifications</th>
           <th>Start at</th>
           <th>End at</th>
           <th>Active</th>
@@ -31,9 +32,10 @@
     <tbody>
         <%@swarms.each do |swarm|%>
             <tr>
-                <td><%=swarm.name%></td>
                 <td><%=swarm.identifier%></td>
-                <td><%=swarm.num_agent%></td>
+                <td><%=Graphium::City.find(swarm.city_id).name%></td>
+                <td><%=Graphium::Pano.where(swarm_identifier: swarm.identifier).length%></td>
+                <td><%=Graphium::Graffiti.where(swarm_identifier: swarm.identifier).length%></td>
                 <td><%=swarm.start_at%></td>
                 <td><%=swarm.end_at%></td>
                 <td><%=swarm.active%></td>

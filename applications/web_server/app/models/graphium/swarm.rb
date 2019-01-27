@@ -13,6 +13,7 @@ class Graphium::Swarm
     field :end_at, type: String
     field :qmi, type: Float
     field :end_well, type: Boolean
-    field :seconds_to_check_agents, type: Integer
+    field :model_weights_name, type: String
+
     store_in collection: "swarm", database: "graphium"
 end
