@@ -1,8 +1,6 @@
 # Welcome to Graphium
 
-Graphium help you to walk in google street view using IA models to find elements learned. 
-
-We use multi-agent to drive in a city with [OSM](https://www.openstreetmap.org) geographic data, [Keras](https://keras.io/) models to find elements in images from Google Street View [API](https://developers.google.com/maps/documentation/streetview/intro).
+Graphium help you to walk in Google Street View using IA models to find elements learned. We use multi-agent to drive in a city with [OSM](https://www.openstreetmap.org) geographic data, [Keras](https://keras.io/) models to find elements in images from Google Street View [API](https://developers.google.com/maps/documentation/streetview/intro).
 
 ![Screenshot](imgs/graphium_glaucomunsberg_com_agent.jpg)
 *Swarm with 5 agents in Porto Alegre city*
