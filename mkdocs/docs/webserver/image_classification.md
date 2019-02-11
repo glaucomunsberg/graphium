@@ -1,0 +1,1 @@
+![Screenshot](../imgs/graphium_image_classifier.png)

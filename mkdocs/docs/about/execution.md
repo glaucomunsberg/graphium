@@ -1,4 +1,6 @@
-To run the application see below
+To run the application see below, the first step [Reader](#reader) you load the city geographic data, after that you run [Swarm](#swarm) to check the streets with your model, at last you can use [WebServer](#web-server) to view the swarm running or show results after executation. 
+
+If you want erase an execution, or list elements suchs swarms, agents, cities, streets use [Assessor Commands](#assessor).
 
 ### Reader
 Before you need **load a dataset** from a city. You need populate the database to be processed with a swarm with N agents.
@@ -53,9 +55,18 @@ See list below:
     `--rake :erase` on assessor **remove permanently**. Be careful about this command.
 ## Web Server
 
-You can see throw the dashboard on web server at:
+Go to `applications/web_server` and run the code bellow:
 
-	cd ../webserver/app/
-	rails s
+````bash
+$ rails s
+````
+
+Then, open you browser and go to [http://localhost:3000](http://localhost:3000). To access admin dasboard you need use default user `admin@graphium.com` and password `1234567890`.
+
+
+!!!info
+    Check if you install RoR in [Instalation Section](../about/installation/ubuntu_16.04.md).
+    
+!!!info
+    Check if you [run/running a swarm](../swarm/index.md).
 	
-Then, open you browser and go to [http://localhost:3000](http://localhost:3000).

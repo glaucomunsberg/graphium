@@ -185,10 +185,46 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../installation/" title="Installation" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/ubuntu_16.04/" title="Ubuntu 16.04" class="md-nav__link">
+      Ubuntu 16.04
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/macosx_10.14/" title="MacOS 10.14" class="md-nav__link">
+      MacOS 10.14
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -668,9 +704,81 @@
 
 
   <li class="md-nav__item">
-    <a href="../../webserver/" title="About Maker" class="md-nav__link">
-      About Maker
+    <a href="../../webserver/" title="About WebServer" class="md-nav__link">
+      About WebServer
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Applications
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Applications
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../webserver/realtime/" title="Real Time Swarm" class="md-nav__link">
+      Real Time Swarm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../webserver/swarm/" title="History Swarm" class="md-nav__link">
+      History Swarm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../webserver/image_classified/" title="Classified Images" class="md-nav__link">
+      Classified Images
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../webserver/image_classification/" title="Image Classifier" class="md-nav__link">
+      Image Classifier
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -792,7 +900,8 @@
                 
                   <h1>Run Application</h1>
                 
-                <p>To run the application see below</p>
+                <p>To run the application see below, the first step <a href="#reader">Reader</a> you load the city geographic data, after that you run <a href="#swarm">Swarm</a> to check the streets with your model, at last you can use <a href="#web-server">WebServer</a> to view the swarm running or show results after executation. </p>
+<p>If you want erase an execution, or list elements suchs swarms, agents, cities, streets use <a href="#assessor">Assessor Commands</a>.</p>
 <h3 id="reader">Reader</h3>
 <p>Before you need <strong>load a dataset</strong> from a city. You need populate the database to be processed with a swarm with N agents.
 Bellow you can see how upload the city <code>Pelotas</code> database:</p>
@@ -801,8 +910,8 @@ python Main.py --mode reader --osm_path city_pelotas_full/ex_pelotas.osm
 </code></pre>
 <h3 id="swarm">Swarm</h3>
 <p>After upload the database – with reader mode – you can execute the a swarm with N agents to find images with a model.</p>
-<p>Example: To <strong>run at streets</strong> with <code>5</code> agents at <code>Pelotas</code> city.</p>
-<pre><code>python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7
+<p>Example: To <strong>run on streets</strong> with <code>5</code> agents at <code>Pelotas</code> city with model <code>20190120203800.h5</code>.</p>
+<pre><code>python Main.py --mode swarm --swarm_city 59dd4d7b6a86370cb85d6be7 --model_name 20190120203800
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -816,32 +925,45 @@ See list below:</p>
 python Main.py --mode assessor --rake swarm:list
 python Main.py --mode assessor --rake swarm:active
 python Main.py --mode assessor --rake swarm:shutdown
-python Main.py --mode assessor --rake swarm:erase
+python Main.py --mode assessor --rake swarm:erase  --id &lt;SWARM_ID&gt;
 
-python Main.py --mode assessor --rake agent:erase
+python Main.py --mode assessor --rake swarms:erase
+
+python Main.py --mode assessor --rake agents:erase
 
 python Main.py --mode assessor --rake city:list
+
+python Main.py --mode assessor --rake model:list
 
 python Main.py --mode assessor --rake street:list
 python Main.py --mode assessor --rake street:count
 
 python Main.py --mode assessor --rake graffiti:list
-python Main.py --mode assessor --rake graffiti:erase
+
+python Main.py --mode assessor --rake graffitis:erase
 
 puthon Main.py --mode assessor --rake session:list
 
-python Main.py --mode assessor --rake log:erase
+python Main.py --mode assessor --rake logs:erase
 </code></pre>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><code>--rake :erase</code> on assessor <strong>remove permanently</strong>. Be careful about this command.</p>
 </div>
 <h2 id="web-server">Web Server</h2>
-<p>You can see throw the dashboard on web server at:</p>
-<pre><code>cd ../webserver/app/
-rails s
+<p>Go to <code>applications/web_server</code> and run the code bellow:</p>
+<pre><code class="bash">$ rails s
 </code></pre>
-<p>Then, open you browser and go to <a href="http://localhost:3000">http://localhost:3000</a>.</p>
+
+<p>Then, open you browser and go to <a href="http://localhost:3000">http://localhost:3000</a>. To access admin dasboard you need use default user <code>admin@graphium.com</code> and password <code>1234567890</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Check if you install RoR in <a href="../installation/ubuntu_16.04/">Instalation Section</a>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Check if you <a href="../../swarm/">run/running a swarm</a>.</p>
+</div>
                 
                   
                 
@@ -862,7 +984,7 @@ rails s
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../installation/" title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../installation/macosx_10.14/" title="MacOS 10.14" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -871,7 +993,7 @@ rails s
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Installation
+                MacOS 10.14
               </span>
             </div>
           </a>

@@ -2,7 +2,9 @@ site_name: Graphium
 site_description: Graphium allow you look in street for elements learned in IA's model.
 pages:
     - Welcome: 'index.md'
-    - Installation: 'about/installation.md'
+    - Installation:
+        - Ubuntu 16.04: 'about/installation/ubuntu_16.04.md'
+        - MacOS 10.14: 'about/installation/macosx_10.14.md'
     - Run Application: 'about/execution.md'
     - Configurations:
         - Swarm Config.: 'data/configuration.md'
@@ -31,7 +33,12 @@ pages:
           - Reader: 'swarm/assistant/reader.md'
           - Scissor: 'swarm/assistant/scissor.md'
     - WebServer:
-        - About Maker: 'webserver/index.md'
+        - About WebServer: 'webserver/index.md'
+        - Applications:
+          - Real Time Swarm: 'webserver/realtime.md'
+          - History Swarm: 'webserver/swarm.md'
+          - Classified Images: 'webserver/image_classified.md'
+          - Image Classifier: 'webserver/image_classification.md'
     - About:
         - 'License': 'about/license.md'
         - 'Release Notes': 'about/release-notes.md'
