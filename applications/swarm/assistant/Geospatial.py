@@ -87,12 +87,13 @@ class GeoSpatial:
         lat2 = float(lat2)
         lng2 = float(lng2)
 
-        dot1 = (lat1,lng1)
-        dot2 = (lat2,lng2)
+        dot1 = (lat1, lng1)
+        dot2 = (lat2, lng2)
         return self.getIntermediatePointsFromTwoDots(dot1,dot2)
 
 
     def calculateStreetOrientation(self,pointA, pointB):
+
         """
         Calculates the bearing between two points.
         The formulae used is the following:
@@ -108,6 +109,7 @@ class GeoSpatial:
         :Returns Type:
           float
         """
+
         if (type(pointA) != tuple) or (type(pointB) != tuple):
             raise TypeError("Only tuples are supported as arguments")
 
