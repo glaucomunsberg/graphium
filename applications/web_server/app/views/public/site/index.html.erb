@@ -92,14 +92,16 @@
     var works     = ['Graffiti','Cars','Houses','People','Road sign']
     var position  = -1
     function changeWord(){
-      console.log('a!')
+      //console.log('a!')
       position+=1;
       if(position > works.length-1){
         position=0
       }
-      $('#word_space').hide()
-      document.querySelector('#word_space').innerHTML = works[position]
-      $('#word_space').show()
+      if(document.querySelector('#word_space') != null){
+          $('#word_space').hide()
+          document.querySelector('#word_space').innerHTML = works[position]
+          $('#word_space').show()
+      }
     }
 
     window.setInterval(function(){

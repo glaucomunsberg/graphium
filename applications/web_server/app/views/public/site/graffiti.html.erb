@@ -1,4 +1,4 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=<%=Graphium::Configuration.first.google_maps_key%>&callback=initTheMap" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=Graphium::Configuration.first.google_maps_key%>&libraries=visualization&callback=initTheMap" defer></script>
 <div id='map' class="map row" style="margin-bottom: 0px" >
 </div>
 <div class="row shadow-controller" controllers style="overflow-y: auto;display:initial;position:absolute;top:64px;left: 0px;background-color: white;width: 400px;height: 600px;margin-bottom: 0px">
@@ -65,6 +65,19 @@
     <input type="checkbox" disabled id="classification_false_negative" />
     <label for="classification_false_negative">False Negative</label>
   </p>
+  <div class="col s12">
+    <b>Show Heatmap</b>
+    <div>
+      <p class="col s6">
+        <input name="show_heatmap" type="radio" id="show_heatmap_no" checked />
+        <label for="show_heatmap_no">No</label>
+      </p>
+      <p class="col s6">
+        <input name="show_heatmap" type="radio" id="show_heatmap_yes" />
+        <label for="show_heatmap_yes">Yes</label>
+      </p>
+    </div>
+  </div>
   <div class="col s12">
     <b>Show agents</b>
     <div>
@@ -212,6 +225,8 @@
     var agents = [];
     var lines = [];
     var visited_streets = [];
+    var heatmapData = [];
+    var heatmap = null;
     var lineSymbol = {
         path: 'M 0,1 0,1',
         strokeOpacity: 0.4,
@@ -235,6 +250,10 @@
         markers_agents = [];
         lines = [];
         markers_graffiti = [];
+        heatmapData = [];
+        if(heatmap!=null){
+            heatmap.setMap(null);
+        }
         google.maps.event.trigger(map, 'resize');
         $('#street_names').html('<span>None</span>');
         console.log('clean')
@@ -411,7 +430,7 @@
                     map.setCenter(new google.maps.LatLng($data.city.lat, $data.city.lng));
 
                     for(var a=0; a < $data.graffiti.length; a++){
-                        addGraffitiMarker(a,$data.graffiti[a]._id.$oid, $data.graffiti[a].situation, $data.graffiti[a].lat, $data.graffiti[a].lng)
+                        addGraffitiMarker(a,$data.graffiti[a]._id.$oid, $data.graffiti[a].situation, $data.graffiti[a].lat, $data.graffiti[a].lng);
                     }
 
                     $('td[result_total]').html($data.graffiti.length);
@@ -426,6 +445,13 @@
                     $('td[result_preditive_negative]').html($data.results.preditive_negative);
                     $('td[result_preditive_positive]').html($data.results.preditive_positive);
 
+                    if(document.querySelector('#show_heatmap_yes').checked){
+                        heatmap = new google.maps.visualization.HeatmapLayer({
+                            data: heatmapData
+                        });
+                        heatmap.set('radius', 20);
+                        heatmap.setMap(map);
+                    }
                 }
                 Materialize.toast('Synced', 1000,'rounded')
 
@@ -481,6 +507,10 @@
 
     }
 
+    function  addHeatmapMarker(position, lat, lng) {
+        heatmapData.push(new google.maps.LatLng(lat, lng))
+    }
+
     function addAgentMarker(position,name,lat,lng){
 
         agent_num = position.toString();
@@ -521,11 +551,6 @@
             }
         }
 
-
-
-
-
-
         latLng = new google.maps.LatLng(lat, lng);
 
         marker = new google.maps.Marker({
@@ -534,13 +559,19 @@
             title:name,
             visible: true
         });
-        marker.setMap(map);
-        marker.addListener('click', function() {
-            console.log('Grafiti->',id);
-            openGraffiti(id)
-        });
-        console.log('adding agraffiti!',lat,lng);
-        markers_graffiti.push(marker)
+
+        if(document.querySelector('#show_heatmap_yes').checked){
+            addHeatmapMarker(position,lat,lng);
+        }else{
+            marker.setMap(map);
+            marker.addListener('click', function() {
+                console.log('Grafiti->',id);
+                openGraffiti(id)
+            });
+            markers_graffiti.push(marker)
+        }
+
+
     }
 
     function openGraffiti(id){
