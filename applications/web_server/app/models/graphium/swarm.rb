@@ -14,6 +14,7 @@ class Graphium::Swarm
     field :qmi, type: Float
     field :end_well, type: Boolean
     field :model_weights_name, type: String
+    field :visible, type: Boolean
 
     store_in collection: "swarm", database: "graphium"
 end

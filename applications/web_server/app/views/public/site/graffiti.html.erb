@@ -8,22 +8,22 @@
   <p class="col s12">
     <select name="swarm_id"  class="browser-default" id="swarm_id">
       <option value="" disabled selected>Choose your swarm</option>
-      <% Graphium::Swarm.all.each do |swarm| %>
-        <option id="<%=swarm.identifier %>">Swarm <%=swarm.identifier %></option>
+      <% Graphium::Swarm.where(visible: true).each do |swarm| %>
+        <option id="<%=swarm.identifier %>"><%=swarm.name %></option>
       <%end %>
     </select>
   </p>
   <div class="col s12">
     <b>City Name</b>
-    <p city_name>Sem informações</p>
+    <p city_name style="cursor: pointer;" onclick="window.open('https://github.com/glaucomunsberg/graphium/tree/master/data/datasets')">No information</p>
   </div>
   <div class="col s6">
-    <b>Model Name</b>
-    <p model_name>Sem informações</p>
+    <b>Preditive Model</b>
+    <p model_name style="cursor: pointer;" onclick="window.open('https://github.com/glaucomunsberg/graphium/tree/master/data/models')">No information</p>
   </div>
   <div class="col s6">
     <b>Nº of agents</b>
-    <p agents_number>Sem informações</p>
+    <p agents_number>No information</p>
   </div>
   <div class="col s12">
     <b class="tooltiped" data-tooltip="Classificado por">Classified by</b>
@@ -109,7 +109,7 @@
     </div>
   </div>
   <div class="col s12">
-    <a onclick="update()" class="waves-effect waves-light btn right">Filtar</a>
+    <a onclick="update()" class="waves-effect waves-light btn right">Filter</a>
   </div>
   <div class="col s12">
     <p>
@@ -151,10 +151,10 @@
       </tbody>
       <thead>
         <tr>
-          <td>Sensibilidade</td>
-          <td>Especificidade</td>
-          <td>Valor Preditivo Positivo</td>
-          <td>Valor Preditivo Negativo</td>
+          <td>Sensitivity</td>
+          <td>Specificity</td>
+          <td>Positive Predictive Value</td>
+          <td>Negative Predictive Value</td>
         </tr>
       </thead>
       <tbody>
@@ -300,7 +300,7 @@
                     lng: -52.3347313
                 };
                 infoWindow.setPosition(pos);
-                infoWindow.setContent('Sua localização');
+                infoWindow.setContent('Your Localization');
                 map.setCenter(pos);
             }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
@@ -371,11 +371,12 @@
         }
         console.log('update!');
         clean_map();
+        swarm_identifier = document.querySelector('#swarm_id')[document.querySelector('#swarm_id').selectedIndex].id;
         $.ajax({
             url: "/public/site/getSwarmInfo",
             dataType: "json",
             data: {
-                "swarm_identifier": $('#swarm_id').val().split(' ')[1],
+                "swarm_identifier": swarm_identifier,
                 "classified_by_model": document.querySelector('#classified_by_model').checked,
                 "classified_true": document.querySelector('#classification_true').checked,
                 "classified_false": document.querySelector('#classification_false').checked,
